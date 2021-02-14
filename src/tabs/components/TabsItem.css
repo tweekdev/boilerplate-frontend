@@ -1,0 +1,177 @@
+.card-tabs {
+  border-radius: 0;
+	border-radius: 8px;
+  box-shadow: 6px 6px 0px #1d2761;
+  border: none;
+}
+
+.header {
+  display: flex;
+  height: 4rem;
+  background-color: #2d3980;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h3 {
+  margin: 0;
+  margin-left: 0;
+  text-align: center;
+  padding: 1rem;
+  overflow: scroll;
+  color: #8491c7;
+}
+
+.card-tabs h4 {
+  color: #8491c7;
+  font-family: Inter, sans-serif;
+  line-height: 1.3;
+  font-size: 0.9em;
+  font-weight: 700;
+	margin: 1rem 0.3rem;
+}
+.tabs--items {
+  margin: 1.5rem;
+  flex: 0 1 auto;
+  width: 100%;
+}
+
+.tabs-item__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 1rem 1rem;		
+}
+
+.tabs-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.tabs-data label {
+  color: #8491c7;
+  justify-content: left;
+  background: #d4dcff26;
+  padding: 0.3rem;
+  border-radius: 4px;
+  margin-right: 1rem;
+  font-family: Inter, sans-serif;
+  line-height: 1.3;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+.dif {
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+.easy {
+  background: #32cd3257;
+  border-radius: 999px;
+  color: #32cd32 !important;
+  padding: 0.5rem 1rem;
+}
+.medium {
+  background: #f38f2857;
+  border-radius: 999px;
+  color: #f38f28 !important;
+  padding: 0.5rem 1rem;
+}
+.hard {
+  background: #fd4a3b57;
+  border-radius: 999px;
+  color: #fd4a3b !important;
+  padding: 0.5rem 1rem;
+}
+.tabs-choose {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  position: relative;
+  height: 1rem;
+}
+
+.tabs-choose .button {
+  font: inherit;
+  position: absolute;
+  width: 50%;
+  padding: 0.5rem 0.5rem;
+  border-radius: 999px;
+  /* height: 2rem; */
+  /* border-top-left-radius: 0; */
+  /*border-bottom-right-radius: 0;*/
+  color: #f8f8fa;
+  border: none;
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  /* bottom: 0; */
+  display: inline-block;
+  background: linear-gradient(to right, #f38f28c4 0%, #fd4a3bc4 100%);
+}
+
+.tabs-choose .button:hover {
+  transition: 0.7s;
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 80em) {
+  .tabs--items {
+    margin: 1rem;
+    flex: 0 1 auto;
+  }
+
+	.tutorials-item__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		margin: 1rem 1rem;
+	}
+}
+
+@media screen and (max-width: 70em) {
+  .tabs--items {
+    margin: 1rem;
+    flex: 0 1 auto;
+  }
+}
+
+@media screen and (max-width: 56em) {
+  .tabs--items {
+    margin: 1rem;
+    flex: 0 1 auto;
+  }
+}
+@media screen and (max-width: 47.5em) {
+  .tabs--items {
+    margin: 2rem;
+    flex: 0 1 auto;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .tabs--items {
+    margin: 2rem;
+    flex: 0 1 auto;
+    margin-left: 1rem;
+  }
+}
+@media screen and (max-width: 30em) {
+  .tabs--items {
+    margin: 2rem;
+    flex: 0 1 auto;
+    margin-left: 1rem;
+  }
+  .tabs-item__info {
+    margin-left: 1rem;
+  }
+}

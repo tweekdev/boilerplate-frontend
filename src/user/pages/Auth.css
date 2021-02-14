@@ -1,0 +1,65 @@
+
+
+.auth-page {
+  background-color: #030d44;
+  background-image: url("../../assets/image/Wave-10.svg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+.authentication__header {
+  color: #d4dcff;
+  text-align: center;
+}
+
+.title__auth,
+.user-add {
+  color: #d4dcff;
+  list-style: none;
+  text-decoration: none;
+  margin-left: 0;
+}
+
+.authentication {
+  background: #030d44;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 7rem auto;
+  box-shadow: 6px 6px 0px #1d2761;
+  max-width: 25rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.authentication form {
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.authentication form .form-group {
+  margin: 0;
+}
+
+.authentication form .form-control {
+  border: 1px solid #2d3980;
+  background: #2d3980;
+  border-radius: 3px;
+  color: var(--color);
+  padding: calc(1.5 * var(--space)) calc(1 * var(--space));
+  display: block;
+  width: 100%;
+  outline: 0;
+  min-height: 44px;
+  margin: 1rem 0;
+}
+
+.error {
+  margin-top: 0.5rem;
+  color: #f64f59;
+}

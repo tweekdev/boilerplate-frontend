@@ -1,0 +1,151 @@
+
+.backgroundImage {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.smallWrapper {
+  margin-top: 7rem;
+  width: 100%;
+  padding-left: 10%;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  font-size: 5rem;
+  color: #f8f8fa;
+  transition: color 0.2s ease-out;
+}
+
+.wave {
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  background-color: #152167;
+}
+
+span {
+  font-weight: 600;
+  /*color: #b39836;*/
+  color: #f38f28;
+  transition: color 0.2s ease-out;
+}
+
+.subTitle {
+  color: #f8f8fa;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  transition: color 0.2s ease-out;
+}
+
+@media screen and (max-width: 80em) {
+  .title {
+    font-size: 4rem;
+  }
+  .subTitle {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 70em) {
+  .title {
+    font-size: 3.2rem;
+  }
+  .subTitle {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 56em) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .title {
+    font-size: 4.5rem;
+  }
+  .subTitle {
+    font-size: 1rem;
+  }
+
+  .main {
+    flex-direction: column-reverse;
+  }
+  .backgroundImage {
+    align-items: start;
+  }
+  .container {
+    margin-top: 7rem;
+    width: 100%;
+    padding-left: 1rem;
+    margin-bottom: 0;
+  }
+  .smallWrapper {
+    margin-top: 7rem;
+    width: 100%;
+    padding-left: 20%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .title {
+    font-size: 4rem;
+  }
+  .subTitle {
+    font-size: 1.2rem;
+  }
+  .container {
+    width: 100%;
+    padding-left: 2rem;
+    margin-top: 0;
+  }
+  .smallWrapper {
+    margin-top: 7rem;
+    width: 100%;
+    padding-left: 12%;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 25em) {
+  .title {
+    font-size: 3rem;
+  }
+  .subTitle {
+    font-size: 1.2rem;
+  }
+  .container {
+    margin-top: 7rem;
+    width: 100%;
+    height: 75%;
+    padding-left: 1rem;
+  }
+  .smallWrapper {
+    margin-top: 7rem;
+    width: 100%;
+    padding-left: 0%;
+    margin: 0;
+  }
+}

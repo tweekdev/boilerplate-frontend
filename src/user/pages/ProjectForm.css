@@ -1,0 +1,70 @@
+.card-user {
+  width: 100%;
+  margin: 2rem;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+.title-user-add {
+  text-align: center;
+  color: #333;
+}
+.users-form {
+  position: relative;
+  list-style: none;
+  margin: 0 auto;
+  border-radius: 6px;
+  color: #222;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  width: 100%;
+  color: #333;
+  font-size: 0.875rem;
+  font-weight: 200;
+  line-height: 1;
+  flex: 1 0 auto;
+  padding: 10px 50px 10px 24px;
+  background: none;
+  border: 1px solid #05668dff;
+  border-radius: 35px;
+  outline: none;
+  box-sizing: border-box;
+}
+.form-group {
+  margin: 1rem;
+  width: 90%;
+}
+.error {
+  margin-top: 0.5rem;
+  color: #f64f59;
+}
+
+.form-control input::placeholder {
+  color: #909298;
+  margin: 0 !important;
+}
+
+select {
+  width: 100%;
+  color: #333;
+  font-size: 0.875rem;
+  font-weight: 200;
+  line-height: 1;
+  flex: 1 0 auto;
+  padding: 10px 50px 10px 24px;
+  background: none;
+  border: 1px solid #05668dff;
+  border-radius: 35px;
+  outline: none;
+  box-sizing: border-box;
+}
+select ::placeholder {
+  color: #909298;
+}

@@ -1,0 +1,39 @@
+.project-content {
+	background-size:cover;
+	background: #0F162F;
+  display: flex;
+  flex-direction: column;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: saturation;
+}
+.projects {
+  margin-top: 5rem;
+  flex-direction: column;
+}
+.place-list {
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 0px;
+  list-style: none;
+  margin: 1rem auto;
+  padding: 0;
+  width: 100%;
+}
+.subtitle-project {
+  color: #fefefe;
+}
+
+@media screen and (max-width: 37.5em) {
+  .project-content {
+    height:100vh;
+  }
+	.place-list  {
+  overflow: scroll;
+}
+}

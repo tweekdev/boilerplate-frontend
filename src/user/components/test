@@ -1,0 +1,70 @@
+ <div className="users-item__info">
+            {auth.userId === props.id ? (
+              <Link
+                key={props.id}
+                className="user-links"
+                to={`/users/profile/${props.id}`}
+              >
+                <h3 key={props.id}>{props.pseudo}</h3>
+              </Link>
+            ) : (
+              <Link
+                key={props.id}
+                className="user-links"
+                to={`/users/${props.id}`}
+              >
+                <h3 key={props.id}>{props.pseudo}</h3>
+              </Link>
+            )}
+          </div>
+          <div className="users-item__info__name">
+            <h5>{props.firstname}</h5>
+            <h5>{props.name}</h5>
+          </div>
+          <div className="users-item__info__sociaty">
+            <p>{props.email}</p>
+          </div>
+          <div className="users-item__info__role">
+            {props.role.map((r) => (
+              <p
+                className={r.name === 'admin' ? 'admin' : 'user-role'}
+                key={r.id}
+              >
+                {r.name}
+              </p>
+            ))}
+          </div>
+          <div className="users-item__info__count">
+            <p>Tabs: {props.countTabs}</p>
+          </div>
+          {auth.role === '601724ea6f33a7db18a485c5' && (
+           
+)
+}
+					
+
+   <UserItem
+              key={user.id}
+              id={user.id}
+              firstname={user.firstname}
+              pseudo={user.pseudo}
+              role={user.role}
+              email={user.email}
+              name={user.name}
+              countTabs={user.tabs.length}
+            />
+
+
+						 const columns = [
+    { key: 'id', name: 'id' },
+    { key: 'pseudo', name: 'pseudo' },
+    { key: 'name', name: 'Name' },
+    { key: 'firstname', name: 'First name' },
+    { key: 'email', name: 'Email' },
+    { key: 'role', name: 'Role' },
+    { key: 'countTabs', name: 'Tabs' },
+    {
+      key: 'actions',
+      name: 'Actions',
+    },
+  ];

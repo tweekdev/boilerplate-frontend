@@ -1,0 +1,67 @@
+.email {
+  text-decoration: none;
+  color: #d4dcff;
+  font-size: 1rem;
+  position: relative;
+  font-weight: 100;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: color 0.2s ease-out;
+}
+
+.email:hover {
+  color: #5396e7;
+}
+
+.socialWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.styledLink {
+  color: #5396e7;
+  text-decoration: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1.5rem;
+  margin-left: 0;
+  transition: all 0.2s ease-out;
+}
+
+.styledLink:hover {
+  color: #d4dcff;
+  border-color: #5396e7;
+}
+
+.styledIcon {
+  color: #5396e7;
+  font-size: 2rem;
+  transition: color 0.2s ease-out;
+}
+
+.tyledLink:hover {
+  color: green;
+}
+
+.subtitle {
+  color: #5396e7;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 0.7rem;
+  font-size: 1.8rem;
+  transition: color 0.2s ease-out;
+}
+
+span {
+  font-weight: 600;
+  color: #5396e7;
+  transition: color 0.2s ease-out;
+}

@@ -1,0 +1,58 @@
+.main-new-tabs {
+  min-height: 100vh;
+  height: 100% !important;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  align-items: flex-start !important;
+}
+
+.card-new-tabs {
+  margin: 10rem;
+}
+
+.title-tabs-add {
+  text-align: center;
+  color: #cecfd2;
+  margin-top: 2rem;
+}
+
+form.tabs-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.new-tabs-control {
+  width: 100%;
+  border: 1px solid #2d3980;
+  color: #f8f8f873;
+  padding: calc(1.5 * var(--space)) calc(1 * var(--space));
+  display: block;
+  outline: 0;
+  background: #2d3980;
+  box-shadow: 0 2px 4px var(--shadow);
+  border-radius: 3px;
+}
+
+.file-control {
+  width: 90%;
+  margin: 1rem;
+}
+
+.form-group {
+  margin: 1rem;
+  width: 90%;
+}
+.error {
+  margin-top: 0.5rem;
+  color: #f64f59;
+}
+
+.new-tabs-control::placeholder {
+  color: #f8f8f873;
+  margin: 0 !important;
+}

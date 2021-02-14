@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --color-dark: #f0f3ff;
+  --color: #d4dcff;
+  --color-light: #8491c7;
+  --color-inversed: #d4dcff;
+  --contrast: #5396e7;
+  --gap: 20px;
+  --space: 8px;
+  --border: #2a2e5e;
+  --border-light: #161e3b;
+  --background: #171933;
+  --background-light: #1b1e3d;
+  --card-bg: #22244d;
+  --card-bg-footer: #1d1f42;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --play: #1d1d3a;
+  --list-hover: #282a5a;
+  --card-footer: #1b1d3d;
+  --skeleton: #0f1224;
+  --skeleton-wave: #171933;
+  --red: #a6333f;
+  --selection-background: #3d59a1;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #152167;
+  /*background-image: url('./assets/image/06.png');*/
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when 
+	the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+	on the container's size */
+  background-size: cover;
+}
+
+main {
+  margin-top: 0rem;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+.slide-in-left-enter {
+  transform: translateX(-100%);
+}
+
+.slide-in-left-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.slide-in-left-exit {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.slide-in-left-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 200ms;
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-search {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  align-items: center;
+  justify-content: flex-end;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.search-active {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  margin-right: 2rem;
+}
+
+.btn-active-seach {
+  background: transparent;
+  border: none;
+  color: #8491c7;
+  cursor: pointer;
+}
+.btn-active-seach .MuiSvgIcon-root {
+  font-size: 2rem;
+	width: 1em;
+	height: 1em;
+}
+
+.btn-active-seach:focus,
+.btn-active-seach:hover,
+.btn-active-seach:active,
+.btn-active-seach:focus-visible,
+.btn-active-seach:focus-within,
+.btn-active-seach:visited {
+  background: transparent;
+  outline: none;
+  border: none;
+}

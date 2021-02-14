@@ -1,0 +1,183 @@
+.thanks__content {
+  height: 100vh;
+  background-image: url('../../../assets/image/3.jpg');
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when 
+	the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+	on the container's size */
+  background-size: cover;
+}
+
+.title-thanks {
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  color: #5396e7;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: color 0.2s ease-out;
+}
+
+.thanks__content__infos {
+  font-weight: 400;
+  font-size: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 15%;
+  transform: scale(0.95);
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-right: 5rem;
+}
+.avatar:hover {
+  transform: scale(1.2);
+  box-shadow: 0 37.125px 70px -12.125px rgba(0, 0, 0, 0.2);
+}
+
+.profile {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 75%;
+  box-shadow: 0 37.125px 70px -12.125px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.profile-name {
+  background: transparent;
+  border: 0;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #d4dcff;
+}
+
+.profile-infos {
+  background: transparent;
+  border: 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+  color: #d4dcff;
+}
+.actions {
+  background: transparent;
+  border: 0;
+  color: #d4dcff;
+  display: inline-flex;
+}
+.cardBody {
+  color: #d4dcff;
+  margin-top: 1.5em;
+}
+
+.social {
+  display: flex;
+}
+
+.text-description {
+  color: #d4dcff;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.8;
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  text-align: center;
+  transition: color 0.2s ease-out;
+}
+.text-description > em {
+  color: #5396e7;
+  font-weight: 600;
+  transition: color 0.2s ease-out;
+}
+.text-description > p {
+  margin-bottom: 2rem;
+}
+
+.text-description > a {
+  color: #5396e7;
+  font-weight: 600;
+  transition: color 0.2s ease-out;
+}
+.text-description:hover {
+  color: #5396e7;
+}
+
+.icons {
+  color: #e1306c;
+  font-size: 1.5rem;
+  transition: color 0.2s ease-out;
+}
+.icons:hover {
+  color: #fcaf45;
+  transform: scale(1);
+}
+
+.stack {
+  font-weight: 600;
+  color: #5396e7;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  transition: color 0.2s ease-out;
+}
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-out;
+  margin-bottom: 2rem;
+}
+.link:hover {
+  color: #fff;
+  border-color: #5396e7;
+  transform: scale(1.5);
+}
+
+.actions-content {
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+@media screen and (max-width: 70em) {
+  .thanks__content__infos {
+    flex-direction: column;
+  }
+  .profile {
+    width: 100%;
+  }
+  .avatar {
+    margin-right: 0;
+    width: 35%;
+  }
+}

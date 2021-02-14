@@ -1,0 +1,130 @@
+.place-item {
+  margin: 1rem;
+  flex: 0 1 auto; /* Default */
+  width: 25%;
+}
+
+.place-item__content {
+	padding: 0;
+	height: 15rem;
+	position: relative;
+}
+
+.place-item__info {
+	text-align: center;
+	font-family: Inter,sans-serif;
+	line-height: 1.3;
+	font-size: 16px;
+	font-weight: 700;
+}.place-item__technos {
+	font-family: Inter,sans-serif;
+	line-height: 1.3;
+	font-size: 16px;
+	text-transform: lowercase;
+	font-weight: 700;
+}
+
+.place-item__image {
+	display: none;
+  width: 100%;
+  height: 12.5rem;
+  margin-right: 1.5rem;
+  -webkit-filter: grayscale(
+    100%
+  ); /* Pour les navigateurs Chrome, Safari, Opera */
+  filter: grayscale(100%); /* Firefox */
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 5px;
+}
+
+.place-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h2 {
+  color: #4388e7;
+}
+h3 {
+  color: #d4dcff;
+}
+.place-item__info h2,
+.place-item__info h3 {
+  margin: 0.5rem 0 0.5rem 0;
+}
+.place-item__p {
+	margin-top: 2rem;
+	color:var(--color-light);
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+.place-item__actions {
+  padding: 1rem;
+	text-align: center;
+	background: var(--card-bg-footer,var(--card-footer));
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+
+}
+
+.place-item__modal-content {
+  padding: 0;
+}
+
+.place-item__modal-actions {
+  text-align: right;
+}
+
+.place-item__actions button,
+.place-item__actions a {
+  margin: 0.5rem;
+}
+
+.map-container {
+  height: 15rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .place-item__image {
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 80em) {
+  .place-item {
+    margin: 1rem;
+    flex: 0 1 auto;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 70em) {
+  .place-item {
+    margin: 1rem;
+    flex: 0 1 auto;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 56em) {
+  .place-item {
+    margin: 1rem;
+    flex: 0 1 auto;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 47.5em) {
+  .place-item {
+    margin: 1rem;
+    flex: 0 1 auto;
+    width: 90%;
+  }
+}

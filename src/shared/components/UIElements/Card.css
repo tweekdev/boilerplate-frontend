@@ -1,0 +1,38 @@
+.card,
+.card::after,
+.card::before {
+  width: 100%;
+  width: 100%;
+  position: relative;
+  border: 1px solid #496ab733;
+  border: 1px solid #496ab733;
+  box-shadow: 0 2px 4px #496ab733;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+.card::after,
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.card::after {
+  transform: translate(6px, 6px);
+}
+.card::before {
+  transform: translate(0, 0);
+}
+.card:hover::after {
+  transform: translate(6px, 6px) rotate(3deg);
+}
+.card:hover::before {
+  opacity: 1;
+  transform: translate(0, 0) rotate(-3deg);
+}
