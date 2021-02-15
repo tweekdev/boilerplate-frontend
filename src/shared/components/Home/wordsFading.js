@@ -9,7 +9,7 @@ const WORDS = [
 
 const Wrapper = styled.div`
   font-weight: 600;
-  width: 110px;
+  width: 130px;
   position: relative;
   display: inline-block;
   text-align: center;

@@ -115,6 +115,9 @@ const App = () => {
         <Route path="/tabs" exact>
           <Tabs></Tabs>
         </Route>
+        <Route path="/Instruments" exact>
+          <Instruments></Instruments>
+        </Route>
         <Route path="/tab/:tabsId">
           <Tab></Tab>
         </Route>

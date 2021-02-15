@@ -48,7 +48,7 @@ const Auth = () => {
     }
   };
   return (
-    <div className="main auth-page">
+    <div className="auth-page">
       <ErrorModal error={error} onClear={clearError} />
       {isLoading ? (
         <LoadingSpinner asOverlay />

@@ -103,7 +103,7 @@ const TabsList = (props) => {
       <div className="tabs-list">
         <div className="descritif-tabs">
           <h1>
-            Toutes les <strong>tablatures</strong>
+            Toutes les <strong>tabs</strong>
           </h1>
           <p>
             Envie d'apprendre et maitriser de nouvelles musiques par le biais de

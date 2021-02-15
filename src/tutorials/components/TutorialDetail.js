@@ -18,6 +18,7 @@ const TutorialDetail = (props) => {
     event.target.pauseVideo();
   };
   const opts = {
+    height: '500',
     width: '100%',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
@@ -26,48 +27,59 @@ const TutorialDetail = (props) => {
   };
 
   return (
-    <div className="tabs-content">
+    <div className="tab-content">
       <div className="tabs-list-item Test__container">
-        <React.Fragment>
-          <ErrorModal error={error} onClear={clearError} />
-          <Card className="tab-card">
-            <div key={props.items.id} className="tab-item">
-              {isLoading && <LoadingSpinner asOverlay />}
-              <div className="tab-item__info">
-                <h2>{props.items.name}</h2>
-                <h2>{props.items.chanteur}</h2>
-                <h3 className="difficulty">
-                  Level: {props.items.difficulty.name}
-                </h3>
-                <h4 className="items-desc">Type: {props.items.type.name}</h4>
-                <h4 className="items-desc">
-                  Instrument: {props.items.instrument.name}
-                </h4>
-                {props.items.tab ? (
-                  <h4 className="items-desc">
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={props.items.tab}
-                    >
-                      Tablature
-                    </a>
-                  </h4>
-                ) : null}
-              </div>
+        <ErrorModal error={error} onClear={clearError} />
+        <div key={props.items.id} className="tab-item">
+          {isLoading && <LoadingSpinner asOverlay />}
+          <h1>
+            {props.items.name} - {props.items.chanteur}
+          </h1>
+        </div>
+      </div>
+      <div className="tuto-item-info">
+        <div className="video">
+          <YouTube
+            videoId={props.items.link} // defaults -> null
+            id={props.items.link} // defaults -> null
+            opts={opts} // defaults -> {}
+            onReady={_onReady} // defaults -> noop
+          />
+        </div>
+        <div className="tuto-item__info">
+          <Card className="card-tuto-item-info">
+            <div className="tutorials-data">
+              <label>Difficulty:</label>
+              {props.items.difficulty.name === 'easy' ? (
+                <h4 className="dif easy">{props.items.difficulty.name}</h4>
+              ) : props.items.difficulty.name === 'medium' ? (
+                <h4 className="dif medium">{props.items.difficulty.name}</h4>
+              ) : props.items.difficulty.name === 'hard' ? (
+                <h4 className="dif hard">{props.items.difficulty.name}</h4>
+              ) : null}
             </div>
-            <div className="tab-item Test__container__options">
-              <div className="Test__container__content">
-                <YouTube
-                  videoId={props.items.link} // defaults -> null
-                  id={props.items.link} // defaults -> null
-                  opts={opts} // defaults -> {}
-                  onReady={_onReady} // defaults -> noop
-                />
-              </div>
+            <div className="tutorials-data">
+              <label>Type:</label>
+              <h4 className="items-desc">{props.items.type.name}</h4>
             </div>
+            <div className="tutorials-data">
+              <label>Instrument:</label>
+              <h4 className="items-desc">{props.items.instrument.name}</h4>
+            </div>
+            {props.items.tab ? (
+              <div className="linktab">
+                <a
+                  className="medium linktab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={props.items.tab}
+                >
+                  Acceder à la tablature
+                </a>
+              </div>
+            ) : null}
           </Card>
-        </React.Fragment>
+        </div>
       </div>
     </div>
   );

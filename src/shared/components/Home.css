@@ -1,4 +1,12 @@
-
+.main-home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-top: 0;
+  padding: 0;
+}
 .backgroundImage {
   display: flex;
   height: 100%;
@@ -11,19 +19,33 @@
   padding: 0;
 }
 
-.container {
+.home-intro {
+  height: 92vh;
   display: flex;
-  align-items: center;
+	padding: 0px 2rem 0px 2rem;
   justify-content: center;
+  align-items: center;
+}
+.stack {
   width: 100%;
-  height: 100%;
+  align-content: flex-start;
 }
 
-.smallWrapper {
-  margin-top: 7rem;
-  width: 100%;
-  padding-left: 10%;
-  margin: 0 auto;
+.home-push{
+	display: flex;
+	width: 100%;
+
+}
+
+.hero-title {
+  font-size: 52px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-title p {
+  font-size: 22px;
 }
 
 .title {
@@ -36,12 +58,6 @@
   transition: color 0.2s ease-out;
 }
 
-.wave {
-  top: 0;
-  position: absolute;
-  z-index: -1;
-  background-color: #152167;
-}
 
 span {
   font-weight: 600;
@@ -58,7 +74,12 @@ span {
   font-size: 1.2rem;
   transition: color 0.2s ease-out;
 }
-
+.see-tabs {
+  border: 1px solid #f38f28;
+  background: transparent;
+  color: #f38f28;
+  margin-left: 1rem;
+}
 @media screen and (max-width: 80em) {
   .title {
     font-size: 4rem;

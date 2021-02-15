@@ -15,12 +15,12 @@ const NavLinks = (props) => {
         <>
           <li>
             <NavLink className="links" to="/tabs">
-              <QueueMusicIcon className="icon-header"></QueueMusicIcon> Mes Tabs
+              <QueueMusicIcon className="icon-header"></QueueMusicIcon> Tabs
             </NavLink>
           </li>
           <li>
             <NavLink className="links" to="/tutorial">
-              <YouTubeIcon className="icon-header"></YouTubeIcon> Tutorials
+              <YouTubeIcon className="icon-header"></YouTubeIcon> Tutoriels
             </NavLink>
           </li>
           <li>
@@ -41,12 +41,18 @@ const NavLinks = (props) => {
         <>
           <li>
             <NavLink className="links" to="/tabs">
-              <QueueMusicIcon className="icon-header"></QueueMusicIcon> Mes Tabs
+              <QueueMusicIcon className="icon-header"></QueueMusicIcon> Tabs
             </NavLink>
           </li>
           <li>
             <NavLink className="links" to="/tutorial">
-              <YouTubeIcon className="icon-header"></YouTubeIcon> Tutorials
+              <YouTubeIcon className="icon-header"></YouTubeIcon> Tutoriels
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="links" to="/Instruments" exact>
+              <MusicNoteIcon className="icon-header"></MusicNoteIcon>
+              Instruments
             </NavLink>
           </li>
           <li>

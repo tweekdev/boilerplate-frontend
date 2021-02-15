@@ -35,6 +35,14 @@
   height: 100%;
 }
 
+.barre-nav {
+	  margin: 0rem 2rem;
+    color: #1d2761;
+    background: #1d2761;
+    border: 1px solid #1d2761;
+    border-radius: 8px;
+}
+
 @media (min-width: 768px) {
   .main-navigation__menu-btn {
     display: none;

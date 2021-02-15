@@ -1,5 +1,5 @@
 .search-container {
-  width: 96%;
+  width: 100%;
   display: flex;
   margin-left: 1rem;
 }
@@ -16,6 +16,9 @@
   margin: 1rem 1rem;
 }
 
+.tabs-content{
+    margin: 0 2rem 0 1rem;
+}
 
 .search-container .search-tabs {
   background-color: #2d3980;
@@ -48,7 +51,7 @@
 
 .tabs-list {
   font-family: Montserrat, sans-serif;
-  width: 96%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
   grid-gap: calc(4 * var(--space));
@@ -80,7 +83,7 @@ p {
 }
 .descritif-tabs strong {
   font-size: 52px;
-  color: #c5804f;
+  color: #f38f28;
 }
 
 .descritif-tabs p {
@@ -91,68 +94,40 @@ p {
 
 @media screen and (max-width: 80em) {
   .tabs-list {
-    width: 96%;
     justify-content: space-around;
   }
   .search-container {
     margin: 1rem;
     flex: 0 1 auto;
-    width: 96%;
   }
 }
 @media screen and (max-width: 70em) {
   .search-container {
     margin: 1rem;
     flex: 0 1 auto;
-    width: 29%;
   }
 }
 @media screen and (max-width: 56em) {
   .search-container {
     margin: 1rem;
     flex: 0 1 auto;
-    width: 45%;
   }
 }
 @media screen and (max-width: 47.5em) {
-  .tabs-list {
-    width: 93%;
-  }
   .search-container {
     margin: 1rem;
     flex-direction: column;
-    width: 95%;
-  }
-  .search-container .search-tabs {
-    width: 94%;
-  }
-  .search-container .search-tabs:first-child {
-    width: 94%;
   }
 }
 @media screen and (max-width: 37.5em) {
   .search-container {
     margin: 1rem;
     flex: 0 1 auto;
-    width: 95%;
-  }
-  .search-container .search-tabs {
-    width: 87%;
-  }
-  .search-container .search-tabs:first-child {
-    width: 87%;
   }
 }
 @media screen and (max-width: 30em) {
   .search-container {
     margin: 1rem;
     flex: 0 1 auto;
-    width: 86%;
-  }
-  .search-container .search-tabs {
-    width: 87%;
-  }
-  .search-container .search-tabs:first-child {
-    width: 87%;
   }
 }

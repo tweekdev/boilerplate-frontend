@@ -39,8 +39,8 @@ const TabDetail = (props) => {
   }
 
   return (
-    <div className="tabs-content Test">
-      <div className="tabs-list-item Test__container">
+    <div className="tabs-content">
+      <div className="tabs-list-item">
         <React.Fragment>
           <ErrorModal error={error} onClear={clearError} />
           <Card className="tab-card">

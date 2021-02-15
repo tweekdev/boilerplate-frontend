@@ -1,0 +1,112 @@
+.home-push-content-carousel {
+	width: 100%;
+	margin: 2rem;
+}
+.carouselHome {
+  width: 100%;
+	  display: flex;
+		padding: 5rem 2rem 5rem 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.hero-title-push {
+  width: 35%;
+  padding: 2rem 0rem 0px 2rem;
+  font-size: 3rem;
+}
+.hero-title-push h2 {
+  width: 100%;
+  padding: 4rem 0rem 0px 0rem;
+  font-size: 3rem;
+}
+
+.hero-title-push .text {
+  font-size: 22px;
+  padding: 0;
+  width: 80%;
+  color: #f8f8fa;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+
+.contenue-carousel {
+    width: 100%;
+    list-style-type: none;
+    height: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+		flex-wrap: wrap;
+
+}
+
+.middle-card {
+  margin-top: 10rem;
+}
+
+:before,
+:after {
+  content: none;
+}
+
+.header-data button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 100%);
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.contenue-carousel {
+  width: 100%;
+  list-style-type: none;
+  height: 5rem;
+}
+
+.home-push-content-carousel .instru-item {
+  position: relative;
+  padding: 0 0rem;
+  animation: animationFrames 15s linear infinite;
+}
+.slider {
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-data button:active,
+.header-data button:focus,
+.header-data button:hover {
+  outline: none;
+}
+
+.link-datas-home-page-btn {
+  padding: 1rem 3rem;
+  text-decoration: none;
+  border-radius: 999px;
+	margin: 1rem 3rem;
+}
+
+.link-datas-home-page-btn.green {
+  background: #32cd3257;
+  color: #32cd32 !important;
+}
+.link-datas-home-page-btn.orange {
+  background: #f38f2857;
+  color: #f38f28 !important;
+}
+.link-datas-home-page-btn.red {
+  background: #fd4a3b57;
+  color: #fd4a3b !important;
+}

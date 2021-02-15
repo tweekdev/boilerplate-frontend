@@ -42,6 +42,7 @@ const MainNavigation = () => {
           <NavLinks></NavLinks>
         </nav>
       </MainHeader>
+      <hr className="barre-nav"></hr>
     </>
   );
 };

@@ -1,21 +1,11 @@
-
+.tutorials-content{
+    margin: 0 2rem 0 1rem;
+}
 .search-container {
-  width: 96%;
+  width: 100%;
   display: flex;
   margin-left: 1rem;
 }
-
-.search-container .search-tutorials {
-  margin: 1rem 1rem;
-  background-color: #2d3980;
-}
-.search-container .search-tutorials:first-child {
-  margin: 1rem 0rem;
-}
-.search-container .search-tutorials .search1 {
-  margin-left: 0;
-}
-
 .search-container .form-control {
   border: 1px solid #2d3980;
   background: #2d3980;
@@ -29,6 +19,16 @@
   margin: 1rem 1rem;
 }
 
+
+.search-container .search-tutorials {
+  background-color: #2d3980;
+}
+.search-container .search-tutorials:first-child {
+  margin: 1rem 0rem;
+}
+.search-container .search-tutorials .search1 {
+  margin-left: 0;
+}
 .add-new-container {
   display: flex;
   flex-direction: row;
@@ -50,7 +50,7 @@
 
 .tutorials-list {
   font-family: Montserrat, sans-serif;
-  width: 96%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
   grid-gap: calc(4 * var(--space));
@@ -92,68 +92,46 @@ p {
 }
 
 @media screen and (max-width: 80em) {
-  .tutorials-list {
-    width: 96%;
-  }
   .search-container {
     margin: 1rem;
     flex: 0 1 auto;
-    width: 96%;
   }
 }
 @media screen and (max-width: 70em) {
   .search-container {
     margin: 1rem;
     flex: 0 1 auto;
-    width: 70%;
   }
 }
 @media screen and (max-width: 56em) {
   .search-container {
     margin: 1rem;
     flex: 0 1 auto;
-    width: 45%;
+
   }
 }
 @media screen and (max-width: 47.5em) {
-  .tutorials-list {
-    width: 93%;
-  }
+
   .search-container {
     margin: 1rem;
     flex-direction: column;
-    width: 95%;
+
   }
-  .search-container .search-tutorials {
-    width: 94%;
-  }
-  .search-container .search-tutorials:first-child {
-    width: 94%;
-  }
+
 }
 @media screen and (max-width: 37.5em) {
   .search-container {
     margin: 1rem;
     flex: 0 1 auto;
-    width: 95%;
+
   }
-  .search-container .search-tutorials {
-    width: 87%;
-  }
-  .search-container .search-tutorials:first-child {
-    width: 87%;
-  }
+
 }
 @media screen and (max-width: 30em) {
   .search-container {
     margin: 1rem;
     flex: 0 1 auto;
-    width: 86%;
+
   }
-  .search-container .search-tutorials {
-    width: 87%;
-  }
-  .search-container .search-tutorials:first-child {
-    width: 87%;
-  }
+
 }
