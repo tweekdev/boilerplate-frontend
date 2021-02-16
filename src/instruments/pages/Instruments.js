@@ -3,7 +3,7 @@ import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import InstrumentList from '../components/InstrumentList';
-
+import './Instruments.css';
 const Instruments = () => {
   const [loadedInstruments, setLoadedInstruments] = useState();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -29,13 +29,9 @@ const Instruments = () => {
   };
 
   return (
-    <div className="main">
+    <div className="main-instruments">
       <ErrorModal error={error} onClear={clearError} />
-
-      <div className="user">
-        <div className="users">
-          <h3>Instruments</h3>
-        </div>
+      <div className="instrument">
         {isLoading && (
           <div className="center">
             <LoadingSpinner></LoadingSpinner>
@@ -44,7 +40,6 @@ const Instruments = () => {
         {!isLoading && loadedInstruments && (
           <InstrumentList items={loadedInstruments} />
         )}
-        ß
       </div>
     </div>
   );

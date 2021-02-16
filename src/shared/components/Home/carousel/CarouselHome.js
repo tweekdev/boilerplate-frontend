@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Link } from 'react-router-dom';
 import { useHttpClient } from '../../../hooks/http-hook';
 import './CarouselHome.css';

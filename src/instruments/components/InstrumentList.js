@@ -1,28 +1,45 @@
+import SearchIcon from '@material-ui/icons/Search';
 import React, { useState } from 'react';
-import Card from '../../shared/components/UIElements/Card';
-import InstrumentItem from './InstrumentItem';
 import './InstrumentList.css';
+import ListTabByInstrument from './ListTabByInstrument';
 
 const InstrumentList = (props) => {
   const [searchTerm, setSeachTerm] = useState('');
-  if (props.items.length === 0) {
-    return (
-      <div className="center">
-        <Card>
-          <h2>No instruments found.</h2>
-        </Card>
-      </div>
-    );
-  }
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div className="instruments-content">
-      <input
-        className="form-control search-instrument"
-        type="text"
-        placeholder="recherche"
-        onChange={(e) => setSeachTerm(e.target.value)}
-      ></input>
+      <div className="descritif-instruments">
+        <h1>
+          Toutes les <strong>tabs</strong>
+        </h1>
+        <p>
+          Envie d'apprendre et maitriser de nouvelles musiques par le biais de
+          tablatures ? Alors vous êtes sur le bon chemin...
+        </p>
+      </div>
+
+      <div className="header-search">
+        {isVisible && (
+          <div className="search-container">
+            <input
+              className="form-control search-tabs search1"
+              type="text"
+              placeholder="recherche"
+              onChange={(e) => setSeachTerm(e.target.value)}
+            ></input>
+          </div>
+        )}
+        <div className="search-active">
+          <button
+            className="btn-active-seach"
+            onClick={() => setIsVisible(!isVisible)}
+          >
+            <SearchIcon></SearchIcon>
+          </button>
+        </div>
+      </div>
+
       <div className="instruments-list">
         {props.items
           .filter((val) => {
@@ -35,11 +52,13 @@ const InstrumentList = (props) => {
             }
           })
           .map((instrument) => (
-            <InstrumentItem
-              key={instrument.id}
-              id={instrument.id}
-              name={instrument.name}
-            />
+            <>
+              <ListTabByInstrument
+                key={instrument.name}
+                name={instrument.name}
+                id={instrument.id}
+              ></ListTabByInstrument>
+            </>
           ))}
       </div>
     </div>

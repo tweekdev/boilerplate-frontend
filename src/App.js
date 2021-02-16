@@ -22,9 +22,7 @@ const Tutorial = React.lazy(() => import('./tutorials/pages/Tutorial'));
 const NewInstrument = React.lazy(() =>
   import('./instruments/pages/NewInstrument')
 );
-const UpdateProject = React.lazy(() =>
-  import('./projects/pages/UpdateProject')
-);
+const UpdateTabs = React.lazy(() => import('./tabs/pages/UpdateTabs'));
 const Admin = React.lazy(() => import('./user/pages/Admin'));
 const Auth = React.lazy(() => import('./user/pages/Auth'));
 const Signup = React.lazy(() => import('./user/pages/Signup'));
@@ -71,8 +69,11 @@ const App = () => {
         <Route path="/tab/:tabsId">
           <Tab></Tab>
         </Route>
-        <Route path="/tabs/:tabsId">
-          <UpdateProject />
+        <Route path="/tabs/edit/:tabsId">
+          <UpdateTabs />
+        </Route>
+        <Route path="/tutorial/edit/:tabsId">
+          <UpdateTabs />
         </Route>
         <Route path="/users/edit/:uid" exact>
           <UpdateUser />
@@ -100,7 +101,7 @@ const App = () => {
           <Instruments></Instruments>
         </Route>
         <Route path="/tabs/:tabsId">
-          <UpdateProject />
+          <UpdateTabs />
         </Route>
         <Redirect to="/users" />
         <Redirect to={`/users/profile/${userId}`} />
