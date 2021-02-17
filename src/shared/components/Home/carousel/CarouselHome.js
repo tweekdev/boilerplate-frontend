@@ -22,17 +22,15 @@ const CarouselHome = () => {
   useEffect(() => {
     const fetchLastInstruments = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/instruments`
-        );
-        console.log(responseData.instruments);
-        setInstruments(responseData.instruments);
+        await fetch(`${process.env.REACT_APP_BACKEND_URL}/instruments`)
+          .then((response) => response.json())
+          .then((result) => console.log(result.instruments));
       } catch (err) {
         console.log(err);
       }
     };
     fetchLastInstruments();
-  }, [sendRequest]);
+  }, []);
   return (
     <>
       <div className="home-push-content-carousel">

@@ -1,3 +1,4 @@
+import AddIcon from '@material-ui/icons/Add';
 import 'netslider/dist/styles.min.css';
 import React, { useEffect, useState } from 'react';
 import 'react-multi-carousel/lib/styles.css';
@@ -69,7 +70,14 @@ const ListTabByInstrument = (props) => {
         <div className="main-tabs-instru">
           <div className="tab">
             <>
-              <h2>{props.name}</h2>
+              <div className="header-instrument-slide">
+                <Link to={`/instruments/${props.id}`}>
+                  <h2>{props.name}</h2>
+                </Link>
+                <Link to={`/instruments/${props.id}`}>
+                  <AddIcon className="btn-active-seach" />
+                </Link>
+              </div>
               <Slider {...settings}>
                 {loadedTabsByInstrument &&
                   loadedTabsByInstrument.map((tab) => (

@@ -16,7 +16,6 @@ const Content = () => {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/tabs/last`
         );
-        console.log(responseData.tabs);
         setTabs(responseData.tabs);
       } catch (err) {
         console.log(err);
@@ -27,7 +26,6 @@ const Content = () => {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/instruments/last`
         );
-        console.log(responseData.instruments);
         setInstruments(responseData.instruments);
       } catch (err) {
         console.log(err);
@@ -76,7 +74,7 @@ const Content = () => {
                   <Link className="link-datas-home-page" to={`/tab/${tab.id}`}>
                     {tab.name} - {tab.chanteur}
                   </Link>
-                  <hr></hr>
+                  <hr/>
                 </div>
               ))}
           </Card>
@@ -95,7 +93,7 @@ const Content = () => {
                   >
                     {instrument.name}
                   </Link>
-                  <hr></hr>
+                  <hr/>
                 </div>
               ))}
           </Card>
@@ -114,7 +112,7 @@ const Content = () => {
                   >
                     {tutorial.name} - {tutorial.chanteur}
                   </Link>
-                  <hr></hr>
+                  <hr/>
                 </div>
               ))}
           </Card>

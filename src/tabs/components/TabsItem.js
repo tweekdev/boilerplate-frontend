@@ -1,23 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React  from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../../shared/components/UIElements/Card';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import './TabsItem.css';
 
 const TabsItem = (props) => {
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const auth = useContext(AuthContext);
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
-
-  const showDeleteWarningHandler = () => {
-    setShowConfirmModal(true);
-  };
-
-  const cancelDeleteHandler = () => {
-    setShowConfirmModal(false);
-  };
+  const { isLoading } = useHttpClient();
 
   return (
     <div key={props.id} className="tabs--items">

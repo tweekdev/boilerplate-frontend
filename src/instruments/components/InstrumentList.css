@@ -6,20 +6,17 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-blend-mode: saturation;
-  margin-left: 1rem;
 }
 
 .instruments-content .header-search {
-		margin-top: 2rem;
+  margin-top: 2rem;
 }
 .instruments {
-  margin-top: 5rem;
   flex-direction: column;
 }
 .search-container {
   width: 100%;
   display: flex;
-  margin-right: 2rem;
 
 }
 .search-container .form-control {
@@ -32,6 +29,9 @@
   width: 100%;
   outline: 0;
   min-height: 44px;
+	    margin: 0;
+    margin-right: 1rem;
+
 }
 
 

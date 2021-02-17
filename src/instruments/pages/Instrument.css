@@ -1,33 +1,30 @@
-.main-tutorials {
+.main-instruments {
 	min-height:100vh;
-  height: 100% !important;
+  height: 100% ;
   display: flex;
   width: 100%;
   justify-content: space-around;
   flex-direction: row-reverse;
-  align-items: flex-start !important;
-	padding: 2rem 6rem;
+  align-items: flex-start;
 }
-.tutorial {
+.instrument {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-.wave {
-  top: 0;
-  position: absolute;
-  z-index: -1;
-  background-color: #152167;
+	height: 100vh;
+  margin-top: 2rem;
 }
 
-.tutorials-title {
+.instrument-title {
+  margin-left: 2rem;
   color: #f38f28;
   display: flex;
   align-items: center;
 }
 h2 {
-  color: #ffff;
+  color: #d4dcff;
   margin: 0;
+  margin-left: 2rem;
 }
 
 .card {

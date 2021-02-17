@@ -1,42 +1,46 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import { useHttpClient } from '../../shared/hooks/http-hook';
-import TabsList from '../components/TabsList';
-import './Tabs.css';
-const Tabs = (props) => {
+import ContentList from '../components/ContentList';
+import './Instrument.css';
+
+const Tab = () => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
-  const [loadedTabs, setLoadTabs] = useState();
+  const iid = useParams().iid;
+  const [loadedTab, setLoadTab] = useState();
 
   useEffect(() => {
-    const fetchTabs = async () => {
+    const fetchTutorial = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs`
+          `${process.env.REACT_APP_BACKEND_URL}/tabsTutos/${iid}`
         );
-        setLoadTabs(responseData.tabs);
+        console.log(responseData.instruments[0]);
+        setLoadTab(responseData.instruments[0]);
       } catch (err) {
         console.log(err);
       }
     };
-    fetchTabs();
-  }, [sendRequest]);
+    fetchTutorial();
+  }, [sendRequest, iid]);
 
   return (
-    <div className="main main-tabs">
+    <div className="main-tutorials">
       <ErrorModal error={error} onClear={clearError} />
 
-      <div className="tab">
+      <div className="tutorial">
         {isLoading && (
           <div className="center">
-            <LoadingSpinner/>
+            <LoadingSpinner></LoadingSpinner>
           </div>
         )}
-        {!isLoading && loadedTabs && <TabsList items={loadedTabs} />}
+        {!isLoading && loadedTab && <ContentList items={loadedTab} />}
       </div>
     </div>
   );
 };
 
-export default Tabs;
+export default Tab;

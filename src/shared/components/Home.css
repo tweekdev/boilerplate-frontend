@@ -22,7 +22,7 @@
 .home-intro {
   height: 92vh;
   display: flex;
-	padding: 0px 2rem 0px 2rem;
+	padding: 0 6rem;
   justify-content: center;
   align-items: center;
 }

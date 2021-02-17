@@ -8,8 +8,7 @@ import { useHttpClient } from '../../shared/hooks/http-hook';
 import './TabsItem.css';
 
 const TabDetailItem = (props) => {
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const auth = useContext(AuthContext);
+  const { isLoading, error, clearError } = useHttpClient();
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);

@@ -4,7 +4,6 @@
   padding: 0;
 }
 
-
 .home-push-content {
   display: flex;
   width: 100%;
@@ -18,6 +17,7 @@
   width: 100%;
   padding: 4rem 0rem 0px 0rem;
   font-size: 3rem;
+  margin-left: 0;
 }
 
 .hero-title-push .text {
@@ -38,9 +38,19 @@
   border-radius: 8px;
   border: none;
   margin: 1rem;
-  height: 19rem;
+  height: 17rem;
   margin: 3rem 0rem 3rem;
-	width: 90% !important;
+  width: 90% !important;
+}
+
+.header-instrument-slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.header-instrument-slide h2 {
+  margin-left: 0;
 }
 .middle-card {
   margin-top: 10rem;
@@ -64,14 +74,12 @@
   cursor: pointer;
 }
 
-
 .tabs-data-instru {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-left: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 4rem;
 }
-
 
 .tabs-data-instru label {
   color: #8491c7;
@@ -157,7 +165,7 @@
   color: #fd4a3b !important;
 }
 .instru-all-data {
-	margin-top:2rem;
+  margin-top: 2rem;
 }
 
 .data-last-instru {
@@ -172,8 +180,8 @@
   text-decoration: none;
   color: #8491c7;
   font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .data-last-instru hr {

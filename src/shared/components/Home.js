@@ -9,13 +9,13 @@ const Home = () => {
     <div className="main-home">
       <section className="container">
         <div className="home-intro">
-          <Intro></Intro>
+          <Intro/>
         </div>
         <div className="home-push">
-          <Content></Content>
+          <Content/>
         </div>
         <div className="home-push">
-          <CarouselHome></CarouselHome>
+          <CarouselHome/>
         </div>
       </section>
     </div>

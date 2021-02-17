@@ -7,7 +7,7 @@ const WORDS = [
   { id: 1, text: 'magnifique' },
 ];
 
-const Wrapper = styled.div`
+const Wrapper = styled.span`
   font-weight: 600;
   width: 130px;
   position: relative;
@@ -26,6 +26,7 @@ const Wrapper = styled.div`
 export default function WordsFading() {
   // Subtitle keywords loop
   const [index, setIndex] = useState(0);
+
   const wordsTransition = useTransition(WORDS[index], (span) => span.id, {
     config: config.stiff,
     delay: 450,
@@ -47,14 +48,19 @@ export default function WordsFading() {
       transform: 'translateY(-10px)',
     },
   });
-  useEffect(
-    () =>
-      void setInterval(
-        () => setIndex((current) => (current + 1) % WORDS.length),
-        2500
-      ),
-    []
-  );
+  useEffect(() => {
+    let mounted = true;
+
+    let interval = setInterval(
+      () => setIndex((current) => (current + 1) % WORDS.length),
+      2500
+    );
+    return () => {
+      clearInterval(interval);
+      mounted = false;
+    };
+  }, []);
+
   return (
     <Wrapper>
       <i style={{ visibility: 'hidden' }}>self-taught</i>

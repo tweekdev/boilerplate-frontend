@@ -8,7 +8,7 @@ import './TutorialsList.css';
 
 const TutorialsList = (props) => {
   const auth = useContext(AuthContext);
-  const [searchTerm, setSeachTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [isVisible, setIsVisible] = useState(false);
 
   const dif = [
@@ -45,11 +45,11 @@ const TutorialsList = (props) => {
               className="form-control search-tabs search1"
               type="text"
               placeholder="recherche"
-              onChange={(e) => setSeachTerm(e.target.value)}
+              onChange={(e) => setSearchTerm(e.target.value)}
             ></input>
             <select
               className="form-control search-tabs "
-              onChange={(e) => setSeachTerm(e.target.value)}
+              onChange={(e) => setSearchTerm(e.target.value)}
             >
               <option value="">difficulty :</option>
               {dif.map((tab, i) => (
@@ -60,7 +60,7 @@ const TutorialsList = (props) => {
             </select>
             <select
               className="form-control search-tabs "
-              onChange={(e) => setSeachTerm(e.target.value)}
+              onChange={(e) => setSearchTerm(e.target.value)}
             >
               <option value="">Type :</option>
               {type.map((tab, i) => (
@@ -71,7 +71,7 @@ const TutorialsList = (props) => {
             </select>
             <select
               className="form-control search-tabs "
-              onChange={(e) => setSeachTerm(e.target.value)}
+              onChange={(e) => setSearchTerm(e.target.value)}
             >
               <option value="">Instrument :</option>
               {instrument.map((tab, i) => (
@@ -87,7 +87,7 @@ const TutorialsList = (props) => {
             className="btn-active-seach"
             onClick={() => setIsVisible(!isVisible)}
           >
-            <SearchIcon></SearchIcon>
+            <SearchIcon/>
           </button>
         </div>
       </div>
@@ -95,7 +95,7 @@ const TutorialsList = (props) => {
       {auth.isLoggedIn && (
         <div className="add-new-container">
           <Link to={'/tutorial/new'}>
-            <AddIcon></AddIcon>
+            <AddIcon/>
           </Link>
         </div>
       )}

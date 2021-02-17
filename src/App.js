@@ -19,6 +19,7 @@ const Tabs = React.lazy(() => import('./tabs/pages/Tabs'));
 const Tab = React.lazy(() => import('./tabs/pages/Tab'));
 const Tutorials = React.lazy(() => import('./tutorials/pages/Tutorials'));
 const Tutorial = React.lazy(() => import('./tutorials/pages/Tutorial'));
+const Instrument = React.lazy(() => import('./instruments/pages/Instrument'));
 const NewInstrument = React.lazy(() =>
   import('./instruments/pages/NewInstrument')
 );
@@ -58,7 +59,7 @@ const App = () => {
           <NewInstrument></NewInstrument>
         </Route>
         <Route path="/instruments/:iid" exact>
-          <div>id</div>
+          <Instrument />
         </Route>
         <Route path="/Admin" exact>
           <Admin />
