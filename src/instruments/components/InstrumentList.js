@@ -18,7 +18,6 @@ const InstrumentList = (props) => {
           tablatures ? Alors vous êtes sur le bon chemin...
         </p>
       </div>
-
       <div className="header-search">
         {isVisible && (
           <div className="search-container">
@@ -41,25 +40,24 @@ const InstrumentList = (props) => {
       </div>
 
       <div className="instruments-list">
-        {props.items
-          .filter((val) => {
-            if (searchTerm === '') {
-              return val;
-            } else if (
-              val.name.toLowerCase().includes(searchTerm.toLowerCase())
-            ) {
-              return val;
-            }
-          })
-          .map((instrument) => (
-            <>
+        {props.items &&
+          props.items
+            .filter((val) => {
+              if (searchTerm === '') {
+                return val;
+              } else if (
+                val.name.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .map((instrument, i) => (
               <ListTabByInstrument
-                key={instrument.name}
+                key={instrument.id}
                 name={instrument.name}
                 id={instrument.id}
               ></ListTabByInstrument>
-            </>
-          ))}
+            ))}
       </div>
     </div>
   );

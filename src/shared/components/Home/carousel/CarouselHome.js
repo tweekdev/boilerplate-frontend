@@ -24,7 +24,7 @@ const CarouselHome = () => {
       try {
         await fetch(`${process.env.REACT_APP_BACKEND_URL}/instruments`)
           .then((response) => response.json())
-          .then((result) => console.log(result.instruments));
+          .then((result) => setInstruments(result.instruments));
       } catch (err) {
         console.log(err);
       }

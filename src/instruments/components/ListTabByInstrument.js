@@ -67,62 +67,53 @@ const ListTabByInstrument = (props) => {
   return (
     <>
       {loadedTabsByInstrument && (
-        <div className="main-tabs-instru">
+        <div key={props.id} className="main-tabs-instru">
           <div className="tab">
-            <>
-              <div className="header-instrument-slide">
-                <Link to={`/instruments/${props.id}`}>
-                  <h2>{props.name}</h2>
-                </Link>
-                <Link to={`/instruments/${props.id}`}>
-                  <AddIcon className="btn-active-seach" />
-                </Link>
-              </div>
-              <Slider {...settings}>
-                {loadedTabsByInstrument &&
-                  loadedTabsByInstrument.map((tab) => (
-                    <Card className="card-data-last-instru">
-                      <div key={tab.id} className="data-last-instru">
-                        <Link
-                          className="link-datas-instru"
-                          to={`/tab/${tab.id}`}
-                        >
-                          {tab.name} - {tab.chanteur}
-                        </Link>
-                        <div className="instru-all-data">
-                          <div className="tabs-data-instru">
-                            <label>Difficulty:</label>
-                            {tab.difficulty.name === 'easy' ? (
-                              <h4 className="dif easy">
-                                {tab.difficulty.name}
-                              </h4>
-                            ) : tab.difficulty.name === 'medium' ? (
-                              <h4 className="dif medium">
-                                {tab.difficulty.name}
-                              </h4>
-                            ) : tab.difficulty.name === 'hard' ? (
-                              <h4 className="dif hard">
-                                {tab.difficulty.name}
-                              </h4>
-                            ) : null}
-                          </div>
-                          <div className="tabs-data-instru">
-                            <label>Type:</label>
-                            <h4> {tab.type.name}</h4>
-                          </div>
-                          <div className="tabs-data-instru">
-                            <label>Instrument:</label>
-                            <h4>{tab.instrument.name}</h4>
-                          </div>
+            <div className="header-instrument-slide">
+              <Link to={`/instruments/${props.id}`}>
+                <h2>{props.name}</h2>
+              </Link>
+              <Link to={`/instruments/${props.id}`}>
+                <AddIcon className="btn-active-seach" />
+              </Link>
+            </div>
+            <Slider {...settings}>
+              {loadedTabsByInstrument &&
+                loadedTabsByInstrument.map((tab) => (
+                  <Card key={tab.id} className="card-data-last-instru">
+                    <div className="data-last-instru">
+                      <Link className="link-datas-instru" to={`/tab/${tab.id}`}>
+                        {tab.name} - {tab.chanteur}
+                      </Link>
+                      <div className="instru-all-data">
+                        <div className="tabs-data-instru">
+                          <label>Difficulty:</label>
+                          {tab.difficulty.name === 'easy' ? (
+                            <h4 className="dif easy">{tab.difficulty.name}</h4>
+                          ) : tab.difficulty.name === 'medium' ? (
+                            <h4 className="dif medium">
+                              {tab.difficulty.name}
+                            </h4>
+                          ) : tab.difficulty.name === 'hard' ? (
+                            <h4 className="dif hard">{tab.difficulty.name}</h4>
+                          ) : null}
+                        </div>
+                        <div className="tabs-data-instru">
+                          <label>Type:</label>
+                          <h4> {tab.type.name}</h4>
+                        </div>
+                        <div className="tabs-data-instru">
+                          <label>Instrument:</label>
+                          <h4>{tab.instrument.name}</h4>
                         </div>
                       </div>
-                      <Link className="tabs-choose" to={`/tab/${tab.id}`}>
-                        <button className="pill button ">Choisir</button>
-                      </Link>
-                    </Card>
-                  ))}
-              </Slider>
-            </>
+                    </div>
+                    <Link className="tabs-choose" to={`/tab/${tab.id}`}>
+                      <button className="pill button ">Choisir</button>
+                    </Link>
+                  </Card>
+                ))}
+            </Slider>
           </div>
         </div>
       )}
