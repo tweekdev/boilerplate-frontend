@@ -81,7 +81,7 @@ p {
 }
 .descritif-instruments-data strong {
   font-size: 52px;
-  color: #c5804f;
+  color: var(--orange);
 }
 
 .descritif-instruments-data p {

@@ -34,7 +34,7 @@ const InstrumentList = (props) => {
             className="btn-active-seach"
             onClick={() => setIsVisible(!isVisible)}
           >
-            <SearchIcon></SearchIcon>
+            <SearchIcon/>
           </button>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import AddIcon from '@material-ui/icons/Add';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import 'netslider/dist/styles.min.css';
 import React, { useEffect, useState } from 'react';
 import 'react-multi-carousel/lib/styles.css';
@@ -31,7 +32,23 @@ const ListTabByInstrument = (props) => {
         },
       },
       {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
         breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 500,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -68,7 +85,7 @@ const ListTabByInstrument = (props) => {
     <>
       {loadedTabsByInstrument && (
         <div key={props.id} className="main-tabs-instru">
-          <div className="tab">
+          <div className="instru-carou">
             <div className="header-instrument-slide">
               <Link to={`/instruments/${props.id}`}>
                 <h2>{props.name}</h2>
@@ -80,36 +97,31 @@ const ListTabByInstrument = (props) => {
             <Slider {...settings}>
               {loadedTabsByInstrument &&
                 loadedTabsByInstrument.map((tab) => (
-                  <Card key={tab.id} className="card-data-last-instru">
-                    <div className="data-last-instru">
+                  <Card key={tab.id} className="single-instrument">
+                    <div className="header-single-instrument">
                       <Link className="link-datas-instru" to={`/tab/${tab.id}`}>
-                        {tab.name} - {tab.chanteur}
+                        {tab.name}
+                        <br />
+                        {tab.chanteur}
                       </Link>
-                      <div className="instru-all-data">
-                        <div className="tabs-data-instru">
-                          <label>Difficulty:</label>
-                          {tab.difficulty.name === 'easy' ? (
-                            <h4 className="dif easy">{tab.difficulty.name}</h4>
-                          ) : tab.difficulty.name === 'medium' ? (
-                            <h4 className="dif medium">
-                              {tab.difficulty.name}
-                            </h4>
-                          ) : tab.difficulty.name === 'hard' ? (
-                            <h4 className="dif hard">{tab.difficulty.name}</h4>
-                          ) : null}
-                        </div>
-                        <div className="tabs-data-instru">
-                          <label>Type:</label>
-                          <h4> {tab.type.name}</h4>
-                        </div>
-                        <div className="tabs-data-instru">
-                          <label>Instrument:</label>
-                          <h4>{tab.instrument.name}</h4>
-                        </div>
+                      <div className="content-single-instrument">
+                        <label>Difficulty</label>
+                        {tab.difficulty.name === 'easy' ? (
+                          <h4 className="dif easy">{tab.difficulty.name}</h4>
+                        ) : tab.difficulty.name === 'medium' ? (
+                          <h4 className="dif medium">{tab.difficulty.name}</h4>
+                        ) : tab.difficulty.name === 'hard' ? (
+                          <h4 className="dif hard">{tab.difficulty.name}</h4>
+                        ) : null}
+
+                        <label>Type</label>
+                        <h4 className="dif">{tab.type.name}</h4>
                       </div>
                     </div>
                     <Link className="tabs-choose" to={`/tab/${tab.id}`}>
-                      <button className="pill button ">Choisir</button>
+                      <button className="btn-choose">
+                        Choisir <ArrowForwardIcon />
+                      </button>
                     </Link>
                   </Card>
                 ))}

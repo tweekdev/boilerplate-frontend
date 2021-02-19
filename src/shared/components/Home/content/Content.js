@@ -74,7 +74,7 @@ const Content = () => {
                   <Link className="link-datas-home-page" to={`/tab/${tab.id}`}>
                     {tab.name} - {tab.chanteur}
                   </Link>
-                  <hr/>
+                  <hr />
                 </div>
               ))}
           </Card>
@@ -93,7 +93,7 @@ const Content = () => {
                   >
                     {instrument.name}
                   </Link>
-                  <hr/>
+                  <hr />
                 </div>
               ))}
           </Card>
@@ -112,7 +112,7 @@ const Content = () => {
                   >
                     {tutorial.name} - {tutorial.chanteur}
                   </Link>
-                  <hr/>
+                  <hr />
                 </div>
               ))}
           </Card>

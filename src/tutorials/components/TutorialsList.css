@@ -37,7 +37,7 @@
   align-items: center;
   text-decoration: none;
   text-align: center;
-  color: #fafaf8;
+  color: var(--color);
 }
 
 .add-new-container a .MuiSvgIcon-root {
@@ -79,8 +79,8 @@ p {
 }
 .descritif-tutorials strong {
   font-size: 52px;
-  color: #c5804f;
-}
+  color: var(--orange
+);}
 
 .descritif-tutorials p {
   font-size: 23px;

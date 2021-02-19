@@ -141,32 +141,26 @@
 
 @media screen and (max-width: 56em) {
   .tabs--items {
-    margin: 1rem;
+    margin: 0rem;
     flex: 0 1 auto;
+    margin-left: 0rem;
   }
 }
 @media screen and (max-width: 47.5em) {
   .tabs--items {
-    margin: 2rem;
+    margin: 0rem;
     flex: 0 1 auto;
-    margin-left: 1rem;
+    margin-left: 0rem;
   }
 }
 
 @media screen and (max-width: 37.5em) {
   .tabs--items {
-    margin: 2rem;
+    margin: 0rem;
     flex: 0 1 auto;
-    margin-left: 1rem;
+    margin-left: 0rem;
   }
 }
 @media screen and (max-width: 30em) {
-  .tabs--items {
-    margin: 2rem;
-    flex: 0 1 auto;
-    margin-left: 1rem;
-  }
-  .tabs-item__info {
-    margin-left: 1rem;
-  }
+
 }

@@ -15,7 +15,6 @@
   margin-top: 2rem;
 }
 .wave {
-  top: 0;
   position: absolute;
   z-index: -1;
   background-color: #152167;
@@ -34,5 +33,5 @@ h2 {
 }
 
 .card {
-  background: #030d44;
+  background: #030d44b5;
 }

@@ -133,40 +133,38 @@
 }
 
 @media screen and (max-width: 70em) {
-  .tutorials--items {
-    margin: 1rem;
-    flex: 0 1 auto;
+ 
   }
-}
 
 @media screen and (max-width: 56em) {
   .tutorials--items {
-    margin: 1rem;
+    margin: 0rem;
     flex: 0 1 auto;
+    margin-left: 0rem;
   }
 }
 @media screen and (max-width: 47.5em) {
   .tutorials--items {
-    margin: 2rem;
+    margin: 0rem;
     flex: 0 1 auto;
-    margin-left: 1rem;
+    margin-left: 0rem;
   }
 }
 
 @media screen and (max-width: 37.5em) {
   .tutorials--items {
-    margin: 2rem;
+    margin: 0rem;
     flex: 0 1 auto;
-    margin-left: 1rem;
+    margin-left: 0rem;
   }
 }
 @media screen and (max-width: 30em) {
   .tutorials--items {
-    margin: 2rem;
+    margin: 0rem;
     flex: 0 1 auto;
-    margin-left: 1rem;
+    margin-left: 0rem;
   }
   .tutorials-item__info {
-    margin-left: 1rem;
+    margin-left: 0rem;
   }
 }

@@ -14,22 +14,61 @@
   width: 100%;
 }
 .wave {
-  top: 0;
   position: absolute;
   z-index: -1;
   background-color: #152167;
 }
 
 .tutorials-title {
-  color: #f38f28;
+  color: var(--orange);
   display: flex;
   align-items: center;
 }
 h2 {
-  color: #ffff;
+  color: var(--color);
   margin: 0;
 }
 
 .card {
-  background: #030d44;
+  background: #030d44b5;
+}
+@media screen and (max-width: 80em) {
+  .title {
+    font-size: 4rem;
+  }
+  .subTitle {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 70em) {
+
+}
+
+@media screen and (max-width: 56em) {
+  .main-tutorials  {
+    padding: 1rem;
+  }
+	.descritif-tutorials {
+		margin-left: 0;
+		grid-column: 1/1;
+	}
+}
+
+@media screen and (max-width: 37.5em) {
+  .main-tutorials  {
+    padding: 1rem;
+  }
+	.descritif-tutorials {
+		margin-left: 0;
+		grid-column: 1/1;
+	}
+}
+
+@media screen and (max-width: 30em) {
+
+
+}
+@media screen and (max-width: 25em) {
+
+
 }

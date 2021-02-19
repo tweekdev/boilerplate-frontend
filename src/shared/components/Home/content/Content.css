@@ -1,29 +1,29 @@
 .home-push-content {
   display: flex;
   width: 100%;
-	padding: 0 5rem;
+  padding: 0 5rem;
 }
 .hero-title-push {
   width: 35%;
-    padding: 2rem 0rem 0px 2rem;
+  padding: 2rem 0rem 0px 2rem;
   font-size: 3rem;
 }
 .hero-title-push h2 {
   width: 100%;
-    padding: 4rem 0rem 0px 0rem;
-		  font-size: 3rem;
+  padding: 4rem 0rem 0px 0rem;
+  font-size: 3rem;
 }
 
 .hero-title-push .text {
   font-size: 22px;
   padding: 0;
   width: 80%;
-	color: #f8f8fa;
-	font-weight: 400;
-	margin: 0;
-	margin-bottom: 2rem;
-	font-size: 1.2rem;
-	transition: color 0.2s
+  color: #f8f8fa;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  transition: color 0.2s;
 }
 
 .mosaique {
@@ -33,18 +33,20 @@
 }
 
 .card-data-last {
-  background: #030d44;
+  background: #030d44b5;
   color: 6px 6px 0px #1d2761;
   border-radius: 8px;
   border: none;
   margin: 1rem;
-	height: 21rem;
-}.middle-card{
-	margin-top: 10rem;
+  height: 21rem;
+}
+.middle-card {
+  margin-top: 10rem;
 }
 
-.card-data-last:before, .card-data-last:after {
-	content:none;
+.card-data-last:before,
+.card-data-last:after {
+  content: none;
 }
 .card-data-last .header-data {
   display: flex;
@@ -57,11 +59,13 @@
   border: none;
   border-radius: 999px;
   padding: 0.4rem;
-	cursor: pointer;
+  cursor: pointer;
 }
 
-.card-data-last .header-data button:active, .card-data-last .header-data button:focus, .card-data-last .header-data button:hover{
-	outline: none;
+.card-data-last .header-data button:active,
+.card-data-last .header-data button:focus,
+.card-data-last .header-data button:hover {
+  outline: none;
 }
 .card-data-last .header-data .green {
   background: #32cd3257;
@@ -70,7 +74,8 @@
 .card-data-last .header-data .orange {
   background: #f38f2857;
   color: #f38f28 !important;
-}.card-data-last .header-data .red {
+}
+.card-data-last .header-data .red {
   background: #fd4a3b57;
   color: #fd4a3b !important;
 }
@@ -81,12 +86,14 @@
   color: #8491c7;
   margin: 2rem 0;
   font-size: 12px;
+  font-weight: bold;
 }
-.data-last .link-datas-home-page{
+.data-last .link-datas-home-page {
   text-align: center;
-	text-decoration: none;
+  text-decoration: none;
   color: #8491c7;
   font-size: 12px;
+  font-weight: bold;
 }
 
 .data-last hr {
@@ -98,5 +105,5 @@
 }
 
 .data-last:last-child hr {
-	display: none;
+  display: none;
 }

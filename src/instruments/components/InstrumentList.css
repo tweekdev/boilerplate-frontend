@@ -17,7 +17,6 @@
 .search-container {
   width: 100%;
   display: flex;
-
 }
 .search-container .form-control {
   border: 1px solid #2d3980;
@@ -29,11 +28,9 @@
   width: 100%;
   outline: 0;
   min-height: 44px;
-	    margin: 0;
-    margin-right: 1rem;
-
+  margin: 0;
+  margin-right: 1rem;
 }
-
 
 .search-instrument {
   width: 100%;
@@ -54,10 +51,10 @@
   justify-content: center;
   word-break: break-word;
 }
-.descritif-instruments h1, h2,
+.descritif-instruments h1,
+h2,
 p {
   color: #d4dcff;
-	
 }
 .descritif-instruments h1 {
   font-size: 52px;
@@ -67,9 +64,8 @@ p {
   margin-bottom: 0;
 }
 
-.descritif-instruments h2{
+.descritif-instruments h2 {
   margin-left: 0;
-	
 }
 .descritif-instruments strong {
   font-size: 52px;

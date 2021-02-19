@@ -1,4 +1,26 @@
-.main-instruments{
-	margin: 0;
-	padding: 2rem 6rem;
+.main-instruments {
+  margin: 0;
+  padding: 2rem 6rem;
+}
+
+@media screen and (max-width: 80em) {
+}
+@media screen and (max-width: 70em) {
+}
+
+@media screen and (max-width: 56em) {
+}
+
+@media screen and (max-width: 37.5em) {
+  .main-instruments {
+    padding: 0rem 0rem 0 1rem;
+  }
+  .descritif-instruments {
+    grid-column: 1/1;
+  }
+}
+
+@media screen and (max-width: 30em) {
+}
+@media screen and (max-width: 25em) {
 }

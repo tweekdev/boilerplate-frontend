@@ -5,6 +5,10 @@
 }
 :root {
   --color-dark: #f0f3ff;
+	--white: #f8f8fa;
+  --orange: #fb743e;
+  --orange-gold: #b39836;
+  --orange-light: #f38f28;
   --color: #d4dcff;
   --color-light: #8491c7;
   --color-inversed: #d4dcff;
@@ -18,7 +22,7 @@
   --card-bg: #22244d;
   --card-bg-footer: #1d1f42;
   --shadow: rgba(0, 0, 0, 0.2);
-	--space-section: 150px;
+  --space-section: 150px;
   --card-footer: #f7fafd;
   --card-padding: 16px;
   --header-height: 137px;
@@ -29,7 +33,7 @@
   --skeleton-wave: #171933;
   --red: #a6333f;
   --selection-background: #3d59a1;
-	  --container-padding: 20px;
+  --container-padding: 20px;
   --container-width: calc(100vw - var(--container-padding) * 2);
 }
 
@@ -54,8 +58,7 @@ body {
 
 main {
   margin-top: 0rem;
-	height: 90vh;
-
+  height: 90vh;
 }
 
 .main {
@@ -68,8 +71,7 @@ main {
   margin-top: 0;
   padding: 0;
 }
-.wave {
-  top: 0;
+.wave , .wave-inverse{
   position: absolute;
   z-index: -1;
   background-color: #152167;
@@ -126,8 +128,8 @@ main {
 }
 .btn-active-seach .MuiSvgIcon-root {
   font-size: 2rem;
-	width: 1em;
-	height: 1em;
+  width: 1em;
+  height: 1em;
 }
 
 .btn-active-seach:focus,
