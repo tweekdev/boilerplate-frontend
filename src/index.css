@@ -27,6 +27,7 @@
   --card-padding: 16px;
   --header-height: 137px;
   --play: #1d1d3a;
+  --plays: #152167;
   --list-hover: #282a5a;
   --card-footer: #1b1d3d;
   --skeleton: #0f1224;
@@ -44,6 +45,7 @@ html {
 body {
   margin: 0;
   background: #152167;
+  background: #111b55;
   background-position: center center;
   /* Background image doesn't tile */
   background-repeat: no-repeat;
@@ -55,11 +57,38 @@ body {
 	on the container's size */
   background-size: cover;
 }
+body,html{
+   height:100%;
+}
 
 main {
   margin-top: 0rem;
   height: 90vh;
 }
+
+.container-page{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.nav-left{
+	width: 15%;
+	background: #000426;
+		position: fixed;
+		height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.content-right{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 85%;
+}
+
+
 
 .main {
   width: 100%;
@@ -74,7 +103,7 @@ main {
 .wave , .wave-inverse{
   position: absolute;
   z-index: -1;
-  background-color: #152167;
+  background-color: #111b55;
 }
 
 .slide-in-left-enter {

@@ -33,7 +33,6 @@
 }
 
 .card-data-last {
-  background: #030d44b5;
   color: 6px 6px 0px #1d2761;
   border-radius: 8px;
   border: none;
@@ -106,4 +105,106 @@
 
 .data-last:last-child hr {
   display: none;
+}
+
+@media screen and (max-width: 80em) {
+
+}
+@media screen and (max-width: 70em) {
+.home-push-content {
+  padding: 0rem;
+	text-align: center;
+	flex-direction: column;
+}
+.hero-title-push{
+	width: 100%;
+	padding: 1rem;
+
+}
+.mosaique {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+.hero-title-push .text {
+
+    width: 100%;
+    margin: 0;
+    margin-bottom: 0rem;
+}
+.card-data-last{
+	margin: 0;
+	margin-bottom: 3rem;
+}
+.home-push-content-carousel{
+	display: none;
+}
+}
+
+@media screen and (max-width: 56em) {
+
+}
+@media screen and (max-width: 37.5em) {
+  .title {
+    font-size: 4.5rem;
+  }
+  .subTitle {
+    font-size: 1rem;
+  }
+
+ 
+  .backgroundImage {
+    align-items: start;
+  }
+.container {
+	    width: 100%;
+    margin-top: 0rem;
+    padding-left: 0rem;
+}
+  .smallWrapper {
+    margin-top: 7rem;
+    width: 100%;
+    padding-left: 20%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .title {
+    font-size: 4rem;
+  }
+  .subTitle {
+    font-size: 1.2rem;
+  }
+.container {
+	    width: 100%;
+    margin-top: 0rem;
+    padding-left: 0rem;
+}
+  .smallWrapper {
+    margin-top: 7rem;
+    width: 100%;
+    padding-left: 12%;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 25em) {
+  .title {
+    font-size: 3rem;
+  }
+  .subTitle {
+    font-size: 1.2rem;
+  }
+.container {
+	    width: 100%;
+    margin-top: 0rem;
+    padding-left: 0rem;
+}
+  .smallWrapper {
+    margin-top: 7rem;
+    width: 100%;
+    padding-left: 0%;
+    margin: 0;
+  }
 }

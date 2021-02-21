@@ -1,76 +1,65 @@
-import MusicNoteIcon from '@material-ui/icons/MusicNote';
-import QueueMusicIcon from '@material-ui/icons/QueueMusic';
-import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import React, { useContext } from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles';
+import React, { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../context/auth-context';
+import { useHttpClient } from '../../hooks/http-hook';
 import './NavLinks.css';
+import SimpleMenu from './SimpleMenu';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 const NavLinks = (props) => {
+  const { sendRequest } = useHttpClient();
+  const classes = useStyles();
+
   const auth = useContext(AuthContext);
+  const [user, setUser] = useState();
+  const userId = auth.userId;
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        if (userId !== false) {
+          const responseData = await sendRequest(
+            `${process.env.REACT_APP_BACKEND_URL}/users/user/${auth.userId}`
+          );
+          setUser(responseData.users[0]);
+        }
+      } catch (err) {}
+    };
+    fetchUsers();
+  }, [sendRequest, auth.userId, userId]);
   return (
     <ul className="nav-links">
-      {auth.isLoggedIn && (
-        <>
-          <li>
-            <NavLink className="links" to="/tabs">
-              <QueueMusicIcon className="icon-header"></QueueMusicIcon> Tabs
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="links" to="/tutorial">
-              <YouTubeIcon className="icon-header"></YouTubeIcon> Tutoriels
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="links" to="/Instruments" exact>
-              <MusicNoteIcon className="icon-header"></MusicNoteIcon>
-              Instruments
-            </NavLink>
-          </li>
-        </>
-      )}
-      {auth.isLoggedIn && auth.role === '601724ea6f33a7db18a485c5' && (
-        <NavLink className="links" to="/admin" exact>
-          <SupervisorAccountIcon className="icon-header"></SupervisorAccountIcon>
-          Panel Admin
-        </NavLink>
-      )}
       {!auth.isLoggedIn && (
-        <>
-          <li>
-            <NavLink className="links" to="/tabs">
-              <QueueMusicIcon className="icon-header"></QueueMusicIcon> Tabs
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="links" to="/tutorial">
-              <YouTubeIcon className="icon-header"></YouTubeIcon> Tutoriels
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="links" to="/Instruments" exact>
-              <MusicNoteIcon className="icon-header"></MusicNoteIcon>
-              Instruments
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/auth">
-              <button className="button--inverse auth-button">
-                Se connecter
-              </button>
-            </NavLink>
-          </li>
-        </>
+        <li>
+          <NavLink to="/auth">
+            <button className="button--inverse auth-button">
+              Se connecter
+            </button>
+          </NavLink>
+        </li>
       )}
       {auth.isLoggedIn && (
         <li>
-          <form>
-            <button className="button--inverse" onClick={auth.logout}>
-              Deconnexion
-            </button>
-          </form>
+          {user && (
+            <div className={classes.root}>
+              <Avatar
+                alt="profile-picture"
+                src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
+              />
+
+              <SimpleMenu logout={auth.logout} pseudo={user.pseudo}>
+                {user.pseudo}
+              </SimpleMenu>
+            </div>
+          )}
         </li>
       )}
     </ul>

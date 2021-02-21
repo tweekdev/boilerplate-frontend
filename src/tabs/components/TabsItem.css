@@ -1,14 +1,11 @@
 .card-tabs {
-  border-radius: 0;
-	border-radius: 8px;
-  box-shadow: 6px 6px 0px #1d2761;
   border: none;
 }
 
 .header {
   display: flex;
   height: 4rem;
-  background-color: #2d3980;
+  background-color: transparent;
   width: 100%;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;

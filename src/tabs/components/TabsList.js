@@ -87,7 +87,7 @@ const TabsList = (props) => {
             className="btn-active-seach"
             onClick={() => setIsVisible(!isVisible)}
           >
-            <SearchIcon/>
+            <SearchIcon />
           </button>
         </div>
       </div>
@@ -95,7 +95,7 @@ const TabsList = (props) => {
       {auth.isLoggedIn && (
         <div className="add-new-container">
           <Link to={'/tabs/new'}>
-            <AddIcon/>
+            <AddIcon />
           </Link>
         </div>
       )}

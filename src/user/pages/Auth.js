@@ -36,10 +36,13 @@ const Auth = () => {
             'Content-Type': 'application/json',
           }
         );
+        console.log(responseData);
         auth.login(
           responseData.userId,
           responseData.token,
-          responseData.role[0]
+          responseData.role[0],
+          responseData.pseudo,
+          responseData.picture
         );
         actions.isSubmitting = false;
         actions.resetForm();

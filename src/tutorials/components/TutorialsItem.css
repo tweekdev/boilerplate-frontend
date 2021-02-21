@@ -1,17 +1,16 @@
 .card-tutorials {
   border-radius: 0;
-  box-shadow: 6px 6px 0px #1d2761;
   border: none;
-	border-radius: 8px;
+	border-radius: 3px;
 }
 
 .header {
   display: flex;
   height: 4rem;
-  background-color: #2d3980;
+  background-color: transparent;
   width: 100%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
   justify-content: center;
   align-items: center;
 }

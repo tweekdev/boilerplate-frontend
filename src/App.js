@@ -6,13 +6,16 @@ import {
   Switch,
 } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
+import Explore from './explore/pages/Explore';
 import Instruments from './instruments/pages/Instruments';
+import LeftNavigation from './shared/components/Navigation/LeftNavigation';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import LoadingSpinner from './shared/components/UIElements/LoadingSpinner';
 import { AuthContext } from './shared/context/auth-context';
 import { useAuth } from './shared/hooks/auth-hook';
 import NewTabs from './tabs/pages/NewTabs';
 import NewTutorial from './tutorials/pages/NewTutorial';
+import Profile from './user/pages/Profile';
 
 const Home = React.lazy(() => import('./shared/components/Home'));
 const Tabs = React.lazy(() => import('./tabs/pages/Tabs'));
@@ -46,6 +49,12 @@ const App = () => {
         <Route path="/tutorial" exact>
           <Tutorials></Tutorials>
         </Route>
+        <Route path="/profil" exact>
+          <Profile></Profile>
+        </Route>
+        <Route path="/explore" exact>
+          <Explore></Explore>
+        </Route>
         <Route path="/tutorial/new" exact>
           <NewTutorial></NewTutorial>
         </Route>
@@ -76,6 +85,7 @@ const App = () => {
         <Route path="/tutorial/edit/:tabsId">
           <UpdateTabs />
         </Route>
+
         <Route path="/users/edit/:uid" exact>
           <UpdateUser />
         </Route>
@@ -95,17 +105,34 @@ const App = () => {
         <Route path="/tutorial" exact>
           <Tutorials></Tutorials>
         </Route>
+        <Route path="/profil" exact>
+          <Profile></Profile>
+        </Route>
+        <Route path="/explore" exact>
+          <Explore></Explore>
+        </Route>
+        <Route path="/tutorial/new" exact>
+          <NewTutorial></NewTutorial>
+        </Route>
         <Route path="/tutorial/:tutorialId">
           <Tutorial></Tutorial>
         </Route>
-        <Route path="/Instruments" exact>
+        <Route path="/instruments" exact>
           <Instruments></Instruments>
         </Route>
-        <Route path="/tabs/:tabsId">
-          <UpdateTabs />
+        <Route path="/instruments/:iid" exact>
+          <Instrument />
         </Route>
-        <Redirect to="/users" />
-        <Redirect to={`/users/profile/${userId}`} />
+        <Route path="/tabs/new" exact>
+          <NewTabs />
+        </Route>
+        <Route path="/tab/:tabsId">
+          <Tab></Tab>
+        </Route>
+        <Route path="/users/edit/:uid" exact>
+          <UpdateUser />
+        </Route>
+        <Redirect to={`/`} />
       </Switch>
     );
   } else {
@@ -117,17 +144,26 @@ const App = () => {
         <Route path="/tabs" exact>
           <Tabs></Tabs>
         </Route>
-        <Route path="/Instruments" exact>
-          <Instruments></Instruments>
-        </Route>
-        <Route path="/tab/:tabsId">
-          <Tab></Tab>
-        </Route>
         <Route path="/tutorial" exact>
           <Tutorials></Tutorials>
         </Route>
+        <Route path="/profil" exact>
+          <Profile></Profile>
+        </Route>
+        <Route path="/explore" exact>
+          <Explore></Explore>
+        </Route>
         <Route path="/tutorial/:tutorialId">
           <Tutorial></Tutorial>
+        </Route>
+        <Route path="/instruments" exact>
+          <Instruments></Instruments>
+        </Route>
+        <Route path="/instruments/:iid" exact>
+          <Instrument />
+        </Route>
+        <Route path="/tab/:tabsId">
+          <Tab></Tab>
         </Route>
         <Route path="/auth" exact>
           <Auth />
@@ -152,8 +188,7 @@ const App = () => {
       }}
     >
       <Router>
-        <MainNavigation />
-        <main>
+        <div className="container-page">
           <svg
             className="wave"
             xmlns="http://www.w3.org/2000/svg"
@@ -170,21 +205,29 @@ const App = () => {
               d="M0,110 C150, 200 350, 0 500, 150 L500, 00 L0,0 Z"
             ></path>
             <path
-              fill="#000639"
+              fill="#111b55"
               fillOpacity="1"
               d="M0,100 C150, 200 350, 0 500, 100 L500, 00 L0,0 Z"
             ></path>
           </svg>
-          <Suspense
-            fallback={
-              <div className="center">
-                <LoadingSpinner></LoadingSpinner>
-              </div>
-            }
-          >
-            {routes}
-          </Suspense>
-        </main>
+          <div className="nav-left">
+            <LeftNavigation />
+          </div>
+          <div className="content-right">
+            <MainNavigation />
+            <main>
+              <Suspense
+                fallback={
+                  <div className="center">
+                    <LoadingSpinner></LoadingSpinner>
+                  </div>
+                }
+              >
+                {routes}
+              </Suspense>
+            </main>
+          </div>
+        </div>
       </Router>
     </AuthContext.Provider>
   );

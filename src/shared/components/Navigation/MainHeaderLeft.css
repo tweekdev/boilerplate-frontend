@@ -1,16 +1,16 @@
-.main-header {
+.main-header-left {
   width: 100%;
 	height: 10vh;	
   display: flex;
   align-items: center;
-	justify-content: flex-end;
+	flex-direction: column;
   position: relative;
   top: 0;
   left: 0;
-  background: #111b55;
 	border:none;
-  padding: 0 5rem;
+  padding: 0 1rem;
   z-index: 5;
+	margin-top: 7rem;
 }
 
 main {
@@ -18,8 +18,8 @@ main {
 }
 
 @media (max-width: 768px) {
-  .main-header {
-    flex-direction: row-reverse;
-		  padding: 0 1rem;
+  .main-header-left {
+		padding: 0 1rem;
+		margin-top: 7rem;
   }
 }

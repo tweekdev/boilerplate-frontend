@@ -64,44 +64,41 @@ const ContentList = (props) => {
                     return val;
                   }
                 })
-                .map((instrument) => (
-                  <div key={instrument.id} className="tutorials--items">
+                .map((tab) => (
+                  <div key={tab._id} className="tutorials--items">
                     {isLoading && <LoadingSpinner asOverlay />}
                     <Card className="card-tutorials">
                       <div className="header">
-                        <h3>{instrument.name}</h3>
+                        <h3>{tab.name}</h3>
                       </div>
 
                       <div className="tutorials-item__info">
                         <div className="tutorials-data">
                           <label>Chanteur:</label>
-                          <h4> {instrument.chanteur}</h4>
+                          <h4> {tab.chanteur}</h4>
                         </div>
                         <div className="tutorials-data">
                           <label>Difficulty:</label>
-                          {instrument.difficulty[0].name === 'easy' ? (
+                          {tab.difficulty[0].name === 'easy' ? (
                             <h4 className="dif easy">
-                              {instrument.difficulty[0].name}
+                              {tab.difficulty[0].name}
                             </h4>
-                          ) : instrument.difficulty[0].name === 'medium' ? (
+                          ) : tab.difficulty[0].name === 'medium' ? (
                             <h4 className="dif medium">
-                              {instrument.difficulty[0].name}
+                              {tab.difficulty[0].name}
                             </h4>
-                          ) : instrument.difficulty[0].name === 'hard' ? (
+                          ) : tab.difficulty[0].name === 'hard' ? (
                             <h4 className="dif hard">
-                              {instrument.difficulty[0].name}
+                              {tab.difficulty[0].name}
                             </h4>
                           ) : null}
                         </div>
                         <div className="tutorials-data">
                           <label>Type:</label>
-                          <h4> {instrument.type[0].name}</h4>
+                          <h4> {tab.type[0].name}</h4>
                         </div>
                       </div>
-                      <Link
-                        className="tutorials-choose"
-                        to={`/tutorial/${instrument.id}`}
-                      >
+                      <Link className="tutorials-choose" to={`/tab/${tab._id}`}>
                         <button className="pill button ">Choisir</button>
                       </Link>
                     </Card>
@@ -133,43 +130,43 @@ const ContentList = (props) => {
                     return val;
                   }
                 })
-                .map((instrument) => (
-                  <div key={instrument.id} className="tutorials--items">
+                .map((tuto) => (
+                  <div key={tuto._id} className="tutorials--items">
                     {isLoading && <LoadingSpinner asOverlay />}
                     <Card className="card-tutorials">
                       <div className="header">
-                        <h3>{instrument.name}</h3>
+                        <h3>{tuto.name}</h3>
                       </div>
 
                       <div className="tutorials-item__info">
                         <div className="tutorials-data">
                           <label>Chanteur:</label>
-                          <h4> {instrument.chanteur}</h4>
+                          <h4> {tuto.chanteur}</h4>
                         </div>
                         <div className="tutorials-data">
                           <label>Difficulty:</label>
-                          {instrument.difficulty[0].name === 'easy' ? (
+                          {tuto.difficulty[0].name === 'easy' ? (
                             <h4 className="dif easy">
-                              {instrument.difficulty[0].name}
+                              {tuto.difficulty[0].name}
                             </h4>
-                          ) : instrument.difficulty[0].name === 'medium' ? (
+                          ) : tuto.difficulty[0].name === 'medium' ? (
                             <h4 className="dif medium">
-                              {instrument.difficulty[0].name}
+                              {tuto.difficulty[0].name}
                             </h4>
-                          ) : instrument.difficulty[0].name === 'hard' ? (
+                          ) : tuto.difficulty[0].name === 'hard' ? (
                             <h4 className="dif hard">
-                              {instrument.difficulty[0].name}
+                              {tuto.difficulty[0].name}
                             </h4>
                           ) : null}
                         </div>
                         <div className="tutorials-data">
                           <label>Type:</label>
-                          <h4> {instrument.type[0].name}</h4>
+                          <h4> {tuto.type[0].name}</h4>
                         </div>
                       </div>
                       <Link
                         className="tutorials-choose"
-                        to={`/tutorial/${instrument.id}`}
+                        to={`/tutorial/${tuto._id}`}
                       >
                         <button className="pill button ">Choisir</button>
                       </Link>

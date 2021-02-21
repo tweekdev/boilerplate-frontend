@@ -27,7 +27,8 @@ h2 {
 }
 
 .card {
-  background: #030d44b5;
+  background: linear-gradient(110deg, #090f36 60%, #1d2761 
+ 60%);
 }
 
 @media screen and (max-width: 80em) {

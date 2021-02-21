@@ -18,6 +18,7 @@ const NewUser = () => {
     firstname: Yup.string().required('Veuillez entrer un prénom.'),
     name: Yup.string().required('Veuillez entrer un nom.'),
     email: Yup.string().required('Veuillez entrer un Email.'),
+    picture: Yup.string().required('Veuillez insérer une image.'),
     password: Yup.string()
       .required('Veuillez entrer un mot de passe.')
       .min(6, 'Le mot de passe est trop court 6 caractères minimum.'),
@@ -28,24 +29,28 @@ const NewUser = () => {
 
   const userSubmitHandler = async (values, actions) => {
     try {
+      const formData = new FormData();
+      formData.append('name', values.name);
+      formData.append('firstname', values.firstname);
+      formData.append('pseudo', values.pseudo);
+      formData.append('email', values.email);
+      formData.append('password', values.password);
+      formData.append('picture', values.picture);
+      formData.append('role', '601727566f33a7db18a485c6');
+      formData.append('tabs', []);
+      formData.append('news', []);
       const responseData = await sendRequest(
         `${process.env.REACT_APP_BACKEND_URL}/users/signup`,
         'POST',
-        JSON.stringify({
-          name: values.name,
-          firstname: values.firstname,
-          pseudo: values.pseudo,
-          email: values.email,
-          password: values.password,
-          role: '601727566f33a7db18a485c6',
-          tabs: [],
-          news: [],
-        }),
-        {
-          'Content-Type': 'application/json',
-        }
+        formData
       );
-      auth.login(responseData.userId, responseData.token, responseData.role[0]);
+      auth.login(
+        responseData.userId,
+        responseData.token,
+        responseData.role[0],
+        responseData.pseudo,
+        responseData.picture
+      );
       actions.isSubmitting = false;
       actions.resetForm();
       history.push('/tabs');
@@ -69,6 +74,7 @@ const NewUser = () => {
               password: '',
               email: '',
               role: '',
+              picture: '',
             }}
             validationSchema={schema}
           >
@@ -80,8 +86,25 @@ const NewUser = () => {
               handleBlur,
               handleSubmit,
               isSubmitting,
+              setFieldValue,
             }) => (
               <form onSubmit={handleSubmit}>
+                <div className={'form-group'}>
+                  <input
+                    id="picture"
+                    name="picture"
+                    className="form-control"
+                    type="file"
+                    onChange={(event) => {
+                      setFieldValue('picture', event.currentTarget.files[0]);
+                    }}
+                    values={values.picture}
+                    accept=".jpg,.png,.jpeg"
+                  />
+                  <div className="error">
+                    {errors.picture && touched.picture && errors.picture}
+                  </div>
+                </div>
                 <div className={'form-group'}>
                   <Field
                     className={'form-control'}

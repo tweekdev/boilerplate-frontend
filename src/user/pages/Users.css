@@ -63,10 +63,13 @@ h2{
   color: #fafaf8;
 }
 .add-new-container a .MuiSvgIcon-root {
-  width: 1.7em;
-  height: 1.7em;
-}
+    width: 1.7em;
+    height: 1.7em;
+    color: #8491c7;
+    background: #090f36;
+    border-radius: 999px;
 
+}
 .autres-content {
 	display: flex;
     justify-content: space-between;

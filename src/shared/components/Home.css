@@ -20,7 +20,7 @@
 }
 
 .home-intro {
-  height: 92vh;
+  height: 90vh;
   display: flex;
 	padding: 0 6rem;
   justify-content: center;
@@ -59,7 +59,7 @@
 }
 
 
-span {
+.title span, .subTitle span {
   font-weight: 600;
   color: var(--orange);
   transition: color 0.2s ease-out;
@@ -97,9 +97,24 @@ span {
 }
 
 @media screen and (max-width: 56em) {
-  .title {
-    font-size: 3rem;
-  }
+.main-home {
+  padding: 1rem;
+}
+.home-intro {
+  height: 90vh;
+  display: flex;
+	padding: 0 0rem;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+	    width: 100%;
+    margin-top: 0rem;
+    padding-left: 0rem;
+}
+.backgroundImage {
+    display: none;
+}
 }
 
 @media screen and (max-width: 37.5em) {
@@ -114,12 +129,11 @@ span {
   .backgroundImage {
     align-items: start;
   }
-  .container {
-    margin-top: 7rem;
-    width: 100%;
-    padding-left: 1rem;
-    margin-bottom: 0;
-  }
+.container {
+	    width: 100%;
+    margin-top: 0rem;
+    padding-left: 0rem;
+}
   .smallWrapper {
     margin-top: 7rem;
     width: 100%;
@@ -135,11 +149,11 @@ span {
   .subTitle {
     font-size: 1.2rem;
   }
-  .container {
-    width: 100%;
-    padding-left: 2rem;
-    margin-top: 0;
-  }
+.container {
+	    width: 100%;
+    margin-top: 0rem;
+    padding-left: 0rem;
+}
   .smallWrapper {
     margin-top: 7rem;
     width: 100%;
@@ -154,12 +168,11 @@ span {
   .subTitle {
     font-size: 1.2rem;
   }
-  .container {
-    margin-top: 7rem;
-    width: 100%;
-    height: 75%;
-    padding-left: 1rem;
-  }
+.container {
+	    width: 100%;
+    margin-top: 0rem;
+    padding-left: 0rem;
+}
   .smallWrapper {
     margin-top: 7rem;
     width: 100%;

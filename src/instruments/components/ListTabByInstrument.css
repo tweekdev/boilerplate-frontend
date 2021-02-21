@@ -7,10 +7,9 @@
 .home-push-content {
   display: flex;
   width: 100%;
-  background: #0c1754;
+  background: #090e2f;
   /* background-position-x: revert; */
   /* backface-visibility: visible; */
-  background-clip: content-box;
   backdrop-filter: opacity(0.5);
   /* background: space; */
   background-repeat: round;

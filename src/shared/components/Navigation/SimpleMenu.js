@@ -6,10 +6,9 @@ import MenuList from '@material-ui/core/MenuList';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import { makeStyles } from '@material-ui/core/styles';
-import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -19,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SimpleMenu = () => {
+const SimpleMenu = (props) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -61,10 +60,9 @@ const SimpleMenu = () => {
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
-          style={{ color: 'white' }}
+          style={{ color: '#d4dcff' }}
         >
-          <SupervisorAccountIcon className="icon-header"></SupervisorAccountIcon>
-          Admin
+          {props.pseudo} <ArrowDropDownIcon />
         </Button>
         <Popper
           open={open}
@@ -89,9 +87,16 @@ const SimpleMenu = () => {
                     onKeyDown={handleListKeyDown}
                   >
                     <MenuItem onClick={handleClose}>
-                      <NavLink className="links" to="/admin" exact>
-                        Panel Admin
+                      <NavLink className="links" to="/profil" exact>
+                        Profile
                       </NavLink>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <form>
+                        <button className="button--deco" onClick={props.logout}>
+                          Deconnexion
+                        </button>
+                      </form>
                     </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
