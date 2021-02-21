@@ -16,7 +16,7 @@
 
 
 .tutorials-title {
-  color: var(--orange);
+  color: #1BB453;
   display: flex;
   align-items: center;
 }
@@ -25,10 +25,7 @@ h2 {
   margin: 0;
 }
 
-.card {
-  background: linear-gradient(110deg, #090f36 60%, #1d2761 
- 60%);
-}
+
 @media screen and (max-width: 80em) {
   .title {
     font-size: 4rem;

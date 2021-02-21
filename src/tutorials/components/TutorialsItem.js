@@ -22,7 +22,11 @@ const TutorialsItem = (props) => {
   return (
     <div key={props.id} className="tutorials--items">
       {isLoading && <LoadingSpinner asOverlay />}
-      <Card className="card-tutorials">
+      <Card
+        className={`card-tutorials ${
+          props.i % 2 == 0 ? 'normalize' : 'inversed'
+        }`}
+      >
         <div className="header">
           <h3>{props.name}</h3>
         </div>

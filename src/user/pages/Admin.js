@@ -2,7 +2,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
-import Typography from '@material-ui/core/Typography';
 import AddIcon from '@material-ui/icons/Add';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
@@ -32,11 +31,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box p={4}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box p={4}>{children}</Box>}
     </div>
   );
 }

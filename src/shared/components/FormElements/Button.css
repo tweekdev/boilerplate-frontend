@@ -8,7 +8,8 @@
   margin-top: 1rem;
   text-decoration: none;
   display: inline-block;
-  background-image: linear-gradient(to right, #f38f28 0%, #fd4a3b 100%);
+  background: linear-gradient(110deg, #1BB453 50%, #2ec767 50%);
+
 }
 
 .button:focus {

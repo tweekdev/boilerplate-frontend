@@ -1,6 +1,6 @@
-.card{background:linear-gradient(110deg, #090f36 60%, #1d2761 
+/*.card{background:linear-gradient(110deg, #090f36 60%, #1d2761 
  60%)}
-
+*/
  .card-paper{
 	 border-radius: 3px;
  }
@@ -12,3 +12,15 @@
   border-radius: 3px;
 }
 
+.normalize{
+	/*background: linear-gradient(110deg, #0E1638 60%, #0F1948 60%);*/
+	background:linear-gradient(110deg, #090f36 60%, #1d2761 
+ 60%)
+}
+
+.inversed {
+/*	background: linear-gradient(110deg, #121A2C 60%, #171F31 60%);*/
+
+	background: linear-gradient(110deg, #121A2C 60%, #252e44 60%);
+
+}

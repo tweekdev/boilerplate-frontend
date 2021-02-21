@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/auth-context';
 import Separator from '../..//UIElements/Separator';
 import BackgroundLogo from '../../BackgroundLogo';
 import WordsFading from '../wordsFading';
 
 const Intro = () => {
+  const auth = useContext(AuthContext);
+
   return (
     <>
       <div className="home-intro__body stack">
@@ -22,9 +25,11 @@ const Intro = () => {
           </p>
         </div>
         <div className="button-access-home">
-          <Link to={'/signup'}>
-            <button className="button">Inscrit-toi</button>
-          </Link>
+          {!auth.isLoggedIn && (
+            <Link to={'/signup'}>
+              <button className="button">Inscrit-toi</button>
+            </Link>
+          )}
           <Link to={'/tabs'}>
             <button className="button see-tabs">Voir les tablatures</button>
           </Link>

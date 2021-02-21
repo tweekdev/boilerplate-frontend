@@ -63,7 +63,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 1rem;
   word-break: break-word;
 }
 .descritif-tutorials h1,
@@ -79,8 +78,7 @@ p {
 }
 .descritif-tutorials strong {
   font-size: 52px;
-  color: var(--orange
-);}
+  color: #1BB453;}
 
 .descritif-tutorials p {
   font-size: 23px;

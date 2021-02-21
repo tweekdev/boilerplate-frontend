@@ -1,4 +1,4 @@
-.main-instruments {
+.main-instruments-page {
 	min-height:100vh;
   height: 100% ;
   display: flex;
@@ -6,8 +6,9 @@
   justify-content: space-around;
   flex-direction: row-reverse;
   align-items: flex-start;
+	padding: 2rem 6rem;
 }
-.instrument {
+.instrument-page {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -17,7 +18,7 @@
 
 .instrument-title {
   margin-left: 2rem;
-  color: #f38f28;
+  color: #1BB453;
   display: flex;
   align-items: center;
 }

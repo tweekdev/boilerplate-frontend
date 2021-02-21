@@ -85,7 +85,7 @@ p {
 }
 .descritif-instruments-data strong {
   font-size: 52px;
-  color: var(--orange);
+  color: #1BB453;
 }
 
 .descritif-instruments-data p {
@@ -130,6 +130,15 @@ p {
 .tutorials--items {
   flex: 0 1 auto;
   width: 100%;
+}
+
+.normalize{
+	background: linear-gradient(110deg, #0E1638 60%, #0F1948 60%);
+}
+
+.inversed {
+	background: linear-gradient(110deg, #121A2C 60%, #171F31 60%);
+
 }
 
 .tutorials-item__info {
@@ -203,7 +212,15 @@ p {
   margin-bottom: 1rem;
   text-decoration: none;
   display: inline-block;
-  background: linear-gradient(to right, #f38f28c4 0%, #fd4a3bc4 100%);
+ 
+}
+.normalize-button{
+	background: linear-gradient(110deg, #1BB453 50%, #121A2C 50%);
+	background: linear-gradient(110deg, #1BB453 50%, #2ec767 50%);
+}
+
+.inversed-button{
+	background: linear-gradient(110deg, #1BB453 50%, #2ec767 50%);
 }
 
 .tutorials-choose .button:hover {

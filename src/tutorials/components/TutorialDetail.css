@@ -12,35 +12,34 @@
   width: 100%;
 }
 .card-tuto-item-info {
-	width: 100%;
-	background: #030d44b5;
+  width: 100%;
+  background: #030d44b5;
   color: 6px 6px 0px #1d2761;
-  border-radius: 8px;
+  border-radius: 3px;
   border: none;
-	padding: 3rem;
-	transition: none;
+  padding: 3rem;
+  transition: none;
 }
 
-.card-tuto-item-info::after{
-	content:none;
+
+.tab-content {
+  display: table;
 }
 
 .tuto-item-info {
   width: 100%;
   display: flex;
-  flex-direction: row;
-	justify-content: center;
-	align-items: center;
 }
 
 .video {
   width: 75%;
-  padding: 2rem;
+  display: table-cell;
+  padding: 0 0 0 0;
 }
 
 .tuto-item__info {
-  width: 25%;
-  padding: 2rem;
+  flex: 1;
+  height: 100%;
 }
 
 .tab-item {
@@ -55,23 +54,31 @@
   margin-left: 0;
 }
 
-.difficulty {
-  color: greenyellow;
-}
 .items-desc {
   color: #d4dcff;
-
 }
 
-
 .page-controls span {
-	font: inherit;
+  font: inherit;
   font-size: 0.8em;
   padding: 0 0.5em;
 }
+.data-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.data-bottom .tutorials-data-single{
+	color: #d4dcff;
+}
+.auteur strong{
+	margin-left: .5rem;
+	font-weight: bold;
+  color: #1BB453;
 
+}
 .page-controls button {
-	height: 40px;
+  height: 40px;
   background: #d4dcff;
   border: 0;
   font: inherit;
@@ -80,23 +87,21 @@
 }
 
 .page-controls button:first-child {
-	border-top-right-radius: 0;
+  border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 .page-controls button:last-child {
-	border-top-left-radius: 0;
+  border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.tutorials-data {
+.tutorials-data-single {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-	;
 }
 
-
-.tutorials-data label {
+.tutorials-data-single label {
   color: #8491c7;
   justify-content: left;
   background: #d4dcff26;
@@ -109,30 +114,43 @@
   font-weight: 700;
 }
 .easy {
-	background: #32cd3257;
-	text-align: center;
+  background: #32cd3257;
+  text-align: center;
   border-radius: 999px;
   color: #32cd32 !important;
   padding: 0.5rem 1rem;
 }
 
-.linktab{
-	text-decoration: none;
-	text-align: center;
-	margin-top: 3rem;
-	margin-bottom: -3.5rem;
+.linktab {
+  text-decoration: none;
+  text-align: center;
 }
 .medium {
   background: #f38f2857;
-	text-align: center;
+  text-align: center;
   border-radius: 999px;
   color: #f38f28 !important;
   padding: 0.5rem 1rem;
 }
 .hard {
   background: #fd4a3b57;
-	text-align: center;
+  text-align: center;
   border-radius: 999px;
   color: #fd4a3b !important;
   padding: 0.5rem 1rem;
+}
+
+.description-data-single{
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+.description-data-single h2{
+	margin-left: 0;
+	font-size: 2em;
+	
+}
+.description-data-single p{
+	line-height: 1.6;
+	margin-top: 1rem;
+
 }

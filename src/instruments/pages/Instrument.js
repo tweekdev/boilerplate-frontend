@@ -28,10 +28,10 @@ const Tab = () => {
   }, [sendRequest, iid]);
 
   return (
-    <div className="main-tutorials">
+    <div className="main-instruments-page">
       <ErrorModal error={error} onClear={clearError} />
 
-      <div className="tutorial">
+      <div className="instrument-page">
         {isLoading && (
           <div className="center">
             <LoadingSpinner></LoadingSpinner>

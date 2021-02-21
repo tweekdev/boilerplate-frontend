@@ -87,7 +87,7 @@ const TutorialsList = (props) => {
             className="btn-active-seach"
             onClick={() => setIsVisible(!isVisible)}
           >
-            <SearchIcon/>
+            <SearchIcon />
           </button>
         </div>
       </div>
@@ -95,7 +95,7 @@ const TutorialsList = (props) => {
       {auth.isLoggedIn && (
         <div className="add-new-container">
           <Link to={'/tutorial/new'}>
-            <AddIcon/>
+            <AddIcon />
           </Link>
         </div>
       )}
@@ -139,8 +139,9 @@ const TutorialsList = (props) => {
               return val;
             }
           })
-          .map((tab) => (
+          .map((tab, i) => (
             <TutorialsItem
+              i={i}
               key={tab.id}
               id={tab.id}
               name={tab.name}

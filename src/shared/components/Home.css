@@ -61,7 +61,7 @@
 
 .title span, .subTitle span {
   font-weight: 600;
-  color: var(--orange);
+  color: #1BB453;
   transition: color 0.2s ease-out;
 }
 
@@ -74,9 +74,9 @@
   transition: color 0.2s ease-out;
 }
 .see-tabs {
-  border: 1px solid var(--orange);
+  border: 1px solid #1BB453;
   background: transparent;
-  color: var(--orange);
+  color: #1BB453;
   margin-left: 1rem;
 }
 @media screen and (max-width: 80em) {

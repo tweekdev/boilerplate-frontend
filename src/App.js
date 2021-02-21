@@ -27,6 +27,9 @@ const NewInstrument = React.lazy(() =>
   import('./instruments/pages/NewInstrument')
 );
 const UpdateTabs = React.lazy(() => import('./tabs/pages/UpdateTabs'));
+const UpdateTutorial = React.lazy(() =>
+  import('./tutorials/pages/UpdateTutorial')
+);
 const Admin = React.lazy(() => import('./user/pages/Admin'));
 const Auth = React.lazy(() => import('./user/pages/Auth'));
 const Signup = React.lazy(() => import('./user/pages/Signup'));
@@ -61,6 +64,9 @@ const App = () => {
         <Route path="/tutorial/:tutorialId">
           <Tutorial></Tutorial>
         </Route>
+        <Route path="/tutorials/edit/:tutoId">
+          <UpdateTutorial />
+        </Route>
         <Route path="/instruments" exact>
           <Instruments></Instruments>
         </Route>
@@ -80,9 +86,6 @@ const App = () => {
           <Tab></Tab>
         </Route>
         <Route path="/tabs/edit/:tabsId">
-          <UpdateTabs />
-        </Route>
-        <Route path="/tutorial/edit/:tabsId">
           <UpdateTabs />
         </Route>
 
@@ -132,7 +135,7 @@ const App = () => {
         <Route path="/users/edit/:uid" exact>
           <UpdateUser />
         </Route>
-        <Redirect to={`/`} />
+        <Redirect to="/" />
       </Switch>
     );
   } else {
@@ -171,7 +174,7 @@ const App = () => {
         <Route path="/signup" exact>
           <Signup />
         </Route>
-        <Redirect to="/" />
+        <Redirect to="/auth" />
       </Switch>
     );
   }

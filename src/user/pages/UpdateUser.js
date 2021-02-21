@@ -1,12 +1,11 @@
+import Skeleton from '@material-ui/lab/Skeleton';
 import { Field, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import * as Yup from 'yup';
 import Button from '../../shared/components/FormElements/Button';
-import Thumb from '../../shared/components/FormElements/Thumb';
 import Card from '../../shared/components/UIElements/Card';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import './Auth.css';
@@ -118,7 +117,7 @@ const UpdateUser = (props) => {
               <form className="users-form" onSubmit={handleSubmit}>
                 <div className={'form-group'}>
                   <input
-                    enctype="multipart/form-data"
+                    encType="multipart/form-data"
                     id="picture"
                     name="picture"
                     className="form-control"
@@ -132,7 +131,6 @@ const UpdateUser = (props) => {
                   <div className="error">
                     {errors.picture && touched.picture && errors.picture}
                   </div>
-                  <Thumb file={values.picture}></Thumb>
                 </div>
                 <div className={'form-group'}>
                   <Field
@@ -229,7 +227,11 @@ const UpdateUser = (props) => {
           </Formik>
         </Card>
       ) : (
-        <LoadingSpinner asOverlay />
+        <div>
+          <Skeleton variant="text" />
+          <Skeleton variant="circle" width={80} height={80} />
+          <Skeleton variant="rect" width={500} height={500} />
+        </div>
       )}
     </div>
   );

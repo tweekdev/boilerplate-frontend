@@ -23,6 +23,7 @@ const NewTutorial = () => {
       .min(4, 'Le chanteur est trop court.'),
     link: Yup.string().required(),
     tab: Yup.string(),
+    description: Yup.string(),
     name: Yup.string().required('Veuillez entrer un nom.'),
     type: Yup.string().required('Veuillez entrer un type.'),
     difficulty: Yup.string().required('Veuillez choisir une difficulté.'),
@@ -81,6 +82,7 @@ const NewTutorial = () => {
           link: video_id,
           name: values.name,
           tab: values.tab,
+          description: values.description,
           type: values.type,
           difficulty: values.difficulty,
           instrument: values.instrument,
@@ -118,7 +120,7 @@ const NewTutorial = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <ErrorModal error={error} onClear={clearError} />
       <ToastContainer />
       <div className="main main-new-tutorials">
@@ -133,6 +135,7 @@ const NewTutorial = () => {
                   link: '',
                   tab: '',
                   name: '',
+                  description: '',
                   type: '',
                   difficulty: '',
                   instrument: '',
@@ -162,6 +165,22 @@ const NewTutorial = () => {
                       />
                       <div className="error">
                         {errors.chanteur && touched.chanteur && errors.chanteur}
+                      </div>
+                    </div>
+                    <div className={'form-group'}>
+                      <textarea
+                        className={' new-tutorials-control'}
+                        type="text"
+                        name="description"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.description}
+                        placeholder={'Description'}
+                      />
+                      <div className="error">
+                        {errors.description &&
+                          touched.description &&
+                          errors.description}
                       </div>
                     </div>
                     <div className={'form-group'}>
@@ -301,7 +320,7 @@ const NewTutorial = () => {
           )}
         </Card>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

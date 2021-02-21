@@ -140,8 +140,9 @@ const TabsList = (props) => {
               return val;
             }
           })
-          .map((tab) => (
+          .map((tab, i) => (
             <TabsItem
+              i={i}
               key={tab.id}
               id={tab.id}
               name={tab.name}

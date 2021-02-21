@@ -1,5 +1,4 @@
 import AddIcon from '@material-ui/icons/Add';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import 'netslider/dist/styles.min.css';
 import React, { useEffect, useState } from 'react';
 import 'react-multi-carousel/lib/styles.css';
@@ -98,30 +97,32 @@ const ListTabByInstrument = (props) => {
               {loadedTabsByInstrument &&
                 loadedTabsByInstrument.map((tab) => (
                   <Card key={tab.id} className="single-instrument">
-                    <div className="header-single-instrument">
-                      <Link className="link-datas-instru" to={`/tab/${tab.id}`}>
-                        {tab.name}
-                        <br />
-                        {tab.chanteur}
-                      </Link>
-                      <div className="content-single-instrument">
-                        <label>Difficulty</label>
-                        {tab.difficulty.name === 'easy' ? (
-                          <h4 className="dif easy">{tab.difficulty.name}</h4>
-                        ) : tab.difficulty.name === 'medium' ? (
-                          <h4 className="dif medium">{tab.difficulty.name}</h4>
-                        ) : tab.difficulty.name === 'hard' ? (
-                          <h4 className="dif hard">{tab.difficulty.name}</h4>
-                        ) : null}
+                    <Link to={`/tab/${tab.id}`}>
+                      <div className="header-single-instrument">
+                        <Link
+                          className="link-datas-instru"
+                          to={`/tab/${tab.id}`}
+                        >
+                          {tab.name}
+                          <br />
+                          {tab.chanteur}
+                        </Link>
+                        <div className="content-single-instrument">
+                          <label>Difficulty</label>
+                          {tab.difficulty.name === 'easy' ? (
+                            <h4 className="dif easy">{tab.difficulty.name}</h4>
+                          ) : tab.difficulty.name === 'medium' ? (
+                            <h4 className="dif medium">
+                              {tab.difficulty.name}
+                            </h4>
+                          ) : tab.difficulty.name === 'hard' ? (
+                            <h4 className="dif hard">{tab.difficulty.name}</h4>
+                          ) : null}
 
-                        <label>Type</label>
-                        <h4 className="dif">{tab.type.name}</h4>
+                          <label>Type</label>
+                          <h4 className="dif">{tab.type.name}</h4>
+                        </div>
                       </div>
-                    </div>
-                    <Link className="tabs-choose" to={`/tab/${tab.id}`}>
-                      <button className="btn-choose">
-                        Choisir <ArrowForwardIcon />
-                      </button>
                     </Link>
                   </Card>
                 ))}

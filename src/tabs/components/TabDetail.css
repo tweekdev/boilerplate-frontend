@@ -1,30 +1,69 @@
 .tabs-list-item {
-  font-family: Montserrat, sans-serif;
+  color: #d4dcff;
+  font-family: Inter, sans-serif;
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin: 0px;
   list-style: none;
   padding: 0;
   width: 100%;
 }
-.tab-card {
-  width: 80%;
+.tab-content {
+  display: table;
+}
+
+.tab-item-info {
+  width: 100%;
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+}
+.card-tab-item-info {
+  width: 100%;
+  background: #030d44b5;
+  color: 6px 6px 0px #1d2761;
+  border-radius: 3px;
+  border: none;
+  padding: 3rem;
+  transition: none;
 }
 .tab-item {
   margin: 1rem;
   flex: 0 1 auto;
-  width: 45%;
-  text-align: center;
+  width: 100%;
+  padding-left: calc(50% - var(--container-width) / 2);
+  padding-right: calc(50% - var(--container-width) / 2);
+}
+.pdf {
+  width: 75%;
+  display: table-cell;
+  padding: 0 0 0 0;
 }
 
+.items-desc {
+  color: #d4dcff;
+}
+
+.page-controls span {
+  font: inherit;
+  font-size: 0.8em;
+  padding: 0 0.5em;
+}
+.data-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.data-bottom .tabs-data-single{
+	color: #d4dcff;
+}
+.auteur strong{
+	margin-left: .5rem;
+	font-weight: bold;
+  color: #1BB453;
+
+}
 .tab-item h2 {
   margin-left: 0;
 }
@@ -91,25 +130,16 @@
 }
 
 .tab-item__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    margin: 1rem 1rem;
-    color: #8491c7;
-    font-family: Inter, sans-serif;
-    line-height: 1.3;
-    font-size: 0.9em;
-    font-weight: 700;
-    margin: 1rem 10rem;
+  flex: 1;
+  height: 100%;
 }
 
-.tabs-data {
+.tabs-data-single {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.tabs-data label {
+.tabs-data-single label {
   color: #8491c7;
   justify-content: left;
   background: #d4dcff26;
@@ -145,6 +175,10 @@
   color: #fd4a3b !important;
   padding: 0.5rem 1rem;
 }
+.linktab {
+  text-decoration: none;
+  text-align: center;
+}
 .tabs-choose {
   display: flex;
   justify-content: center;
@@ -171,5 +205,20 @@
   text-decoration: none;
   /* bottom: 0; */
   display: inline-block;
-  background: linear-gradient(to right, #f38f28c4 0%, #fd4a3bc4 100%);
+	background: linear-gradient(110deg, #1BB453 50%, #2ec767 50%);
+
+}
+
+.description-data-single{
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+.description-data-single h2{
+	margin-left: 0;
+	font-size: 2em;
+	
+}
+.description-data-single p{
+	line-height: 1.6;
+	margin-top: 1rem;
 }

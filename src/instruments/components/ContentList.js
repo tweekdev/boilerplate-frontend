@@ -8,7 +8,7 @@ import './ContentList.css';
 const ContentList = (props) => {
   const [searchTerm, setSeachTerm] = useState('');
   const [isVisible, setIsVisible] = useState(false);
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const { isLoading } = useHttpClient();
 
   return (
     <div className="instrument-content-id">
@@ -64,10 +64,14 @@ const ContentList = (props) => {
                     return val;
                   }
                 })
-                .map((tab) => (
-                  <div key={tab._id} className="tutorials--items">
+                .map((tab, i) => (
+                  <div key={i} className="tutorials--items">
                     {isLoading && <LoadingSpinner asOverlay />}
-                    <Card className="card-tutorials">
+                    <Card
+                      className={`card-tutorials ${
+                        i % 2 == 0 ? 'normalize' : 'inversed'
+                      }`}
+                    >
                       <div className="header">
                         <h3>{tab.name}</h3>
                       </div>
@@ -99,7 +103,13 @@ const ContentList = (props) => {
                         </div>
                       </div>
                       <Link className="tutorials-choose" to={`/tab/${tab._id}`}>
-                        <button className="pill button ">Choisir</button>
+                        <button
+                          className={`pill button ${
+                            i % 2 == 0 ? 'normalize-button' : 'inversed-button'
+                          }`}
+                        >
+                          Choisir
+                        </button>
                       </Link>
                     </Card>
                   </div>
@@ -130,10 +140,14 @@ const ContentList = (props) => {
                     return val;
                   }
                 })
-                .map((tuto) => (
-                  <div key={tuto._id} className="tutorials--items">
+                .map((tuto, i) => (
+                  <div key={i} className="tutorials--items">
                     {isLoading && <LoadingSpinner asOverlay />}
-                    <Card className="card-tutorials">
+                    <Card
+                      className={`card-tutorials ${
+                        i % 2 === 0 ? 'normalize' : 'inversed'
+                      } `}
+                    >
                       <div className="header">
                         <h3>{tuto.name}</h3>
                       </div>
@@ -168,7 +182,13 @@ const ContentList = (props) => {
                         className="tutorials-choose"
                         to={`/tutorial/${tuto._id}`}
                       >
-                        <button className="pill button ">Choisir</button>
+                        <button
+                          className={`pill button ${
+                            i % 2 == 0 ? 'normalize-button' : 'inversed-button'
+                          }`}
+                        >
+                          Choisir
+                        </button>
                       </Link>
                     </Card>
                   </div>

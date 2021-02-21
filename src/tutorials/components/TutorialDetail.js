@@ -1,5 +1,6 @@
+import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles';
 import React, { useContext } from 'react';
-import { pdfjs } from 'react-pdf';
 import YouTube from 'react-youtube';
 import Card from '../../shared/components/UIElements/Card';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
@@ -8,9 +9,24 @@ import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import './TutorialDetail.css';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+  small: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+  },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+  },
+}));
 const TutorialDetail = (props) => {
+  const classes = useStyles();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const auth = useContext(AuthContext);
   const _onReady = (event) => {
@@ -28,7 +44,7 @@ const TutorialDetail = (props) => {
 
   return (
     <div className="tab-content">
-      <div className="tabs-list-item Test__container">
+      <div className="tabs-list-item">
         <ErrorModal error={error} onClear={clearError} />
         <div key={props.items.id} className="tab-item">
           {isLoading && <LoadingSpinner asOverlay />}
@@ -48,39 +64,63 @@ const TutorialDetail = (props) => {
         </div>
         <div className="tuto-item__info">
           <Card className="card-tuto-item-info">
-            <div className="tutorials-data">
-              <label>Difficulty:</label>
-              {props.items.difficulty.name === 'easy' ? (
-                <h4 className="dif easy">{props.items.difficulty.name}</h4>
-              ) : props.items.difficulty.name === 'medium' ? (
-                <h4 className="dif medium">{props.items.difficulty.name}</h4>
-              ) : props.items.difficulty.name === 'hard' ? (
-                <h4 className="dif hard">{props.items.difficulty.name}</h4>
-              ) : null}
-            </div>
-            <div className="tutorials-data">
+            <div className="tutorials-data-single">
               <label>Type:</label>
               <h4 className="items-desc">{props.items.type.name}</h4>
             </div>
-            <div className="tutorials-data">
+            <div className="tutorials-data-single">
               <label>Instrument:</label>
               <h4 className="items-desc">{props.items.instrument.name}</h4>
             </div>
             {props.items.tab ? (
               <div className="linktab">
                 <a
-                  className="medium linktab"
+                  className="button"
                   target="_blank"
                   rel="noopener noreferrer"
                   href={props.items.tab}
                 >
-                  Acceder à la tablature
+                  Tablature
                 </a>
               </div>
             ) : null}
           </Card>
         </div>
       </div>
+      <div className="data-bottom">
+        <div className="tutorials-data-single">
+          <label>Difficulty:</label>
+          {props.items.difficulty.name === 'easy' ? (
+            <h4 className="dif easy">{props.items.difficulty.name}</h4>
+          ) : props.items.difficulty.name === 'medium' ? (
+            <h4 className="dif medium">{props.items.difficulty.name}</h4>
+          ) : props.items.difficulty.name === 'hard' ? (
+            <h4 className="dif hard">{props.items.difficulty.name}</h4>
+          ) : null}
+        </div>
+        {props.items.creator && (
+          <div className="tutorials-data-single">
+            <div className={`${classes.root} user-head`}>
+              <Avatar
+                alt="picture"
+                src={`${process.env.REACT_APP_BACKEND_URL}/${props.items.creator.picture}`}
+                className={classes.small}
+              />
+            </div>
+            <div className="auteur">
+              <h5>
+                Auteur: <strong>{props.items.creator.pseudo} </strong>
+              </h5>
+            </div>
+          </div>
+        )}
+      </div>
+      {props.items.description && (
+        <div className="description-data-single">
+          <h2>A propos de ce tutoriel</h2>
+          <p>{props.items.description}</p>
+        </div>
+      )}
     </div>
   );
 };

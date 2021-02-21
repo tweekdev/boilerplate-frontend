@@ -38,20 +38,19 @@
   transition: color 0.2s;
 }
 
+.slick-slider .MuiPaper-root{
+	width: 80%;
+	margin: 0rem;
+}
 .single-instrument {
-  width: 80% !important;
   text-align: center;
-  padding: 30px 20px 35px;
+  padding: 15px 15px 15px;
   -webkit-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   background: #252f5a;
   background: #030d44b5;
-  border-radius: 8px;
-}
-.single-instrument::after,
-.single-instrument::before {
-  content: none;
+  border-radius: 3px;
 }
 
 .header-single-instrument {
@@ -64,13 +63,13 @@
 }
 
 .card-header-single-instrument {
-  border-radius: 8px;
+  border-radius: 3px;
   border: none;
   margin: 1rem;
   height: 18rem;
   padding: 0rem 2rem 0rem 2rem;
   margin: 0rem 0rem 2rem 0;
-  width: 90% !important;
+  width: 90% ;
 }
 
 .header-instrument-slide {
@@ -82,14 +81,11 @@
 .header-instrument-slide h2 {
   margin-left: 0;
 }
-.middle-card {
-  margin-top: 10rem;
+
+.single-instrument .header-single-instrument .link-datas-instru {
+	font-weight: normal !important;
 }
 
-.card-header-single-instrument:before,
-.card-header-single-instrument:after {
-  content: none;
-}
 .card-header-single-instrument .header-data {
   display: flex;
   align-items: center;
@@ -149,36 +145,7 @@
   margin-top: 2rem;
 }
 
-.tabs-choose .btn-choose {
-  font: inherit;
-  position: absolute;
-  padding: 0.5rem 0.5rem;
-  border-radius: 999px;
-  font-weight: bold;
-  border: 1px solid #a1aed4;
-  cursor: pointer;
-  text-decoration: none;
-  line-height: 26px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #a1aed4;
-  margin-bottom: 0px;
-  background: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.tabs-choose .button:hover {
-  transition: 0.7s;
-  opacity: 0.9;
-}
-
-.card-header-single-instrument .header-data button:active,
-.card-header-single-instrument .header-data button:focus,
-.card-header-single-instrument .header-data button:hover {
-  outline: none;
-}
 .card-header-single-instrument .header-data .green {
   background: #32cd3257;
   color: #32cd32 !important;

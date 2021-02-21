@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../../shared/components/UIElements/Card';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
@@ -11,7 +11,9 @@ const TabsItem = (props) => {
   return (
     <div key={props.id} className="tabs--items">
       {isLoading && <LoadingSpinner asOverlay />}
-      <Card className="card-tabs">
+      <Card
+        className={`card-tabs ${props.i % 2 == 0 ? 'normalize' : 'inversed'}`}
+      >
         <div className="header">
           <h3>{props.name}</h3>
         </div>

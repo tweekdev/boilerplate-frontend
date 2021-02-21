@@ -195,7 +195,7 @@ const UsersList = (props) => {
     {
       field: 'countTabs',
       headerName: 'Tabs',
-      width: 170,
+      width: 70,
       headerClassName: 'super-app-theme--header',
       headerAlign: 'center',
       cellClassName: 'super-app-theme--cell',
@@ -203,7 +203,7 @@ const UsersList = (props) => {
     {
       field: 'countTutorials',
       headerName: 'Tutorials',
-      width: 170,
+      width: 70,
       headerClassName: 'super-app-theme--header',
       headerAlign: 'center',
       cellClassName: 'super-app-theme--cell',

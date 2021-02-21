@@ -23,7 +23,8 @@ const UpdateTabs = () => {
     chanteur: Yup.string()
       .required('Veuillez entrer un chanteur.')
       .min(4, 'Le chanteur est trop court.'),
-    file: Yup.string().required(),
+    file: Yup.string(),
+    description: Yup.string(),
     name: Yup.string().required('Veuillez entrer un nom.'),
     type: Yup.string().required('Veuillez entrer un type.'),
     difficulty: Yup.string().required('Veuillez choisir une difficulté.'),
@@ -85,6 +86,7 @@ const UpdateTabs = () => {
       formData.append('chanteur', values.chanteur);
       formData.append('file', values.file);
       formData.append('name', values.name);
+      formData.append('description', values.description);
       formData.append('type', values.type);
       formData.append('difficulty', values.difficulty);
       formData.append('instrument', values.instrument);
@@ -139,6 +141,7 @@ const UpdateTabs = () => {
                   file: loadedTabs.file,
                   name: loadedTabs.name,
                   type: loadedTabs.type.id,
+                  description: loadedTabs.description,
                   difficulty: loadedTabs.difficulty.id,
                   instrument: loadedTabs.instrument.id,
                 }}
@@ -193,6 +196,22 @@ const UpdateTabs = () => {
                       />
                       <div className="error">
                         {errors.name && touched.name && errors.name}
+                      </div>
+                    </div>
+                    <div className={'form-group'}>
+                      <textarea
+                        className={'new-tabs-control'}
+                        type="text"
+                        name="description"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.description}
+                        placeholder={'description'}
+                      />
+                      <div className="error">
+                        {errors.description &&
+                          touched.description &&
+                          errors.description}
                       </div>
                     </div>
 

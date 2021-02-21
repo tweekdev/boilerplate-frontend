@@ -1,12 +1,14 @@
 .home-push-content {
   display: flex;
   width: 100%;
-  padding: 0 5rem;
+  padding: 2rem 6rem
 }
 .hero-title-push {
-  width: 35%;
-  padding: 2rem 0rem 0px 2rem;
+  width: 40%;
+  padding: 0rem;
   font-size: 3rem;
+	align-items: center;
+  justify-content: center;
 }
 .hero-title-push h2 {
   width: 100%;
@@ -27,20 +29,22 @@
 }
 
 .mosaique {
-  width: 65%;
+  width: 60%;
   display: flex;
-  padding: 2rem;
+  align-items: center;
+  padding: 0rem;
+  justify-content: center;
+}
+.mosaique .MuiPaper-root {
+  margin: .5rem;
+  height: max-content;
 }
 
 .card-data-last {
   color: 6px 6px 0px #1d2761;
   border-radius: 8px;
   border: none;
-  margin: 1rem;
-  height: 21rem;
-}
-.middle-card {
-  margin-top: 10rem;
+  margin: 0rem;
 }
 
 .card-data-last:before,
@@ -51,7 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -0.7rem;
+  margin-top: -1rem;
 }
 
 .card-data-last .header-data button {
@@ -108,42 +112,38 @@
 }
 
 @media screen and (max-width: 80em) {
-
 }
 @media screen and (max-width: 70em) {
-.home-push-content {
-  padding: 0rem;
-	text-align: center;
-	flex-direction: column;
-}
-.hero-title-push{
-	width: 100%;
-	padding: 1rem;
-
-}
-.mosaique {
+  .home-push-content {
+    padding: 0rem;
+    text-align: center;
+    flex-direction: column;
+  }
+  .hero-title-push {
+    width: 100%;
+    padding: 1rem;
+  }
+  .mosaique {
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 2rem;
-}
-.hero-title-push .text {
-
+  }
+  .hero-title-push .text {
     width: 100%;
     margin: 0;
     margin-bottom: 0rem;
-}
-.card-data-last{
-	margin: 0;
-	margin-bottom: 3rem;
-}
-.home-push-content-carousel{
-	display: none;
-}
+  }
+  .card-data-last {
+    margin: 0;
+    margin-bottom: 3rem;
+  }
+  .home-push-content-carousel {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 56em) {
-
 }
 @media screen and (max-width: 37.5em) {
   .title {
@@ -153,15 +153,14 @@
     font-size: 1rem;
   }
 
- 
   .backgroundImage {
     align-items: start;
   }
-.container {
-	    width: 100%;
+  .container {
+    width: 100%;
     margin-top: 0rem;
     padding-left: 0rem;
-}
+  }
   .smallWrapper {
     margin-top: 7rem;
     width: 100%;
@@ -177,11 +176,11 @@
   .subTitle {
     font-size: 1.2rem;
   }
-.container {
-	    width: 100%;
+  .container {
+    width: 100%;
     margin-top: 0rem;
     padding-left: 0rem;
-}
+  }
   .smallWrapper {
     margin-top: 7rem;
     width: 100%;
@@ -196,11 +195,11 @@
   .subTitle {
     font-size: 1.2rem;
   }
-.container {
-	    width: 100%;
+  .container {
+    width: 100%;
     margin-top: 0rem;
     padding-left: 0rem;
-}
+  }
   .smallWrapper {
     margin-top: 7rem;
     width: 100%;

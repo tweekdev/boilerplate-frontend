@@ -1,0 +1,14 @@
+.profile-container {
+  padding: 0rem 6rem;
+  color: #d4dcff;
+}
+.box .box-row {
+  display: flex;
+	flex-direction: row;
+  width: 100%;
+}
+.box .box-cell {
+	width: 100%;
+  flex: 1;
+  padding: 16px;
+}

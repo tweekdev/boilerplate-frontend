@@ -1,7 +1,6 @@
 import { Field, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
-import { pdfjs } from 'react-pdf';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
@@ -11,17 +10,18 @@ import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import './ProjectForm.css';
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-
 toast.configure();
 
-const NewTabs = () => {
+const UpdateTutorial = () => {
+  const tuid = useParams().tutoId;
+
   const auth = useContext(AuthContext);
   const schema = Yup.object().shape({
     chanteur: Yup.string()
       .required('Veuillez entrer un chanteur.')
       .min(4, 'Le chanteur est trop court.'),
-    file: Yup.string().required(),
+    link: Yup.string().required(),
+    tab: Yup.string(),
     description: Yup.string(),
     name: Yup.string().required('Veuillez entrer un nom.'),
     type: Yup.string().required('Veuillez entrer un type.'),
@@ -32,6 +32,7 @@ const NewTabs = () => {
   const [loadedTypes, setLoadTypes] = useState();
   const [loadedDifficulty, setLoadDifficulty] = useState();
   const [loadedInstrument, setLoadInstrument] = useState();
+  const [loadedTutos, setLoadTutos] = useState();
 
   useEffect(() => {
     const fetchTypes = async () => {
@@ -58,28 +59,54 @@ const NewTabs = () => {
         setLoadDifficulty(responseData.difficulties);
       } catch (err) {}
     };
+    const fetchTuto = async () => {
+      try {
+        const responseData = await sendRequest(
+          `${process.env.REACT_APP_BACKEND_URL}/tutorials/${tuid}`
+        );
+        console.log(responseData);
+        setLoadTutos(responseData.tutorials);
+      } catch (err) {
+        console.log(err);
+      }
+    };
     fetchTypes();
     fetchInstruments();
     fetchDifficulty();
-  }, [sendRequest]);
+    fetchTuto();
+  }, [sendRequest, tuid]);
 
   const history = useHistory();
 
   const userSubmitHandler = async (values, actions) => {
     try {
-      const formData = new FormData();
-      formData.append('chanteur', values.chanteur);
-      formData.append('file', values.file);
-      formData.append('name', values.name);
-      formData.append('type', values.type);
-      formData.append('description', values.description);
-      formData.append('difficulty', values.difficulty);
-      formData.append('instrument', values.instrument);
+      if (values.link) {
+        if (values.link.split('v=')[1]) {
+          var video_id = values.link.split('v=')[1];
+          var ampersandPosition = video_id.indexOf('&');
+          if (ampersandPosition !== -1) {
+            video_id = video_id.substring(0, ampersandPosition);
+          }
+        } else {
+          var video_id = values.link;
+        }
+      }
+
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/tabs`,
-        'POST',
-        formData,
+        `${process.env.REACT_APP_BACKEND_URL}/tutorials/${tuid}`,
+        'PATCH',
+        JSON.stringify({
+          chanteur: values.chanteur,
+          link: video_id,
+          name: values.name,
+          tab: values.tab,
+          description: values.description,
+          type: values.type,
+          difficulty: values.difficulty,
+          instrument: values.instrument,
+        }),
         {
+          'Content-Type': 'application/json',
           Authorization: 'Bearer ' + auth.token,
         }
       );
@@ -95,9 +122,10 @@ const NewTabs = () => {
         progress: undefined,
       });
       setTimeout(() => {
-        history.push('/tabs');
+        history.push('/tutorials');
       }, 4000);
     } catch (err) {
+      console.error(err);
       toast.error('🦄 An error occurred!', {
         position: 'top-right',
         autoClose: 5000,
@@ -116,19 +144,21 @@ const NewTabs = () => {
       <ToastContainer />
       <div className="main main-new-tabs">
         <Card className="card-new-tabs">
-          {loadedDifficulty && loadedTypes && loadedInstrument && (
+          {loadedDifficulty && loadedTypes && loadedInstrument && loadedTutos && (
             <>
               <h2 className="title-tabs-add">Ajouter une tablature</h2>
               <Formik
                 onSubmit={userSubmitHandler}
                 initialValues={{
-                  chanteur: '',
-                  file: null,
-                  name: '',
-                  description: '',
-                  type: '',
-                  difficulty: '',
-                  instrument: '',
+                  link: loadedTutos.link,
+                  tab: loadedTutos.tab,
+                  chanteur: loadedTutos.chanteur,
+                  file: loadedTutos.file,
+                  name: loadedTutos.name,
+                  type: loadedTutos.type.id,
+                  description: loadedTutos.description,
+                  difficulty: loadedTutos.difficulty.id,
+                  instrument: loadedTutos.instrument.id,
                 }}
                 validationSchema={schema}
               >
@@ -142,10 +172,10 @@ const NewTabs = () => {
                   isSubmitting,
                   setFieldValue,
                 }) => (
-                  <form onSubmit={handleSubmit} className="tabs-form">
+                  <form onSubmit={handleSubmit} className="tutorials-form">
                     <div className={'form-group'}>
                       <Field
-                        className={' new-tabs-control'}
+                        className={' new-tutorials-control'}
                         type="text"
                         name="chanteur"
                         onChange={handleChange}
@@ -157,35 +187,9 @@ const NewTabs = () => {
                         {errors.chanteur && touched.chanteur && errors.chanteur}
                       </div>
                     </div>
-                    <input
-                      id="file"
-                      name="file"
-                      className="file-control new-tabs-control"
-                      type="file"
-                      onChange={(event) => {
-                        setFieldValue('file', event.currentTarget.files[0]);
-                      }}
-                      values={values.file}
-                      accept=".pdf"
-                    />
-
-                    <div className={'form-group'}>
-                      <Field
-                        className={'new-tabs-control'}
-                        type="text"
-                        name="name"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.name}
-                        placeholder={'Nom'}
-                      />
-                      <div className="error">
-                        {errors.name && touched.name && errors.name}
-                      </div>
-                    </div>
                     <div className={'form-group'}>
                       <textarea
-                        className={'new-tabs-control'}
+                        className={' new-tutorials-control'}
                         type="text"
                         name="description"
                         onChange={handleChange}
@@ -199,11 +203,53 @@ const NewTabs = () => {
                           errors.description}
                       </div>
                     </div>
+                    <div className={'form-group'}>
+                      <Field
+                        name="link"
+                        className="link-control new-tutorials-control"
+                        type="text"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        values={values.link}
+                        placeholder={'Lien video'}
+                      />
+                      <div className="error">
+                        {errors.link && touched.link && errors.link}
+                      </div>
+                    </div>
+                    <div className={'form-group'}>
+                      <Field
+                        name="tab"
+                        className="tab-control new-tutorials-control"
+                        type="text"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        values={values.tab}
+                        placeholder={'Lien tablature'}
+                      />
+                      <div className="error">
+                        {errors.tab && touched.tab && errors.tab}
+                      </div>
+                    </div>
+                    <div className={'form-group'}>
+                      <Field
+                        className={'new-tutorials-control'}
+                        type="text"
+                        name="name"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.name}
+                        placeholder={'Nom'}
+                      />
+                      <div className="error">
+                        {errors.name && touched.name && errors.name}
+                      </div>
+                    </div>
 
                     {loadedTypes && loadedTypes.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' new-tabs-control'}
+                          className={' new-tutorials-control'}
                           as="select"
                           name="type"
                           onChange={handleChange}
@@ -228,7 +274,7 @@ const NewTabs = () => {
                     {loadedInstrument && loadedInstrument.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' new-tabs-control'}
+                          className={' new-tutorials-control'}
                           as="select"
                           name="instrument"
                           onChange={handleChange}
@@ -255,7 +301,7 @@ const NewTabs = () => {
                     {loadedDifficulty && loadedDifficulty.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' new-tabs-control'}
+                          className={' new-tutorials-control'}
                           as="select"
                           name="difficulty"
                           onChange={handleChange}
@@ -282,7 +328,7 @@ const NewTabs = () => {
 
                     <div className={'form-group'}>
                       <Button type="submit" disabled={isSubmitting}>
-                        Soumettre
+                        Mettre à jour
                       </Button>
                     </div>
                   </form>
@@ -296,4 +342,4 @@ const NewTabs = () => {
   );
 };
 
-export default NewTabs;
+export default UpdateTutorial;

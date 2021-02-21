@@ -1,3 +1,5 @@
+import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles';
 import React, { useCallback, useContext, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import Card from '../../shared/components/UIElements/Card';
@@ -9,8 +11,25 @@ import './TabDetail.css';
 import './TabDetail.less';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+  small: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+  },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+  },
+}));
 const TabDetail = (props) => {
+  const classes = useStyles();
+
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const auth = useContext(AuthContext);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -39,85 +58,109 @@ const TabDetail = (props) => {
   }
 
   return (
-    <div className="tabs-content">
+    <div className="tab-content">
       <div className="tabs-list-item">
-        <React.Fragment>
-          <ErrorModal error={error} onClear={clearError} />
-          <Card className="tab-card">
-            <div key={props.items.id} className="tab-item">
-              {isLoading && <LoadingSpinner asOverlay />}
-              <div className="tab-item__info">
-                <h2> {props.items.name}</h2>
-                <div className="tabs-data">
-                  <label>Chanteur:</label>
-                  <h4> {props.items.chanteur}</h4>
-                </div>
-                <div className="tabs-data">
-                  <label>Difficulty:</label>
-                  {props.items.difficulty.name === 'easy' ? (
-                    <h4 className="dif easy">{props.items.difficulty.name}</h4>
-                  ) : props.items.difficulty.name === 'medium' ? (
-                    <h4 className="dif medium">
-                      {props.items.difficulty.name}
-                    </h4>
-                  ) : props.items.difficulty.name === 'hard' ? (
-                    <h4 className="dif hard">{props.items.difficulty.name}</h4>
-                  ) : null}
-                </div>
-                <div className="tabs-data">
-                  <label>Type:</label>
-                  <h4> {props.items.type.name}</h4>
-                </div>
-                <div className="tabs-data">
-                  <label>Instrument:</label>
-                  <h4>{props.items.instrument.name}</h4>
-                </div>
-                <a
-                  href={`${process.env.REACT_APP_BACKEND_URL}/${props.items.file}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="button">Ouvrir</button>
-                </a>
-              </div>
+        <ErrorModal error={error} onClear={clearError} />
+        <div key={props.items.id} className="tab-item">
+          {isLoading && <LoadingSpinner asOverlay />}
+          <h1>
+            {props.items.name} - {props.items.chanteur}
+          </h1>
+        </div>
+      </div>
+      <div className="tab-item-info">
+        <div className="pdf">
+          <Document
+            className="custom-classname-document"
+            file={`${process.env.REACT_APP_BACKEND_URL}/${props.items.file}`}
+            onLoadSuccess={onDocumentLoadSuccess}
+          >
+            <div className="Test__container__content__document">
+              <Page pageNumber={pageNumber} />
             </div>
-            <div className="tab-item Test__container__options">
-              <div className="Test__container__content">
-                <Document
-                  className="custom-classname-document"
-                  file={`${process.env.REACT_APP_BACKEND_URL}/${props.items.file}`}
-                  onLoadSuccess={onDocumentLoadSuccess}
-                >
-                  <div className="Test__container__content__document">
-                    <Page pageNumber={pageNumber} />
-                  </div>
-                  <div className="page-controls">
-                    <button
-                      disabled={pageNumber <= 1}
-                      onClick={previousPage}
-                      type="button"
-                    >
-                      Previous
-                    </button>
-                    <span>
-                      {`Page ${pageNumber || (numPages ? 1 : '--')} of ${
-                        numPages || '--'
-                      }`}
-                    </span>
-                    <button
-                      disabled={pageNumber >= numPages}
-                      onClick={nextPage}
-                      type="button"
-                    >
-                      Next
-                    </button>
-                  </div>
-                </Document>
-              </div>
+            <div className="page-controls">
+              <button
+                disabled={pageNumber <= 1}
+                onClick={previousPage}
+                type="button"
+              >
+                Previous
+              </button>
+              <span>
+                {`Page ${pageNumber || (numPages ? 1 : '--')} of ${
+                  numPages || '--'
+                }`}
+              </span>
+              <button
+                disabled={pageNumber >= numPages}
+                onClick={nextPage}
+                type="button"
+              >
+                Next
+              </button>
+            </div>
+          </Document>
+        </div>
+        <div className="tab-item__info">
+          <Card className="card-tab-item-info">
+            <div className="tabs-data-single">
+              <label>Chanteur:</label>
+              <h4 className="items-desc"> {props.items.chanteur}</h4>
+            </div>
+            <div className="tabs-data-single">
+              <label>Type:</label>
+              <h4 className="items-desc"> {props.items.type.name}</h4>
+            </div>
+            <div className="tabs-data-single">
+              <label>Instrument:</label>
+              <h4 className="items-desc">{props.items.instrument.name}</h4>
+            </div>
+            <div className="linktab">
+              <a
+                href={`${process.env.REACT_APP_BACKEND_URL}/${props.items.file}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="button">Ouvrir</button>
+              </a>
             </div>
           </Card>
-        </React.Fragment>
+        </div>
       </div>
+      <div className="data-bottom">
+        <div className="tabs-data-single">
+          <label>Difficulty:</label>
+          {props.items.difficulty.name === 'easy' ? (
+            <h4 className="dif easy">{props.items.difficulty.name}</h4>
+          ) : props.items.difficulty.name === 'medium' ? (
+            <h4 className="dif medium">{props.items.difficulty.name}</h4>
+          ) : props.items.difficulty.name === 'hard' ? (
+            <h4 className="dif hard">{props.items.difficulty.name}</h4>
+          ) : null}
+        </div>
+        {props.items.creator && (
+          <div className="tabs-data-single">
+            <div className={`${classes.root} user-head`}>
+              <Avatar
+                alt="picture"
+                src={`${process.env.REACT_APP_BACKEND_URL}/${props.items.creator.picture}`}
+                className={classes.small}
+              />
+            </div>
+            <div className="auteur">
+              <h5>
+                Auteur: <strong>{props.items.creator.pseudo} </strong>
+              </h5>
+            </div>
+          </div>
+        )}
+      </div>
+      {props.items.description && (
+        <div className="description-data-single">
+          <h2>A propos de ce tutoriel</h2>
+          <p>{props.items.description}</p>
+        </div>
+      )}
     </div>
   );
 };

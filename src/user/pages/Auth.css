@@ -19,6 +19,10 @@
   margin-left: 0;
 }
 
+input#file-upload-button{
+	background:transparent;
+}
+
 .authentication {
   background: #030d44b5;
   display: flex;
