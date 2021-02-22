@@ -1,0 +1,65 @@
+.explore-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+	margin-top: 1rem;
+}
+
+.card-content .MuiPaper-root {
+		width: 32%;
+}
+
+.type-card {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0rem;
+  color: #d4d7e6;
+  position: relative;
+}
+.explore-type .rock {
+    background-image: linear-gradient(to bottom, #0f122f 0%, #0e1948 100%);
+		  background-image: linear-gradient(to bottom, #494cbd 0%, #1b2a80 100%);
+		  background-image: linear-gradient(to bottom, #494cbd 0%, #131e5b 100%);
+
+}
+.explore-type .punk {
+	background-image: linear-gradient(to bottom, #FF0038 0%, #46000f 100%);
+}
+.explore-type .pop {
+	background-image: linear-gradient(to bottom, #0d3d43 0%, #167480 100%);
+  background-image: linear-gradient(to bottom, #2fd2ea 0%, #20a6b8 100%);
+  background-image: linear-gradient(to bottom, #2fd2ea 0%, #1a8593 100%);
+}
+
+.type-card img {
+  height: 20rem;
+}
+
+.type-card .picture-description-type {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.type-card .list-music-type {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+.type-card .list-music-type ul {
+	list-style-type: decimal;
+	padding: 1.5rem;
+}
+.type-card .list-music-type ul li {
+	padding:.5rem 1rem;
+}

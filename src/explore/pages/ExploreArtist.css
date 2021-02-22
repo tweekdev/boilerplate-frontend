@@ -1,0 +1,53 @@
+.explore-artist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 4rem;
+}
+.card-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.artist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #d4d7e6;
+  width: 33%;
+  padding: 1rem;
+}
+
+.artist h3 {
+  text-align: center;
+}
+
+.artist .artist-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 50%;
+  width: 100%;
+}
+
+.artist img {
+  height: 10rem;
+  border-radius: 50%;
+}
+.explore-artist .rock {
+	background-image: linear-gradient(to bottom, #0f122f 0%, #0e1948 100%);
+  background-image: linear-gradient(to bottom, #494cbd 0%, #131e5b 100%);
+}
+.explore-artist .punk {
+  background-image: linear-gradient(to bottom, #46000f 0%, #ff0038 100%);
+	background-image: linear-gradient(to bottom, #FF0038 0%, #46000f 100%);
+}
+.explore-artist .pop {
+	background-image: linear-gradient(to bottom, #0d3d43 0%, #167480 100%);
+  background-image: linear-gradient(to bottom, #2fd2ea 0%, #20a6b8 100%);
+  background-image: linear-gradient(to bottom, #2fd2ea 0%, #1a8593 100%);
+	
+}
