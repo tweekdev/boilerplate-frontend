@@ -103,11 +103,7 @@ const ContentList = (props) => {
                         </div>
                       </div>
                       <Link className="tutorials-choose" to={`/tab/${tab._id}`}>
-                        <button
-                          className={`pill button ${
-                            i % 2 == 0 ? 'normalize-button' : 'inversed-button'
-                          }`}
-                        >
+                        <button className={`pill button  button-reverse`}>
                           Choisir
                         </button>
                       </Link>
@@ -182,11 +178,7 @@ const ContentList = (props) => {
                         className="tutorials-choose"
                         to={`/tutorial/${tuto._id}`}
                       >
-                        <button
-                          className={`pill button ${
-                            i % 2 == 0 ? 'normalize-button' : 'inversed-button'
-                          }`}
-                        >
+                        <button className={`pill button  button-reverse`}>
                           Choisir
                         </button>
                       </Link>

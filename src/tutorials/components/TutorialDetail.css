@@ -13,8 +13,7 @@
 }
 .card-tuto-item-info {
   width: 100%;
-  background: #030d44b5;
-  color: 6px 6px 0px #1d2761;
+  background: #1c204c;
   border-radius: 3px;
   border: none;
   padding: 3rem;
@@ -74,7 +73,7 @@
 .auteur strong{
 	margin-left: .5rem;
 	font-weight: bold;
-  color: #1BB453;
+  color: #FF0038;
 
 }
 .page-controls button {
@@ -102,9 +101,9 @@
 }
 
 .tutorials-data-single label {
-  color: #8491c7;
+  color: #d4dcff;
   justify-content: left;
-  background: #d4dcff26;
+  background: #1c204c;
   padding: 0.3rem;
   border-radius: 4px;
   margin-right: 1rem;

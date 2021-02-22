@@ -30,7 +30,7 @@ const InstrumentItem = (props) => {
             <h2>{props.name}</h2>
           </div>
           <Link to={`/instruments/${props.id}`}>
-            <button className="button">Choisir</button>
+            <button className="button-reverse">Choisir</button>
           </Link>
         </Card>
       </div>

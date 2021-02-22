@@ -11,6 +11,7 @@ import './NavLinksLeft.css';
 const NavLinks = (props) => {
   const auth = useContext(AuthContext);
   const [instruments, setInstruments] = useState();
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const fetchLastInstruments = async () => {
@@ -56,20 +57,27 @@ const NavLinks = (props) => {
           </li>
 
           <div className="instrument-left">
-            Instruments
-            <ul>
-              {instruments &&
-                instruments.map((instrument, i) => (
-                  <NavLink
-                    key={instrument.id}
-                    className="links"
-                    to={`/instruments/${instrument.id}`}
-                  >
-                    <QueueMusicIcon className="icon-header"></QueueMusicIcon>
-                    {instrument.name}
-                  </NavLink>
-                ))}
-            </ul>
+            <button
+              className="btn-active-menu"
+              onClick={() => setIsVisible(!isVisible)}
+            >
+              Instruments
+            </button>
+            {isVisible && (
+              <ul>
+                {instruments &&
+                  instruments.map((instrument, i) => (
+                    <NavLink
+                      key={instrument.id}
+                      className="links"
+                      to={`/instruments/${instrument.id}`}
+                    >
+                      <QueueMusicIcon className="icon-header"></QueueMusicIcon>
+                      {instrument.name}
+                    </NavLink>
+                  ))}
+              </ul>
+            )}
           </div>
         </>
       )}
@@ -107,20 +115,27 @@ const NavLinks = (props) => {
             </NavLink>
           </li>
           <div className="instrument-left">
-            Instruments
-            <ul>
-              {instruments &&
-                instruments.map((instrument, i) => (
-                  <NavLink
-                    key={instrument.id}
-                    className="links"
-                    to={`/instruments/${instrument.id}`}
-                  >
-                    <QueueMusicIcon className="icon-header"></QueueMusicIcon>
-                    {instrument.name}
-                  </NavLink>
-                ))}
-            </ul>
+            <button
+              className="btn-active-menu"
+              onClick={() => setIsVisible(!isVisible)}
+            >
+              Instruments
+            </button>
+            {isVisible && (
+              <ul>
+                {instruments &&
+                  instruments.map((instrument, i) => (
+                    <NavLink
+                      key={instrument.id}
+                      className="links"
+                      to={`/instruments/${instrument.id}`}
+                    >
+                      <QueueMusicIcon className="icon-header"></QueueMusicIcon>
+                      {instrument.name}
+                    </NavLink>
+                  ))}
+              </ul>
+            )}
           </div>
         </>
       )}

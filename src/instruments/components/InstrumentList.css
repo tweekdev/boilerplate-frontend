@@ -19,8 +19,8 @@
   display: flex;
 }
 .search-container .form-control {
-  border: 1px solid #2d3980;
-  background: #2d3980;
+  border: 1px solid #1c204c;
+  background: #1c204c;
   border-radius: 3px;
   color: var(--color);
   padding: calc(1.5 * var(--space)) calc(1 * var(--space));
@@ -69,7 +69,7 @@ p {
 }
 .descritif-instruments strong {
   font-size: 52px;
-  color: #1BB453;
+  color: #FF0038;
 }
 
 .descritif-instruments p {

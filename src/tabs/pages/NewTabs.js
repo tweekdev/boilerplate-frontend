@@ -6,11 +6,11 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 import Button from '../../shared/components/FormElements/Button';
+import '../../shared/components/FormElements/NewPage.css';
 import Card from '../../shared/components/UIElements/Card';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
-import './ProjectForm.css';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 toast.configure();
@@ -114,11 +114,11 @@ const NewTabs = () => {
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
       <ToastContainer />
-      <div className="main main-new-tabs">
-        <Card className="card-new-tabs">
+      <div className="main main-new">
+        <Card className="card-new">
           {loadedDifficulty && loadedTypes && loadedInstrument && (
             <>
-              <h2 className="title-tabs-add">Ajouter une tablature</h2>
+              <h2 className="title-add">Ajouter une tablature</h2>
               <Formik
                 onSubmit={userSubmitHandler}
                 initialValues={{
@@ -142,10 +142,10 @@ const NewTabs = () => {
                   isSubmitting,
                   setFieldValue,
                 }) => (
-                  <form onSubmit={handleSubmit} className="tabs-form">
+                  <form onSubmit={handleSubmit} className="new-form">
                     <div className={'form-group'}>
                       <Field
-                        className={' new-tabs-control'}
+                        className={' new-control'}
                         type="text"
                         name="chanteur"
                         onChange={handleChange}
@@ -157,21 +157,26 @@ const NewTabs = () => {
                         {errors.chanteur && touched.chanteur && errors.chanteur}
                       </div>
                     </div>
-                    <input
-                      id="file"
-                      name="file"
-                      className="file-control new-tabs-control"
-                      type="file"
-                      onChange={(event) => {
-                        setFieldValue('file', event.currentTarget.files[0]);
-                      }}
-                      values={values.file}
-                      accept=".pdf"
-                    />
+                    <div className={'form-group'}>
+                      <input
+                        id="file"
+                        name="file"
+                        className="new-control"
+                        type="file"
+                        onChange={(event) => {
+                          setFieldValue('file', event.currentTarget.files[0]);
+                        }}
+                        values={values.file}
+                        accept=".pdf"
+                      />
+                      <div className="error">
+                        {errors.file && touched.file && errors.file}
+                      </div>
+                    </div>
 
                     <div className={'form-group'}>
                       <Field
-                        className={'new-tabs-control'}
+                        className={'new-control'}
                         type="text"
                         name="name"
                         onChange={handleChange}
@@ -185,7 +190,7 @@ const NewTabs = () => {
                     </div>
                     <div className={'form-group'}>
                       <textarea
-                        className={'new-tabs-control'}
+                        className={'new-control'}
                         type="text"
                         name="description"
                         onChange={handleChange}
@@ -203,7 +208,7 @@ const NewTabs = () => {
                     {loadedTypes && loadedTypes.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' new-tabs-control'}
+                          className={' new-control'}
                           as="select"
                           name="type"
                           onChange={handleChange}
@@ -228,7 +233,7 @@ const NewTabs = () => {
                     {loadedInstrument && loadedInstrument.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' new-tabs-control'}
+                          className={' new-control'}
                           as="select"
                           name="instrument"
                           onChange={handleChange}
@@ -255,7 +260,7 @@ const NewTabs = () => {
                     {loadedDifficulty && loadedDifficulty.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' new-tabs-control'}
+                          className={' new-control'}
                           as="select"
                           name="difficulty"
                           onChange={handleChange}

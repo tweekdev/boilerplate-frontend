@@ -28,12 +28,12 @@ form.tutorials-form {
 
 .new-tutorials-control {
   width: 100%;
-  border: 1px solid #2d3980;
+  border: 1px solid #1c204c;
   color: #f8f8f873;
   padding: calc(1.5 * var(--space)) calc(1 * var(--space));
   display: block;
   outline: 0;
-  background: #2d3980;
+  background: #1c204c;
   box-shadow: 0 2px 4px var(--shadow);
   border-radius: 3px;
 }
@@ -86,12 +86,12 @@ form.tutorials-form {
 
 .new-tutorials-control {
   width: 100%;
-  border: 1px solid #2d3980;
+  border: 1px solid #1c204c;
   color: #f8f8f873;
   padding: calc(1.5 * var(--space)) calc(1 * var(--space));
   display: block;
   outline: 0;
-  background: #2d3980;
+  background: #1c204c;
   box-shadow: 0 2px 4px var(--shadow);
   border-radius: 3px;
 }

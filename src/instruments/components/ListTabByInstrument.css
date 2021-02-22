@@ -38,9 +38,9 @@
   transition: color 0.2s;
 }
 
-.slick-slider .MuiPaper-root{
-	width: 80%;
-	margin: 0rem;
+.slick-slider .MuiPaper-root {
+  width: 80%;
+  margin: 0rem;
 }
 .single-instrument {
   text-align: center;
@@ -48,8 +48,7 @@
   -webkit-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
-  background: #252f5a;
-  background: #030d44b5;
+  background: #1c204c;
   border-radius: 3px;
 }
 
@@ -69,7 +68,7 @@
   height: 18rem;
   padding: 0rem 2rem 0rem 2rem;
   margin: 0rem 0rem 2rem 0;
-  width: 90% ;
+  width: 90%;
 }
 
 .header-instrument-slide {
@@ -83,7 +82,7 @@
 }
 
 .single-instrument .header-single-instrument .link-datas-instru {
-	font-weight: normal !important;
+  font-weight: normal !important;
 }
 
 .card-header-single-instrument .header-data {
@@ -101,8 +100,8 @@
 }
 
 .content-single-instrument label {
-  color: #8491c7;
-  background: #d4dcff26;
+  color: #d4dcff;
+  background: #1c204c;
   padding: 0.3rem;
   border-radius: 4px;
   font-family: Inter, sans-serif;
@@ -145,7 +144,6 @@
   margin-top: 2rem;
 }
 
-
 .card-header-single-instrument .header-data .green {
   background: #32cd3257;
   color: #32cd32 !important;
@@ -164,13 +162,13 @@
 
 .header-single-instrument {
   text-align: center;
-  color: #8491c7;
+  color: #1c204c;
 }
 
 .header-single-instrument .link-datas-instru {
   text-align: center;
   text-decoration: none;
-  color: #8491c7 !important;
+  color: #1c204c !important;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -191,58 +189,51 @@
 }
 
 @media screen and (max-width: 80em) {
- 	.header-single-instrument .link-datas-instru {
-   
+  .header-single-instrument .link-datas-instru {
     font-size: 0.7rem;
-	}
+  }
 
-		.single-instrument{
-		width: 100% !important;
-	}
+  .single-instrument {
+    width: 100% !important;
+  }
 }
 @media screen and (max-width: 70em) {
- 	.header-single-instrument .link-datas-instru {
-   
+  .header-single-instrument .link-datas-instru {
     font-size: 0.7rem;
-	}
+  }
 
-		.single-instrument{
-		width: 100% !important;
-	}
+  .single-instrument {
+    width: 100% !important;
+  }
 }
 @media screen and (max-width: 56em) {
- 	.header-single-instrument .link-datas-instru {
-   
+  .header-single-instrument .link-datas-instru {
     font-size: 0.7rem;
-	}
+  }
 
-		.single-instrument{
-		width: 100% !important;
-	}
-
+  .single-instrument {
+    width: 100% !important;
+  }
 }
 @media screen and (max-width: 47.5em) {
-	.header-single-instrument .link-datas-instru {
-   
+  .header-single-instrument .link-datas-instru {
     font-size: 0.7rem;
-	}
+  }
 
-		.single-instrument{
-		width: 100% !important;
-	}
-
+  .single-instrument {
+    width: 100% !important;
+  }
 }
 @media screen and (max-width: 37.5em) {
-	.header-single-instrument .link-datas-instru {
-   
+  .header-single-instrument .link-datas-instru {
     font-size: 0.7rem;
-	}
+  }
   .instru-carou {
     padding: 0rem 2rem 0 1rem;
   }
-	.single-instrument{
-		width: 100% !important;
-	}
+  .single-instrument {
+    width: 100% !important;
+  }
   .descritif-instruments {
     grid-column: 1/1;
   }

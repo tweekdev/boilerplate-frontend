@@ -962,7 +962,7 @@ a.underline:hover {
   body:not([class~='theme-light']) {
     --color-dark: #f0f3ff;
     --color: #d4dcff;
-    --color-light: #8491c7;
+    --color-light: #1c204c;
     --color-inversed: #d4dcff;
     --color-inversed60: #d4dcff99;
     --contrast: #5396e7;
@@ -999,7 +999,7 @@ a.underline:hover {
 .theme-dark {
   --color-dark: #f0f3ff;
   --color: #d4dcff;
-  --color-light: #8491c7;
+  --color-light: #1c204c;
   --color-inversed: #d4dcff;
   --color-inversed60: #d4dcff99;
   --contrast: #5396e7;

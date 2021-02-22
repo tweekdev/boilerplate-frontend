@@ -40,7 +40,7 @@ function UserProfile() {
         );
         setLoadedUsers(responseData.users[0]);
       } catch (err) {
-        const message = err.message;
+        console.log(err);
       }
     };
     fetchUser();

@@ -12,15 +12,16 @@
   border-radius: 3px;
 }
 
-.normalize{
+.test{
 	/*background: linear-gradient(110deg, #0E1638 60%, #0F1948 60%);*/
-	background:linear-gradient(110deg, #090f36 60%, #1d2761 
- 60%)
+	/*background: linear-gradient(110deg, #121A2C 60%, #171F31 60%);*/
+
+}
+.normalize{
+background: linear-gradient(110deg, #1b2055 60%, #121539 60%);
 }
 
 .inversed {
-/*	background: linear-gradient(110deg, #121A2C 60%, #171F31 60%);*/
-
-	background: linear-gradient(110deg, #121A2C 60%, #252e44 60%);
+	background: linear-gradient(110deg, #121539 60%, #1b2055 60%);
 
 }

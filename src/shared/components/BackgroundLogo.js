@@ -1,6 +1,5 @@
 import React from 'react';
 import { animated, useSpring } from 'react-spring';
-import Logo from '../../assets/image/hero-bg.png';
 import './BackgroudLogo.css';
 const BackgroundLogo = (props) => {
   // Animation
@@ -10,11 +9,7 @@ const BackgroundLogo = (props) => {
     from: { opacity: 0 },
   });
 
-  return (
-    <animated.div style={BackgroundLogoSpring}>
-      <img className="styledImage" src={Logo} alt="Logo" />
-    </animated.div>
-  );
+  return <animated.div style={BackgroundLogoSpring}>pds</animated.div>;
 };
 
 export default BackgroundLogo;

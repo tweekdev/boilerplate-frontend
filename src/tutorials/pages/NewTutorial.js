@@ -6,11 +6,11 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 import Button from '../../shared/components/FormElements/Button';
+import '../../shared/components/FormElements/NewPage.css';
 import Card from '../../shared/components/UIElements/Card';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
-import './ProjectForm.css';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 toast.configure();
@@ -123,11 +123,11 @@ const NewTutorial = () => {
     <>
       <ErrorModal error={error} onClear={clearError} />
       <ToastContainer />
-      <div className="main main-new-tutorials">
-        <Card className="card-new-tutorials">
+      <div className="main main-new">
+        <Card className="card-new">
           {loadedDifficulty && loadedTypes && loadedInstrument && (
             <>
-              <h2 className="title-tutorials-add">Ajouter un tutoriel</h2>
+              <h2 className="title-add">Ajouter un tutoriel</h2>
               <Formik
                 onSubmit={userSubmitHandler}
                 initialValues={{
@@ -152,10 +152,10 @@ const NewTutorial = () => {
                   isSubmitting,
                   setFieldValue,
                 }) => (
-                  <form onSubmit={handleSubmit} className="tutorials-form">
+                  <form onSubmit={handleSubmit} className="new-form">
                     <div className={'form-group'}>
                       <Field
-                        className={' new-tutorials-control'}
+                        className={' new-control'}
                         type="text"
                         name="chanteur"
                         onChange={handleChange}
@@ -169,7 +169,7 @@ const NewTutorial = () => {
                     </div>
                     <div className={'form-group'}>
                       <textarea
-                        className={' new-tutorials-control'}
+                        className={' new-control'}
                         type="text"
                         name="description"
                         onChange={handleChange}
@@ -187,7 +187,7 @@ const NewTutorial = () => {
                       <input
                         id="link"
                         name="link"
-                        className="link-control new-tutorials-control"
+                        className="new-control"
                         type="text"
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -202,7 +202,7 @@ const NewTutorial = () => {
                       <input
                         id="tab"
                         name="tab"
-                        className="tab-control new-tutorials-control"
+                        className="new-control"
                         type="text"
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -215,7 +215,7 @@ const NewTutorial = () => {
                     </div>
                     <div className={'form-group'}>
                       <Field
-                        className={'new-tutorials-control'}
+                        className={'new-control'}
                         type="text"
                         name="name"
                         onChange={handleChange}
@@ -231,7 +231,7 @@ const NewTutorial = () => {
                     {loadedTypes && loadedTypes.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' new-tutorials-control'}
+                          className={'new-control'}
                           as="select"
                           name="type"
                           onChange={handleChange}
@@ -256,7 +256,7 @@ const NewTutorial = () => {
                     {loadedInstrument && loadedInstrument.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' new-tutorials-control'}
+                          className={' new-control'}
                           as="select"
                           name="instrument"
                           onChange={handleChange}
@@ -283,7 +283,7 @@ const NewTutorial = () => {
                     {loadedDifficulty && loadedDifficulty.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' new-tutorials-control'}
+                          className={' new-control'}
                           as="select"
                           name="difficulty"
                           onChange={handleChange}

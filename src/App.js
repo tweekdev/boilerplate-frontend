@@ -198,17 +198,17 @@ const App = () => {
             viewBox="0 0 500 200"
           >
             <path
-              fill="#000639"
+              fill="#141739"
               fillOpacity="0.4"
               d="M0,140 C150, 200 350, 0 500, 200 L700, 00 L0,10 Z"
             ></path>
             <path
-              fill="#000639"
+              fill="#141739"
               fillOpacity="0.6"
               d="M0,110 C150, 200 350, 0 500, 150 L500, 00 L0,0 Z"
             ></path>
             <path
-              fill="#111b55"
+              fill="#141739"
               fillOpacity="1"
               d="M0,100 C150, 200 350, 0 500, 100 L500, 00 L0,0 Z"
             ></path>

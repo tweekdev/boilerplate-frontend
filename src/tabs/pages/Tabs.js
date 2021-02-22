@@ -30,7 +30,7 @@ const Tabs = (props) => {
       <div className="tab">
         {isLoading && (
           <div className="center">
-            <LoadingSpinner/>
+            <LoadingSpinner />
           </div>
         )}
         {!isLoading && loadedTabs && <TabsList items={loadedTabs} />}

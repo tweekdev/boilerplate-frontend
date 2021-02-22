@@ -4,15 +4,15 @@
   top: 22vh;
   left: 10%;
   width: 80%;
-  background: #030d44b5;
-	box-shadow: 0px 2px 8px #1d2761;
+  background: #1c204c;
+	box-shadow: 0px 2px 8px #1c204c;
   color: #d4dcff;
 }
 
 .modal__header {
   width: 100%;
   padding: 0.5rem 0.5rem;
-  background: #2d3980;
+  background: #1c204c;
   color: #d4dcff !important;
 }
 .modal__title {

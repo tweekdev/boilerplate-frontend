@@ -43,7 +43,7 @@ const TabsItem = (props) => {
           </div>
         </div>
         <Link className="tabs-choose" to={`/tab/${props.id}`}>
-          <button className="pill button ">Choisir</button>
+          <button className="pill button-reverse ">Choisir</button>
         </Link>
       </Card>
     </div>

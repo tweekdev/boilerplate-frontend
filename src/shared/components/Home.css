@@ -1,11 +1,14 @@
 .main-home {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
   margin-top: 0;
   padding: 0;
+	background-image: url('../../assets/image/AdobeStock_331719984.png');
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 .backgroundImage {
   display: flex;
@@ -25,6 +28,7 @@
 	padding: 0 6rem;
   justify-content: center;
   align-items: center;
+	user-select: none;
 }
 .stack {
   width: 100%;
@@ -61,7 +65,7 @@
 
 .title span, .subTitle span {
   font-weight: 600;
-  color: #1BB453;
+  color: #FF0038;
   transition: color 0.2s ease-out;
 }
 
@@ -74,9 +78,9 @@
   transition: color 0.2s ease-out;
 }
 .see-tabs {
-  border: 1px solid #1BB453;
+  border: 1px solid #FF0038;
   background: transparent;
-  color: #1BB453;
+  color: #FF0038;
   margin-left: 1rem;
 }
 @media screen and (max-width: 80em) {

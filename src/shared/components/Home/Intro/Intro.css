@@ -1,0 +1,4 @@
+.see-tabs:hover,
+.see-tabs:focus {
+  transform: translateY(-0.25em);
+}

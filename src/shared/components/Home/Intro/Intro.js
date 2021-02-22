@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/auth-context';
-import Separator from '../..//UIElements/Separator';
-import BackgroundLogo from '../../BackgroundLogo';
 import WordsFading from '../wordsFading';
-
+import './Intro.css';
 const Intro = () => {
   const auth = useContext(AuthContext);
 
@@ -17,7 +15,6 @@ const Intro = () => {
             <br />
             <span>TweekTabs</span>
           </h2>
-          <Separator></Separator>
           <p className="subTitle">
             Un <WordsFading></WordsFading>site qui te permet
             <br></br>
@@ -34,9 +31,6 @@ const Intro = () => {
             <button className="button see-tabs">Voir les tablatures</button>
           </Link>
         </div>
-      </div>
-      <div className="backgroundImage">
-        <BackgroundLogo></BackgroundLogo>
       </div>
     </>
   );

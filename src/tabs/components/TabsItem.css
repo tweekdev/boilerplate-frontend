@@ -19,11 +19,11 @@
   text-align: center;
   padding: 1rem;
   overflow: scroll;
-  color: #8491c7;
+  color: #d4dcff;
 }
 
 .card-tabs h4 {
-  color: #8491c7;
+  color: #d4dcff;
   font-family: Inter, sans-serif;
   line-height: 1.3;
   font-size: 0.9em;
@@ -49,9 +49,9 @@
   justify-content: space-around;
 }
 .tabs-data label {
-  color: #8491c7;
+  color: #d4dcff;
   justify-content: left;
-  background: #d4dcff26;
+  background: #1c204c;
   padding: 0.3rem;
   border-radius: 4px;
   margin-right: 1rem;
@@ -93,20 +93,13 @@
   height: 1rem;
 }
 
-.tabs-choose .button {
-  font: inherit;
+.tabs-choose .button-reverse {
   position: absolute;
   width: 50%;
   padding: 0.5rem 0.5rem;
-  border-radius: 999px;
   color: #f8f8fa;
-  border: none;
-  cursor: pointer;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  text-decoration: none;
-  display: inline-block;
-	background: linear-gradient(110deg, #1BB453 50%, #2ec767 50%);
 
 }
 

@@ -4,8 +4,8 @@
   display: flex;
 }
 .search-container .form-control {
-  border: 1px solid #2d3980;
-  background: #2d3980;
+  border: 1px solid #1c204c;
+  background: #1c204c;
   border-radius: 3px;
   color: var(--color);
   padding: calc(1.5 * var(--space)) calc(1 * var(--space));
@@ -18,7 +18,7 @@
 }
 
 .search-container .search-tutorials {
-  background-color: #2d3980;
+  background-color: #1c204c;
 }
 .search-container .search-tutorials:first-child {
   margin: 1rem 0rem;
@@ -78,7 +78,7 @@ p {
 }
 .descritif-tutorials strong {
   font-size: 52px;
-  color: #1BB453;}
+  color: #FF0038;}
 
 .descritif-tutorials p {
   font-size: 23px;

@@ -73,7 +73,7 @@ function Profile() {
         </AppBar>
         <TabPanel value={value} index={0}>
           <div className="container-profile box">
-            <div class="box-row">
+            <div className="box-row">
               <UserProfile className="box-cell" />
               <UpdateUser className="box-cell" />
             </div>

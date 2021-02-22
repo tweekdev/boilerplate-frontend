@@ -41,8 +41,7 @@
 }
 
 .card-data-last {
-  color: 6px 6px 0px #1d2761;
-  border-radius: 8px;
+  border-radius: 3px;
   border: none;
   margin: 0rem;
 }
@@ -86,7 +85,7 @@
 .data-last {
   text-align: center;
   padding: 0 1rem;
-  color: #8491c7;
+  color: #1c204c;
   margin: 2rem 0;
   font-size: 12px;
   font-weight: bold;
@@ -94,7 +93,7 @@
 .data-last .link-datas-home-page {
   text-align: center;
   text-decoration: none;
-  color: #8491c7;
+  color: #1c204c;
   font-size: 12px;
   font-weight: bold;
 }

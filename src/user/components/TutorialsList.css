@@ -14,12 +14,12 @@
 .form-control {
   margin-left: 1rem;
   margin-top: 1rem;
-  border: 1px solid #1d2761;
+  border: 1px solid #1c204c;
   color: var(--color);
   padding: calc(1.5 * var(--space)) calc(1 * var(--space));
   display: block;
   outline: 0;
-  background: #1d2761;
+  background: #1c204c;
   box-shadow: 0 2px 4px var(--shadow);
   border-radius: 3px;
 }

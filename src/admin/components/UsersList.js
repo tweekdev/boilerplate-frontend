@@ -17,7 +17,7 @@ function customCheckbox(theme) {
       height: 16,
       backgroundColor: 'transparent',
       border: `1px solid ${
-        theme.palette.type === 'light' ? '#2d3980' : '#2d3980'
+        theme.palette.type === 'light' ? '#1c204c' : '#1c204c'
       }`,
       borderRadius: 2,
     },
@@ -25,13 +25,13 @@ function customCheckbox(theme) {
       display: 'none',
     },
     '& .MuiCheckbox-root.Mui-checked:not(.MuiCheckbox-indeterminate) svg': {
-      backgroundColor: '#2d3980',
-      borderColor: '#2d3980',
+      backgroundColor: '#1c204c',
+      borderColor: '#1c204c',
     },
     '& .MuiCheckbox-root.Mui-checked .MuiIconButton-label:after': {
       position: 'absolute',
       display: 'table',
-      border: '2px solid #2d3980',
+      border: '2px solid #1c204c',
       borderTop: 0,
       borderLeft: 0,
       transform: 'rotate(45deg) translate(-50%,-50%)',
@@ -46,7 +46,7 @@ function customCheckbox(theme) {
     '& .MuiCheckbox-root.MuiCheckbox-indeterminate .MuiIconButton-label:after': {
       width: 8,
       height: 8,
-      backgroundColor: '#2d3980',
+      backgroundColor: '#1c204c',
       transform: 'none',
       top: '39%',
       border: 0,
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     WebkitFontSmoothing: 'auto',
     letterSpacing: 'normal',
     '& .MuiDataGrid-columnsContainer': {
-      backgroundColor: '#2d3980',
+      backgroundColor: '#1c204c',
     },
     '& .MuiDataGrid-iconSeparator': {
       display: 'none',

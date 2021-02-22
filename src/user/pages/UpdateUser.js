@@ -56,7 +56,7 @@ const UpdateUser = (props) => {
     };
     fetchRoles();
     fetchUser();
-  }, [sendRequest, uid]);
+  }, [sendRequest, uid, auth.userId]);
 
   const userUpdateSubmitHandler = async (values, actions) => {
     try {

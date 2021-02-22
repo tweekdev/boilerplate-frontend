@@ -10,7 +10,7 @@
   --orange-gold: #b39836;
   --orange-light: #f38f28;
   --color: #d4dcff;
-  --color-light: #8491c7;
+  --color-light: #1c204c;
   --color-inversed: #d4dcff;
   --contrast: #5396e7;
   --gap: 20px;
@@ -45,7 +45,7 @@ html {
 body {
   margin: 0;
   background: #152167;
-  background: #111b55;
+  background: #0E112F;
   background-position: center center;
   /* Background image doesn't tile */
   background-repeat: no-repeat;
@@ -74,7 +74,7 @@ main {
 
 .nav-left{
 	width: 15%;
-	background: #000426;
+	background: #0F122F;
 		position: fixed;
 		height: 100%;
 	top: 0;
@@ -98,12 +98,11 @@ main {
   align-items: center;
   margin: 0;
   margin-top: 0;
-  padding: 0;
 }
 .wave , .wave-inverse{
   position: absolute;
   z-index: -1;
-  background-color: #111b55;
+  background-color: #0E112F;
 }
 
 .slide-in-left-enter {
@@ -152,7 +151,7 @@ main {
 .btn-active-seach {
   background: transparent;
   border: none;
-  color: #8491c7;
+  color: #1c204c;
   cursor: pointer;
 }
 .btn-active-seach .MuiSvgIcon-root {
@@ -170,4 +169,8 @@ main {
   background: transparent;
   outline: none;
   border: none;
+}
+
+.form-group{
+	width: 100%;
 }

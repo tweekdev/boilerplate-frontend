@@ -30,7 +30,7 @@ const Tutorials = (props) => {
       <div className="tutorial">
         {isLoading && (
           <div className="center">
-            <LoadingSpinner></LoadingSpinner>
+            <LoadingSpinner />
           </div>
         )}
         {!isLoading && loadedTutorials && (

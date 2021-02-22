@@ -23,21 +23,39 @@ align-items: flex-start;
 }
 
 .instrument-left{
-	color: #3c4680;
+	color: #E2E5E9;
 	font-weight: bold;
 	margin: 0rem;
 	margin-top: 2rem;
 	margin-top: 1rem;
 }
 
+.btn-active-menu {
+  background: transparent;
+  border: none;
+  color: #E2E5E9;
+  cursor: pointer;
+}
+
+
+.btn-active-menu:focus,
+.btn-active-menu:hover,
+.btn-active-menu:active,
+.btn-active-menu:focus-visible,
+.btn-active-menu:focus-within,
+.btn-active-menu:visited {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
 
 .nav-links-left a {
-  color: #2d3980;
+  color: #E2E5E9;
   display: block;
   padding: 9px 0;
   border: 1px solid transparent;
   border-radius: 18px;
-  color: #262626;
   font-size: 0.8125rem;
   font-weight: 600;
   line-height: 1;
@@ -57,9 +75,6 @@ align-items: flex-start;
 
 /* The dropdown container */
 
-.MuiPaper-root{
-	background-color: #1d2761 !important;
-}
 
 /* Dropdown button */
 .dropdown .dropbtn {
@@ -88,24 +103,24 @@ align-items: flex-start;
 }
 
 .instrument-left ul{
-	color: #2d3980;
+	color: #E2E5E9;
 	margin: 1rem 0rem;
 	padding: 0;
 }
 .instrument-left .links{
-	color: #2d3980;
+	color: #E2E5E9;
 	margin: 0px 0rem;
 	margin-top: 0rem;
 }
 .instrument-left .links{
-	color: #2d3980;
+	color: #E2E5E9;
 	margin: 0px 0rem;
 	margin-top: 0rem;
 }
 
 @media (min-width: 768px) {
   .nav-links-left a {
-    color: #2d3980;
+    color: #E2E5E9;
     text-decoration: none;
   }
 }

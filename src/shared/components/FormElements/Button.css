@@ -8,8 +8,20 @@
   margin-top: 1rem;
   text-decoration: none;
   display: inline-block;
-  background: linear-gradient(110deg, #1BB453 50%, #2ec767 50%);
+  background: linear-gradient(110deg, #FF0038 50%, #FF0038 50%);
 
+}
+.button-reverse {
+  font: inherit;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  color: #f8f8fa;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-decoration: none;
+  display: inline-block;
+	background: linear-gradient(110deg, #262947 50%, #262947 50%);
 }
 
 .button:focus {
@@ -22,8 +34,9 @@
   padding: 0.7rem;
   border-radius: 999px;
   color: #f8f8fa;
-  /*background: linear-gradient(to right, #7589ff 0%, #2d3980 100%);*/
-	background: linear-gradient(to right, #8092ff 0%, #2e3d96 100%);
+  /*background: linear-gradient(to right, #7589ff 0%, #1c204c 100%);*/
+	background: linear-gradient(110deg, #1BB453 50%, #2ec767 50%);
+	  background: linear-gradient(110deg, #262947 50%, #262947 50%);
   font-size: 0.9rem;
   cursor: pointer;
 }

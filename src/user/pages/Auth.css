@@ -24,7 +24,7 @@ input#file-upload-button{
 }
 
 .authentication {
-  background: #030d44b5;
+  background: #11142f;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,8 +49,8 @@ input#file-upload-button{
 }
 
 .authentication form .form-control {
-  border: 1px solid #2d3980;
-  background: #2d3980;
+  border: 1px solid #1c204c;
+  background: #1c204c;
   border-radius: 3px;
   color: var(--color);
   padding: calc(1.5 * var(--space)) calc(1 * var(--space));

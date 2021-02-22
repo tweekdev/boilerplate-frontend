@@ -47,7 +47,7 @@ input {
 }
 
 .form-control input::placeholder {
-  color: #909298;
+  color: #1c204c;
   margin: 0 !important;
 }
 
