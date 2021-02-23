@@ -151,7 +151,7 @@ main {
 .btn-active-seach {
   background: transparent;
   border: none;
-  color: #1c204c;
+  color: #E2E5E9;
   cursor: pointer;
 }
 .btn-active-seach .MuiSvgIcon-root {
@@ -174,3 +174,8 @@ main {
 .form-group{
 	width: 100%;
 }
+
+h2 {
+	margin-left: 0rem !important;
+}
+

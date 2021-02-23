@@ -64,7 +64,7 @@ function ExploreType() {
             <ul>
               {loadedRock &&
                 loadedRock.map((song) => (
-                  <li>
+                  <li key={song.id}>
                     <Link to={`/tab/${song.id}`}>
                       <span>{song.name} - </span>
                       <span>{song.chanteur}</span>
@@ -83,7 +83,7 @@ function ExploreType() {
             <ul>
               {loadedPunk &&
                 loadedPunk.map((song) => (
-                  <li>
+                  <li key={song.id}>
                     <Link to={`/tab/${song.id}`}>
                       <span>{song.name} - </span>
                       <span>{song.chanteur}</span>
@@ -102,7 +102,7 @@ function ExploreType() {
             <ul>
               {loadedPop &&
                 loadedPop.map((song) => (
-                  <li>
+                  <li key={song.id}>
                     <Link to={`/tab/${song.id}`}>
                       <span>{song.name} - </span>
                       <span>{song.chanteur}</span>

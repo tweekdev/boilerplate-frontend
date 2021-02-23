@@ -5,8 +5,8 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Explore from './explore/pages/Explore';
 import Instruments from './instruments/pages/Instruments';
 import LeftNavigation from './shared/components/Navigation/LeftNavigation';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
@@ -54,9 +54,6 @@ const App = () => {
         </Route>
         <Route path="/profil" exact>
           <Profile></Profile>
-        </Route>
-        <Route path="/explore" exact>
-          <Explore></Explore>
         </Route>
         <Route path="/tutorial/new" exact>
           <NewTutorial></NewTutorial>
@@ -111,9 +108,6 @@ const App = () => {
         <Route path="/profil" exact>
           <Profile></Profile>
         </Route>
-        <Route path="/explore" exact>
-          <Explore></Explore>
-        </Route>
         <Route path="/tutorial/new" exact>
           <NewTutorial></NewTutorial>
         </Route>
@@ -153,9 +147,6 @@ const App = () => {
         <Route path="/profil" exact>
           <Profile></Profile>
         </Route>
-        <Route path="/explore" exact>
-          <Explore></Explore>
-        </Route>
         <Route path="/tutorial/:tutorialId">
           <Tutorial></Tutorial>
         </Route>
@@ -190,6 +181,7 @@ const App = () => {
         role: role,
       }}
     >
+      <ToastContainer />
       <Router>
         <div className="container-page">
           <svg

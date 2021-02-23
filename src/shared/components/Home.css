@@ -22,10 +22,25 @@
   width: 100%;
   align-content: flex-start;
 }
-
+.container-home{
+	background-image: url('../../assets/image/AdobeStock_270209307.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right;
+}
 .home-push{
 	width: 100%;
-	padding: 2rem 6rem;
+	padding: 0rem 6rem;
+}
+
+.last-home{
+	display: flex;
+	margin-top: 2rem;
+	/*background-image: url('../../assets/image/AdobeStock.png');
+	margin-bottom: 2rem;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: right;*/
 }
 
 .hero-title {

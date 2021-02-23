@@ -27,7 +27,7 @@ const Tab = () => {
   }, [sendRequest, tuib]);
 
   return (
-    <div className="main-tutorials">
+    <div className="main-tutorials-single">
       <ErrorModal error={error} onClear={clearError} />
 
       <div className="tutorial">

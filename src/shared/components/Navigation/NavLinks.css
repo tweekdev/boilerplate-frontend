@@ -12,6 +12,7 @@
 .auth-button{
 	display: flex;
   align-items: center;
+		background: #FF0038;
 }
 
 .nav-links li {

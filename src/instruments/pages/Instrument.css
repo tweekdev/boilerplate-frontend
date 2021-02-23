@@ -7,6 +7,10 @@
   flex-direction: row-reverse;
   align-items: flex-start;
 	padding: 2rem 6rem;
+		background-image: url('../../assets/image/perso1.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+
 }
 .instrument-page {
   display: flex;
@@ -25,7 +29,6 @@
 h2 {
   color: #d4dcff;
   margin: 0;
-  margin-left: 2rem;
 }
 
 

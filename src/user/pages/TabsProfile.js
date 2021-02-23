@@ -1,3 +1,4 @@
+import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,7 @@ import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import '../../tabs/components/TabsItem.css';
+import './TabsProfile.css';
 const TabsProfile = (props) => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const auth = useContext(AuthContext);
@@ -41,10 +43,10 @@ const TabsProfile = (props) => {
   };
 
   return (
-    <div className="main main-tabs">
+    <div className="main main-tabs-profile">
       <ErrorModal error={error} onClear={clearError} />
 
-      <div className="tab">
+      <div className="tab-profil">
         {isLoading && (
           <div className="center">
             <LoadingSpinner />
@@ -54,6 +56,7 @@ const TabsProfile = (props) => {
           loadedTabs &&
           loadedTabs.map((tab, i) => (
             <Card
+              key={tab.id}
               className={`card-tabs ${i % 2 === 0 ? 'normalize' : 'inversed'}`}
             >
               <div className="header">
@@ -84,15 +87,16 @@ const TabsProfile = (props) => {
                   <h4>{tab.instrument.name}</h4>
                 </div>
               </div>
-              <Link className="tabs-choose" to={`/tabs/edit/${tab.id}`}>
-                <button className="pill button ">
-                  <EditIcon />
+              <div className="tabs-data tabs-choose">
+                <Link to={`/tabs/edit/${tab.id}`}>
+                  <button className="pill button">
+                    <EditIcon />
+                  </button>
+                </Link>
+                <button onClick={confirmDeleteHandler} className="pill button">
+                  <DeleteIcon />
                 </button>
-              </Link>
-              <button onClick={confirmDeleteHandler} className="pill button ">
-                <EditIcon />
-                delete
-              </button>
+              </div>
             </Card>
           ))}
       </div>

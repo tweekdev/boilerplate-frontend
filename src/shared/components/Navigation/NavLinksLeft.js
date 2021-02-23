@@ -31,11 +31,6 @@ const NavLinks = (props) => {
         <>
           <li>
             <NavLink className="links" to="/">
-              <HomeIcon className="icon-header"></HomeIcon> Accueil
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="links" to="/explore">
               <DashboardIcon className="icon-header"></DashboardIcon> Explore
             </NavLink>
           </li>

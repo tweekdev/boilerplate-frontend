@@ -28,7 +28,7 @@
 
 .add-new-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   margin-bottom: 1rem;
 }
 
@@ -41,11 +41,11 @@
 }
 
 .add-new-container a .MuiSvgIcon-root {
-  width: 1.7em;
-  height: 1.7em;
-  color: #1c204c;
-  background: #090f36;
-  border-radius: 999px;
+    width: 1.7em;
+    height: 1.7em;
+    color: #E2E5E9;
+    background: #121539;
+    border-radius: 999px;
 }
 
 .tabs-list {

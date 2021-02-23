@@ -5,14 +5,30 @@ import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import './Profile.css';
 import TabsProfile from './TabsProfile';
-import TutosProfile from './TutosProfile';
+import TutorialsProfile from './TutorialsProfile';
 import UpdateUser from './UpdateUser';
 import UserProfile from './UserProfile';
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
 
+toast.configure();
+
+function TabPanel(props) {
+  const location = useLocation();
+  const { children, value, index, ...other } = props;
+  if (location.success === 'success') {
+    toast.success('🦄 Success!', {
+      position: 'top-right',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  }
   return (
     <div
       role="tabpanel"
@@ -55,6 +71,7 @@ function Profile() {
 
   return (
     <div className="profile-container">
+      <ToastContainer />
       <h1>
         Mon <strong>profil</strong>
       </h1>
@@ -83,7 +100,7 @@ function Profile() {
           <TabsProfile />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <TutosProfile />
+          <TutorialsProfile />
         </TabPanel>
       </div>
     </div>

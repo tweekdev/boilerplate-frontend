@@ -1,7 +1,7 @@
 import { Field, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 import Button from '../../shared/components/FormElements/Button';
@@ -113,7 +113,7 @@ const UpdateTutorial = () => {
       );
       actions.isSubmitting = false;
       actions.resetForm();
-      toast.success('🦄 Success!', {
+      toast.success('🦄 Tutoriel mit à jour!', {
         position: 'top-right',
         autoClose: 3000,
         hideProgressBar: false,
@@ -122,12 +122,10 @@ const UpdateTutorial = () => {
         draggable: true,
         progress: undefined,
       });
-      setTimeout(() => {
-        history.push('/tutorials');
-      }, 4000);
+      history.push('/tutorials');
     } catch (err) {
       console.error(err);
-      toast.error('🦄 An error occurred!', {
+      toast.error('An error occurred!', {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -142,7 +140,6 @@ const UpdateTutorial = () => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
-      <ToastContainer />
       <div className="main main-edit">
         <Card className="card-edit">
           {loadedDifficulty && loadedTypes && loadedInstrument && loadedTutos && (

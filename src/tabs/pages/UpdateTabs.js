@@ -2,7 +2,7 @@ import { Field, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
 import { pdfjs } from 'react-pdf';
 import { useHistory, useParams } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 import Button from '../../shared/components/FormElements/Button';
@@ -100,7 +100,7 @@ const UpdateTabs = () => {
       );
       actions.isSubmitting = false;
       actions.resetForm();
-      toast.success('🦄 Success!', {
+      toast.success('🦄 La tab a bien été mise à jour!', {
         position: 'top-right',
         autoClose: 3000,
         hideProgressBar: false,
@@ -109,11 +109,9 @@ const UpdateTabs = () => {
         draggable: true,
         progress: undefined,
       });
-      setTimeout(() => {
-        history.push('/tabs');
-      }, 4000);
+      history.push('/tabs');
     } catch (err) {
-      toast.error('🦄 An error occurred!', {
+      toast.error('An error occurred!', {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -128,7 +126,6 @@ const UpdateTabs = () => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
-      <ToastContainer />
       <div className="main main-edit">
         <Card className="card-edit">
           {loadedDifficulty && loadedTypes && loadedInstrument && loadedTabs && (

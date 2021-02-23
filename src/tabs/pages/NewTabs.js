@@ -2,7 +2,7 @@ import { Field, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
 import { pdfjs } from 'react-pdf';
 import { useHistory } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 import Button from '../../shared/components/FormElements/Button';
@@ -85,7 +85,7 @@ const NewTabs = () => {
       );
       actions.isSubmitting = false;
       actions.resetForm();
-      toast.success('🦄 Success!', {
+      toast.success('🦄 Tab ajouté!', {
         position: 'top-right',
         autoClose: 3000,
         hideProgressBar: false,
@@ -94,11 +94,11 @@ const NewTabs = () => {
         draggable: true,
         progress: undefined,
       });
-      setTimeout(() => {
-        history.push('/tabs');
-      }, 4000);
+      history.push({
+        pathname: '/profil',
+      });
     } catch (err) {
-      toast.error('🦄 An error occurred!', {
+      toast.error(` Une erreur c'est produite!`, {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -113,7 +113,6 @@ const NewTabs = () => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
-      <ToastContainer />
       <div className="main main-new">
         <Card className="card-new">
           {loadedDifficulty && loadedTypes && loadedInstrument && (

@@ -1,0 +1,25 @@
+.main-tutorial-profile {
+  min-height: 100vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  padding: 2rem 6rem;
+}
+.tutorial-profil {
+  font-family: Montserrat, sans-serif;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  grid-gap: calc(4 * var(--space));
+  grid-auto-flow: dense;
+  margin: 0px;
+  list-style: none;
+  padding: 0;
+}
+
+.tutorial-profil .button {
+  padding: 0.7rem;
+  margin: 0.5rem;
+}

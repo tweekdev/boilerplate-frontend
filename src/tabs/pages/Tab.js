@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import TabDetail from '../components/TabDetail';
-import './Tabs.css';
+import './Tab.css';
 
 const Tab = () => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -28,7 +28,7 @@ const Tab = () => {
   }, [sendRequest, tib]);
 
   return (
-    <div className="main-tabs">
+    <div className="main-tabs-single">
       <ErrorModal error={error} onClear={clearError} />
 
       <div className="tab">

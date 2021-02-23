@@ -7,6 +7,9 @@
   flex-direction: row-reverse;
 	align-items: flex-start;
 	padding: 2rem 6rem;
+	background-image: url('../../assets/image/AdobeStock_302148264.png');
+	background-size: contain;
+	background-repeat: no-repeat;	
 }
 .tab {
 	display: flex;

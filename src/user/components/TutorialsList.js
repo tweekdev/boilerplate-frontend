@@ -176,7 +176,6 @@ const TutorialsList = (props) => {
       headerClassName: 'super-app-theme--header',
       headerAlign: 'center',
       cellClassName: 'super-app-theme--cell',
-      resizable: true,
     },
     {
       field: 'date',
