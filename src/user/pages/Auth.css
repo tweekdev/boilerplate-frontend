@@ -18,6 +18,14 @@
   text-decoration: none;
   margin-left: 0;
 }
+.user-password-lost {
+  color: #d4dcff;
+  list-style: none;
+  text-decoration: none;
+  margin-left: 0;
+  margin-top: 1rem;
+	font-size:11px;
+}
 
 input#file-upload-button{
 	background:transparent;

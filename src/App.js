@@ -15,7 +15,9 @@ import { AuthContext } from './shared/context/auth-context';
 import { useAuth } from './shared/hooks/auth-hook';
 import NewTabs from './tabs/pages/NewTabs';
 import NewTutorial from './tutorials/pages/NewTutorial';
+import ForgotPassword from './user/pages/ForgotPassword';
 import Profile from './user/pages/Profile';
+import ResetPassword from './user/pages/ResetPassword';
 
 const Home = React.lazy(() => import('./shared/components/Home'));
 const Tabs = React.lazy(() => import('./tabs/pages/Tabs'));
@@ -164,6 +166,12 @@ const App = () => {
         </Route>
         <Route path="/signup" exact>
           <Signup />
+        </Route>
+        <Route path="/resetPassword/:tokenId">
+          <ResetPassword />
+        </Route>
+        <Route path="/forgotpassword" exact>
+          <ForgotPassword />
         </Route>
         <Redirect to="/auth" />
       </Switch>

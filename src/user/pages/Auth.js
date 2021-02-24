@@ -12,7 +12,9 @@ import './Auth.css';
 
 const Auth = () => {
   const schema = Yup.object().shape({
-    email: Yup.string().required('Veuillez entrer un email.'),
+    email: Yup.string()
+      .email('Email invalide.')
+      .required('Veuillez entrer un Email.'),
     password: Yup.string().required('Veuillez entrer un mot de passe.'),
   });
 
@@ -113,6 +115,9 @@ const Auth = () => {
           </Formik>
           <Link className="user-add" to={`/signup`}>
             S'inscrire
+          </Link>
+          <Link className="user-password-lost" to={`/forgotpassword`}>
+            Mot de passe oublié ?
           </Link>
         </Card>
       )}
