@@ -6,7 +6,6 @@ import TabsList from '../components/TabsList';
 import './Tabs.css';
 const Tabs = (props) => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
-
   const [loadedTabs, setLoadTabs] = useState();
 
   useEffect(() => {

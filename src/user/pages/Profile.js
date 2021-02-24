@@ -5,30 +5,19 @@ import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import './Profile.css';
 import TabsProfile from './TabsProfile';
 import TutorialsProfile from './TutorialsProfile';
+import UpdatePassword from './UpdatePassword';
 import UpdateUser from './UpdateUser';
 import UserProfile from './UserProfile';
 
 toast.configure();
 
 function TabPanel(props) {
-  const location = useLocation();
   const { children, value, index, ...other } = props;
-  if (location.success === 'success') {
-    toast.success('🦄 Success!', {
-      position: 'top-right',
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  }
+
   return (
     <div
       role="tabpanel"
@@ -93,6 +82,9 @@ function Profile() {
             <div className="box-row">
               <UserProfile className="box-cell" />
               <UpdateUser className="box-cell" />
+            </div>
+            <div className="update-password-box">
+              <UpdatePassword className="box-cell" />
             </div>
           </div>
         </TabPanel>

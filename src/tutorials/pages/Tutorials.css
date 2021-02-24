@@ -10,6 +10,7 @@
 		background-image: url('../../assets/image/AdobeStock_331719856.png');
 	background-size: contain;
 	background-repeat: no-repeat;	
+	background-position: center;
 }
 .tutorial {
   display: flex;

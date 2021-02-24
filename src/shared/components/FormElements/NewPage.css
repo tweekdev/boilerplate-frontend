@@ -40,7 +40,7 @@ form.new-form {
 
 .error {
   margin-top: 0.5rem;
-  color: #f64f59;
+  color: #FF0038;
 }
 
 .new-control::placeholder {

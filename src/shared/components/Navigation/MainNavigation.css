@@ -28,7 +28,10 @@
 }
 
 .main-navigation__header-nav {
-  display: none;
+    display: flex;
+		flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-navigation__drawer-nav {

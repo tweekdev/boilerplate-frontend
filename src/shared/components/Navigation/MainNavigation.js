@@ -3,8 +3,8 @@ import Backdrop from '../UIElements/Backdrop';
 import MainHeader from './MainHeader';
 import './MainNavigation.css';
 import NavLinks from './NavLinks';
+import NavLinksLeft from './NavLinksLeft';
 import SideDrawer from './SideDrawer';
-
 const MainNavigation = () => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
   const openDrawerHandler = () => {
@@ -19,7 +19,7 @@ const MainNavigation = () => {
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler}></Backdrop>}
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
         <nav className="main-navigation__drawer-nav">
-          <NavLinks></NavLinks>
+          <NavLinksLeft />
         </nav>
       </SideDrawer>
 

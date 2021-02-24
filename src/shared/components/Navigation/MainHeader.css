@@ -19,7 +19,7 @@ main {
 
 @media (max-width: 768px) {
   .main-header {
-    flex-direction: row-reverse;
 		  padding: 0 1rem;
+				justify-content: space-between;
   }
 }

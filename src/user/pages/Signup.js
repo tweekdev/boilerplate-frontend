@@ -17,7 +17,9 @@ const NewUser = () => {
       .min(4, 'Le pseudo est trop court.'),
     firstname: Yup.string().required('Veuillez entrer un prénom.'),
     name: Yup.string().required('Veuillez entrer un nom.'),
-    email: Yup.string().required('Veuillez entrer un Email.'),
+    email: Yup.string()
+      .email('Email invalide.')
+      .required('Veuillez entrer un Email.'),
     picture: Yup.string().required('Veuillez insérer une image.'),
     password: Yup.string()
       .required('Veuillez entrer un mot de passe.')

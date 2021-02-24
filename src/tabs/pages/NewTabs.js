@@ -157,6 +157,20 @@ const NewTabs = () => {
                       </div>
                     </div>
                     <div className={'form-group'}>
+                      <Field
+                        className={'new-control'}
+                        type="text"
+                        name="name"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.name}
+                        placeholder={'Nom'}
+                      />
+                      <div className="error">
+                        {errors.name && touched.name && errors.name}
+                      </div>
+                    </div>
+                    <div className={'form-group'}>
                       <input
                         id="file"
                         name="file"
@@ -173,20 +187,6 @@ const NewTabs = () => {
                       </div>
                     </div>
 
-                    <div className={'form-group'}>
-                      <Field
-                        className={'new-control'}
-                        type="text"
-                        name="name"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.name}
-                        placeholder={'Nom'}
-                      />
-                      <div className="error">
-                        {errors.name && touched.name && errors.name}
-                      </div>
-                    </div>
                     <div className={'form-group'}>
                       <textarea
                         className={'new-control'}

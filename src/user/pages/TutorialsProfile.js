@@ -2,7 +2,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Card from '../../shared/components/UIElements/Card';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import { AuthContext } from '../../shared/context/auth-context';
@@ -55,9 +54,9 @@ const TutorialsProfile = (props) => {
         {!isLoading &&
           loadedTutorials &&
           loadedTutorials.map((tutorial, i) => (
-            <Card
+            <div
               key={tutorial.id}
-              className={`card-tutorials ${
+              className={`card-tutorials card-tutorials-profil ${
                 i % 2 === 0 ? 'normalize' : 'inversed'
               }`}
             >
@@ -68,28 +67,28 @@ const TutorialsProfile = (props) => {
               <div className="tutorials-item__info">
                 <div className="tutorials-data">
                   <label>Chanteur:</label>
-                  <h4> {tutorial.chanteur}</h4>
+                  <h5> {tutorial.chanteur}</h5>
                 </div>
                 <div className="tutorials-data">
                   <label>Difficulty:</label>
                   {tutorial.difficulty.name === 'easy' ? (
-                    <h4 className="dif easy">{tutorial.difficulty.name}</h4>
+                    <h5 className="dif easy">{tutorial.difficulty.name}</h5>
                   ) : tutorial.difficulty.name === 'medium' ? (
-                    <h4 className="dif medium">{tutorial.difficulty.name}</h4>
+                    <h5 className="dif medium">{tutorial.difficulty.name}</h5>
                   ) : tutorial.difficulty.name === 'hard' ? (
-                    <h4 className="dif hard">{tutorial.difficulty.name}</h4>
+                    <h5 className="dif hard">{tutorial.difficulty.name}</h5>
                   ) : null}
                 </div>
                 <div className="tutorials-data">
                   <label>Type:</label>
-                  <h4> {tutorial.type.name}</h4>
+                  <h5> {tutorial.type.name}</h5>
                 </div>
                 <div className="tutorials-data">
                   <label>Instrument:</label>
-                  <h4>{tutorial.instrument.name}</h4>
+                  <h5>{tutorial.instrument.name}</h5>
                 </div>
               </div>
-              <div className="tutorials-data tutorials-choose">
+              <div className="tutorials-data tutorials-choose-profil">
                 <Link to={`/tutorials/edit/${tutorial.id}`}>
                   <button className="pill button">
                     <EditIcon />
@@ -99,7 +98,7 @@ const TutorialsProfile = (props) => {
                   <DeleteIcon />
                 </button>
               </div>
-            </Card>
+            </div>
           ))}
       </div>
     </div>

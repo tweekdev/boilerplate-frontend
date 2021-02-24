@@ -44,9 +44,6 @@ input#file-upload-button{
   align-items: center;
 }
 
-.authentication form .form-group {
-  margin: 0;
-}
 
 .authentication form .form-control {
   border: 1px solid #1c204c;
@@ -58,10 +55,10 @@ input#file-upload-button{
   width: 100%;
   outline: 0;
   min-height: 44px;
-  margin: 1rem 0;
+  margin: 0rem 0;
 }
 
 .error {
   margin-top: 0.5rem;
-  color: #f64f59;
+  color: #FF0038;
 }

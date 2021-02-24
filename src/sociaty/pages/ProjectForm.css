@@ -25,9 +25,7 @@
 	
 	width: 100%;
 }
-.form-control {
-	margin: 1rem;
-}
+
 
 input{
 	width: 100%;
@@ -46,7 +44,7 @@ input{
 
 .error{
 	  margin-top: .5rem;
-	  color: #f64f59;
+	  color: #FF0038;
 }
 
 .form-control input::placeholder{

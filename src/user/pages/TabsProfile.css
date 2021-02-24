@@ -4,8 +4,8 @@
   width: 100%;
   justify-content: space-around;
   flex-direction: row-reverse;
-  align-items: flex-start;
-  padding: 2rem 6rem;
+  align-items: flex-start !important;
+  padding: 0rem 0rem;
 }
 .tab-profil {
   font-family: Montserrat, sans-serif;
@@ -19,7 +19,34 @@
   padding: 0;
 }
 
-.tab-profil .button {
-  padding: 0.7rem;
+.tab-profil .tabs-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   margin: 0.5rem;
+}
+
+.tab-profil .card-tabs-profil {
+  width: 100%;
+  position: relative;
+  transition: 0.3s;
+  border-radius: 3px;
+}
+.tab-profil .tabs-item__info {
+  margin: 0;
+}
+.tab-profil .tabs-choose-profil {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.tab-profil .button {
+  padding: 0rem;
+  margin: 0rem;
+  border-radius: 0;
 }

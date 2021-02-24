@@ -2,7 +2,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Card from '../../shared/components/UIElements/Card';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import { AuthContext } from '../../shared/context/auth-context';
@@ -55,9 +54,11 @@ const TabsProfile = (props) => {
         {!isLoading &&
           loadedTabs &&
           loadedTabs.map((tab, i) => (
-            <Card
+            <div
               key={tab.id}
-              className={`card-tabs ${i % 2 === 0 ? 'normalize' : 'inversed'}`}
+              className={`card-tabs card-tabs-profil ${
+                i % 2 === 0 ? 'normalize' : 'inversed'
+              }`}
             >
               <div className="header">
                 <h3>{tab.name}</h3>
@@ -66,28 +67,28 @@ const TabsProfile = (props) => {
               <div className="tabs-item__info">
                 <div className="tabs-data">
                   <label>Chanteur:</label>
-                  <h4> {tab.chanteur}</h4>
+                  <h5> {tab.chanteur}</h5>
                 </div>
                 <div className="tabs-data">
                   <label>Difficulty:</label>
                   {tab.difficulty.name === 'easy' ? (
-                    <h4 className="dif easy">{tab.difficulty.name}</h4>
+                    <h5 className="dif easy">{tab.difficulty.name}</h5>
                   ) : tab.difficulty.name === 'medium' ? (
-                    <h4 className="dif medium">{tab.difficulty.name}</h4>
+                    <h5 className="dif medium">{tab.difficulty.name}</h5>
                   ) : tab.difficulty.name === 'hard' ? (
-                    <h4 className="dif hard">{tab.difficulty.name}</h4>
+                    <h5 className="dif hard">{tab.difficulty.name}</h5>
                   ) : null}
                 </div>
                 <div className="tabs-data">
                   <label>Type:</label>
-                  <h4> {tab.type.name}</h4>
+                  <h5> {tab.type.name}</h5>
                 </div>
                 <div className="tabs-data">
                   <label>Instrument:</label>
-                  <h4>{tab.instrument.name}</h4>
+                  <h5>{tab.instrument.name}</h5>
                 </div>
               </div>
-              <div className="tabs-data tabs-choose">
+              <div className="tabs-data tabs-choose-profil">
                 <Link to={`/tabs/edit/${tab.id}`}>
                   <button className="pill button">
                     <EditIcon />
@@ -97,7 +98,7 @@ const TabsProfile = (props) => {
                   <DeleteIcon />
                 </button>
               </div>
-            </Card>
+            </div>
           ))}
       </div>
     </div>

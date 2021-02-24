@@ -170,20 +170,6 @@ const UpdateTabs = () => {
                       </div>
                     </div>
                     <div className={'form-group'}>
-                      <input
-                        id="file"
-                        name="file"
-                        className="edit-control"
-                        type="file"
-                        onChange={(event) => {
-                          setFieldValue('file', event.currentTarget.files[0]);
-                        }}
-                        values={values.file}
-                        accept=".pdf"
-                      />
-                    </div>
-
-                    <div className={'form-group'}>
                       <Field
                         className={'edit-control'}
                         type="text"
@@ -197,6 +183,20 @@ const UpdateTabs = () => {
                         {errors.name && touched.name && errors.name}
                       </div>
                     </div>
+                    <div className={'form-group'}>
+                      <input
+                        id="file"
+                        name="file"
+                        className="edit-control"
+                        type="file"
+                        onChange={(event) => {
+                          setFieldValue('file', event.currentTarget.files[0]);
+                        }}
+                        values={values.file}
+                        accept=".pdf"
+                      />
+                    </div>
+
                     <div className={'form-group'}>
                       <textarea
                         className={'edit-control'}

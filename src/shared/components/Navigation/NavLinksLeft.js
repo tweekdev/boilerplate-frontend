@@ -11,7 +11,7 @@ import './NavLinksLeft.css';
 const NavLinks = (props) => {
   const auth = useContext(AuthContext);
   const [instruments, setInstruments] = useState();
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const fetchLastInstruments = async () => {

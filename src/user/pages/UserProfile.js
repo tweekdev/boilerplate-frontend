@@ -77,7 +77,11 @@ function UserProfile() {
             </div>
             <div className="form-group-data">
               <label>Role: </label>
-              <h4>{loadedUsers.role[0].name}</h4>
+              {loadedUsers.role[0].name === 'user' ? (
+                <h4 className="color-role">Standard</h4>
+              ) : (
+                <h4 className="color-role">{loadedUsers.role[0].name}</h4>
+              )}
             </div>
             <div className="form-group-data">
               <label>Tabs: </label>

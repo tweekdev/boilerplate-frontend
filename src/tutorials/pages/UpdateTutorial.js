@@ -186,8 +186,22 @@ const UpdateTutorial = () => {
                       </div>
                     </div>
                     <div className={'form-group'}>
+                      <Field
+                        className={'edit-control'}
+                        type="text"
+                        name="name"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.name}
+                        placeholder={'Nom'}
+                      />
+                      <div className="error">
+                        {errors.name && touched.name && errors.name}
+                      </div>
+                    </div>
+                    <div className={'form-group'}>
                       <textarea
-                        className={' edit-control'}
+                        className={'edit-control'}
                         type="text"
                         name="description"
                         onChange={handleChange}
@@ -229,25 +243,11 @@ const UpdateTutorial = () => {
                         {errors.tab && touched.tab && errors.tab}
                       </div>
                     </div>
-                    <div className={'form-group'}>
-                      <Field
-                        className={'edit-control'}
-                        type="text"
-                        name="name"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.name}
-                        placeholder={'Nom'}
-                      />
-                      <div className="error">
-                        {errors.name && touched.name && errors.name}
-                      </div>
-                    </div>
 
                     {loadedTypes && loadedTypes.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' edit-control'}
+                          className={'edit-control'}
                           as="select"
                           name="type"
                           onChange={handleChange}
@@ -272,7 +272,7 @@ const UpdateTutorial = () => {
                     {loadedInstrument && loadedInstrument.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' edit-control'}
+                          className={'edit-control'}
                           as="select"
                           name="instrument"
                           onChange={handleChange}
@@ -299,7 +299,7 @@ const UpdateTutorial = () => {
                     {loadedDifficulty && loadedDifficulty.length > 0 && (
                       <div className={'form-group'}>
                         <Field
-                          className={' edit-control'}
+                          className={'edit-control'}
                           as="select"
                           name="difficulty"
                           onChange={handleChange}

@@ -2,6 +2,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import { Field, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 import Button from '../../shared/components/FormElements/Button';
 import Card from '../../shared/components/UIElements/Card';
@@ -10,6 +11,7 @@ import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import './Auth.css';
 
+toast.configure();
 const UpdateUser = (props) => {
   const schemas = Yup.object().shape({
     pseudo: Yup.string()
@@ -17,7 +19,9 @@ const UpdateUser = (props) => {
       .min(4, 'Le pseudo est trop court.'),
     firstname: Yup.string().required('Veuillez entrer un prénom.'),
     picture: Yup.string(),
-    email: Yup.string().required('Veuillez entrer un email.'),
+    email: Yup.string()
+      .email('Email invalide.')
+      .required('Veuillez entrer un email.'),
     name: Yup.string().required('Veuillez entrer un nom.'),
     role: Yup.string(),
   });
@@ -61,7 +65,6 @@ const UpdateUser = (props) => {
   const userUpdateSubmitHandler = async (values, actions) => {
     try {
       const formData = new FormData();
-
       formData.append('name', values.name);
       formData.append('firstname', values.firstname);
       formData.append('pseudo', values.pseudo);
@@ -71,8 +74,11 @@ const UpdateUser = (props) => {
         values.picture ? values.picture : loadedUsers.picture
       );
       formData.append('role', values.role);
+
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/users/${uid}`,
+        `${process.env.REACT_APP_BACKEND_URL}/users/${
+          uid ? uid : loadedUsers.id
+        }`,
         'PATCH',
         formData,
         {
@@ -81,8 +87,27 @@ const UpdateUser = (props) => {
       );
       actions.isSubmitting = false;
       actions.resetForm();
+      toast.success('🦄 Profil mit à jour!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       history.push('/');
-    } catch (err) {}
+    } catch (err) {
+      toast.error('An error occurred!', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   };
 
   return (
