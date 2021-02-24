@@ -93,10 +93,10 @@ const UpdateUser = (props) => {
   };
 
   return (
-    <div className="main auth-page">
+    <div className="main auth-page upd-password">
       <ErrorModal error={error} onClear={clearError} />
       {!isLoading && loadedUsers ? (
-        <Card className="authentication">
+        <Card className="authentication update-password">
           <h2 className="title__auth">Mettre à jour le mot de passe</h2>
           <Formik
             onSubmit={userUpdateSubmitHandler}
@@ -117,39 +117,47 @@ const UpdateUser = (props) => {
               isSubmitting,
               setFieldValue,
             }) => (
-              <form className="users-form" onSubmit={handleSubmit}>
-                <div className={'form-group'}>
-                  <Field
-                    className={'form-control'}
-                    type={passwordFieldVisible ? 'text' : 'password'}
-                    name="password"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.password}
-                    placeholder={'Mot de passe'}
-                  />
-                  <div className="error">
-                    {errors.password && touched.password && errors.password}
+              <>
+                <form className="users-form" onSubmit={handleSubmit}>
+                  <div className={'form-group'}>
+                    <Field
+                      className={'form-control'}
+                      type={passwordFieldVisible ? 'text' : 'password'}
+                      name="password"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.password}
+                      placeholder={'Mot de passe'}
+                    />
+                    <div className="error">
+                      {errors.password && touched.password && errors.password}
+                    </div>
                   </div>
-                </div>
 
-                <div className={'form-group'}>
-                  <Field
-                    className={'form-control'}
-                    type={passwordFieldVisible ? 'text' : 'password'}
-                    name="confirmPassword"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.confirmPassword}
-                    placeholder={'Comfirmer mot de passe'}
-                  />
-                  <div className="error">
-                    {errors.confirmPassword &&
-                      touched.confirmPassword &&
-                      errors.confirmPassword}
+                  <div className={'form-group'}>
+                    <Field
+                      className={'form-control'}
+                      type={passwordFieldVisible ? 'text' : 'password'}
+                      name="confirmPassword"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.confirmPassword}
+                      placeholder={'Comfirmer mot de passe'}
+                    />
+                    <div className="error">
+                      {errors.confirmPassword &&
+                        touched.confirmPassword &&
+                        errors.confirmPassword}
+                    </div>
                   </div>
-                </div>
-                <div className={'form-group'}>
+
+                  <div className={'form-group'}>
+                    <Button type="submit" disabled={isSubmitting}>
+                      Mettre à jour
+                    </Button>
+                  </div>
+                </form>
+                <div className={'form-group show-pass'}>
                   <label>Voir le mot de passe</label>
                   <Checkbox
                     onClick={() =>
@@ -157,13 +165,7 @@ const UpdateUser = (props) => {
                     }
                   />
                 </div>
-
-                <div className={'form-group'}>
-                  <Button type="submit" disabled={isSubmitting}>
-                    Mettre à jour
-                  </Button>
-                </div>
-              </form>
+              </>
             )}
           </Formik>
         </Card>

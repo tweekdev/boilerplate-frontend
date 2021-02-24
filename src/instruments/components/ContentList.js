@@ -78,11 +78,27 @@ const ContentList = (props) => {
 
                       <div className="tutorials-item__info">
                         <div className="tutorials-data">
-                          <label>Chanteur:</label>
+                          <label
+                            className={`${
+                              props.i % 2 === 0
+                                ? 'normalize-label'
+                                : 'inversed-label'
+                            }`}
+                          >
+                            Chanteur:
+                          </label>
                           <h4> {tab.chanteur}</h4>
                         </div>
                         <div className="tutorials-data">
-                          <label>Difficulty:</label>
+                          <label
+                            className={`${
+                              props.i % 2 === 0
+                                ? 'normalize-label'
+                                : 'inversed-label'
+                            }`}
+                          >
+                            Difficulty:
+                          </label>
                           {tab.difficulty[0].name === 'easy' ? (
                             <h4 className="dif easy">
                               {tab.difficulty[0].name}
@@ -98,7 +114,15 @@ const ContentList = (props) => {
                           ) : null}
                         </div>
                         <div className="tutorials-data">
-                          <label>Type:</label>
+                          <label
+                            className={`${
+                              props.i % 2 === 0
+                                ? 'normalize-label'
+                                : 'inversed-label'
+                            }`}
+                          >
+                            Type:
+                          </label>
                           <h4> {tab.type[0].name}</h4>
                         </div>
                       </div>
@@ -150,11 +174,27 @@ const ContentList = (props) => {
 
                       <div className="tutorials-item__info">
                         <div className="tutorials-data">
-                          <label>Chanteur:</label>
+                          <label
+                            className={`${
+                              props.i % 2 === 0
+                                ? 'normalize-label'
+                                : 'inversed-label'
+                            }`}
+                          >
+                            Chanteur:
+                          </label>
                           <h4> {tuto.chanteur}</h4>
                         </div>
                         <div className="tutorials-data">
-                          <label>Difficulty:</label>
+                          <label
+                            className={`${
+                              props.i % 2 === 0
+                                ? 'normalize-label'
+                                : 'inversed-label'
+                            }`}
+                          >
+                            Difficulty:
+                          </label>
                           {tuto.difficulty[0].name === 'easy' ? (
                             <h4 className="dif easy">
                               {tuto.difficulty[0].name}
@@ -170,7 +210,15 @@ const ContentList = (props) => {
                           ) : null}
                         </div>
                         <div className="tutorials-data">
-                          <label>Type:</label>
+                          <label
+                            className={`${
+                              props.i % 2 === 0
+                                ? 'normalize-label'
+                                : 'inversed-label'
+                            }`}
+                          >
+                            Type:
+                          </label>
                           <h4> {tuto.type[0].name}</h4>
                         </div>
                       </div>

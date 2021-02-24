@@ -1,7 +1,7 @@
 import Skeleton from '@material-ui/lab/Skeleton';
 import { Field, Formik } from 'formik';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 import Button from '../../shared/components/FormElements/Button';
@@ -102,6 +102,9 @@ const ForgotPassword = (props) => {
                     Envoyer
                   </Button>
                 </div>
+                <Link className="user-add" to={`/auth`}>
+                  Se connecter
+                </Link>
               </form>
             )}
           </Formik>

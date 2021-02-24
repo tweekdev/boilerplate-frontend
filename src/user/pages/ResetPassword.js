@@ -10,7 +10,7 @@ import Card from '../../shared/components/UIElements/Card';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import './Auth.css';
-import './UpdatePassword.css';
+import './ResetPassword.css';
 
 toast.configure();
 const ResetPassword = (props) => {
@@ -67,7 +67,7 @@ const ResetPassword = (props) => {
   };
 
   return (
-    <div className="main auth-page">
+    <div className="main auth-page reset">
       <ErrorModal error={error} onClear={clearError} />
       {!isLoading ? (
         <Card className="authentication">

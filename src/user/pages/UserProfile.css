@@ -12,35 +12,61 @@
 .profile-container .user-prof-card {
   background: #11142f;
   display: flex;
-	width: 100%;
-	height: 100%;
-	min-width: 36.5rem;
+  width: 100%;
+  height: 100%;
+  min-width: 36.5rem;
   text-align: center;
   padding: 1rem 2rem;
-	justify-content: flex-start;
-	align-items: center;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.profile-container .authentication{
-	min-width: 36.5rem;
-	
+.profile-container .authentication {
+  min-width: 36.5rem;
 }
 .profile-container .MuiBox-root {
-	padding: 0;
+  padding: 0;
 }
 
 .form-group-data {
-	display: flex;
+  display: flex;
   align-items: center;
   color: #d4dcff;
-	padding: 1rem;
+  padding: 1rem;
 }
 .profile-container h4 {
   margin-left: 2rem;
 }
 
 .profile-container label {
+  color: #d4dcff;
   padding: 0.2rem 1rem;
   border-radius: 3px;
   background-color: #1c204c;
+}
+
+.upd-password .MuiPaper-root {
+  display: contents;
+}
+.profile-container .update-password {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.upd-password .authentication form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.upd-password .authentication form .form-group {
+  margin-right: 1rem;
+}
+.upd-password .authentication form .button {
+  margin-top: 0rem;
+}
+.upd-password .show-pass {
+  text-align: left;
+}
+.upd-password .show-pass .MuiSvgIcon-root {
+  color: #ff0038;
 }

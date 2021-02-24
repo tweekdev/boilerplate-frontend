@@ -70,3 +70,24 @@ input#file-upload-button{
   margin-top: 0.5rem;
   color: #FF0038;
 }
+.show-password-auth-check {
+	justify-content: flex-start;
+	text-align: left;
+}
+
+.show-password-auth-check .show-password-auth{
+	text-align: left;
+	color: #d4dcff;
+	justify-content: left;
+	background: #1c204c;
+	padding: 0.3rem;
+	border-radius: 4px;
+	margin-right: 1rem;
+	font-family: Inter, sans-serif;
+	line-height: 1.3;
+	font-size: 0.9em;
+	font-weight: 700;
+}
+.show-password-auth-check .MuiSvgIcon-root {
+	color: #FF0038;
+}

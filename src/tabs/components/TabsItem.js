@@ -20,11 +20,23 @@ const TabsItem = (props) => {
 
         <div className="tabs-item__info">
           <div className="tabs-data">
-            <label>Chanteur:</label>
+            <label
+              className={`${
+                props.i % 2 === 0 ? 'normalize-label' : 'inversed-label'
+              }`}
+            >
+              Chanteur:
+            </label>
             <h4> {props.chanteur}</h4>
           </div>
           <div className="tabs-data">
-            <label>Difficulty:</label>
+            <label
+              className={`${
+                props.i % 2 === 0 ? 'normalize-label' : 'inversed-label'
+              }`}
+            >
+              Difficulty:
+            </label>
             {props.difficulty.name === 'easy' ? (
               <h4 className="dif easy">{props.difficulty.name}</h4>
             ) : props.difficulty.name === 'medium' ? (
@@ -34,11 +46,23 @@ const TabsItem = (props) => {
             ) : null}
           </div>
           <div className="tabs-data">
-            <label>Type:</label>
+            <label
+              className={`${
+                props.i % 2 === 0 ? 'normalize-label' : 'inversed-label'
+              }`}
+            >
+              Type:
+            </label>
             <h4> {props.type.name}</h4>
           </div>
           <div className="tabs-data">
-            <label>Instrument:</label>
+            <label
+              className={`${
+                props.i % 2 === 0 ? 'normalize-label' : 'inversed-label'
+              }`}
+            >
+              Instrument:
+            </label>
             <h4>{props.instrument.name}</h4>
           </div>
         </div>

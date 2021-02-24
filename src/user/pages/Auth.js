@@ -1,3 +1,4 @@
+import { Checkbox } from '@material-ui/core';
 import { Field, Formik } from 'formik';
 import React, { useContext, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
@@ -19,7 +20,7 @@ const Auth = () => {
   });
 
   const history = useHistory();
-
+  const [passwordFieldVisible, setPasswordFieldVisible] = useState(false);
   const auth = useContext(AuthContext);
   const [isLoginMode, setIsLoginMode] = useState(true);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -92,16 +93,24 @@ const Auth = () => {
                     {errors.email && touched.email && errors.email}
                   </div>
                 </div>
-                <div className={'form-group'}>
+                <div className={'form-group show-password-auth-check'}>
                   <Field
                     className={'form-control'}
-                    type="password"
+                    type={passwordFieldVisible ? 'text' : 'password'}
                     name="password"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.password}
                     placeholder={'Password'}
                   />
+                  <Checkbox
+                    onClick={() =>
+                      setPasswordFieldVisible(!passwordFieldVisible)
+                    }
+                  />
+                  <label className="show-password-auth">
+                    Voir le mot de passe
+                  </label>
                   <div className="error">
                     {errors.password && touched.password && errors.password}
                   </div>
