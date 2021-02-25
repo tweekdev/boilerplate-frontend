@@ -1,18 +1,34 @@
+import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import Button from '../../shared/components/FormElements/Button';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
+import Modal from '../../shared/components/UIElements/Modal';
 import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import '../../tabs/components/TabsItem.css';
 import './TabsProfile.css';
+
+toast.configure();
 const TabsProfile = (props) => {
+  const history = useHistory();
+
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const auth = useContext(AuthContext);
   const [loadedTabs, setLoadTabs] = useState();
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
+  const showDeleteWarningHandler = () => {
+    setShowConfirmModal(true);
+  };
+
+  const cancelDeleteHandler = () => {
+    setShowConfirmModal(false);
+  };
   useEffect(() => {
     const fetchTabs = async () => {
       try {
@@ -27,24 +43,52 @@ const TabsProfile = (props) => {
     fetchTabs();
   }, [sendRequest]);
 
-  const confirmDeleteHandler = async () => {
+  const confirmDeleteHandler = async (id) => {
+    setShowConfirmModal(false);
+
     try {
       console.log();
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/tabs/${loadedTabs.id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/tabs/${id}`,
         'DELETE',
         null,
         {
           Authorization: 'Bearer ' + auth.token,
         }
       );
-    } catch (err) {}
+      toast.success('🦄 Tabs supprimé!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      history.push('/');
+    } catch (err) {
+      toast.error('An error occurred!', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   };
 
   return (
     <div className="main main-tabs-profile">
       <ErrorModal error={error} onClear={clearError} />
-
+      {auth.isLoggedIn && (
+        <div className="add-new-container">
+          <Link to={'/tabs/new'}>
+            <AddIcon />
+          </Link>
+        </div>
+      )}
       <div className="tab-profil">
         {isLoading && (
           <div className="center">
@@ -94,9 +138,36 @@ const TabsProfile = (props) => {
                     <EditIcon />
                   </button>
                 </Link>
-                <button onClick={confirmDeleteHandler} className="pill button">
+                <button
+                  onClick={showDeleteWarningHandler}
+                  className="pill button"
+                >
                   <DeleteIcon />
                 </button>
+                <Modal
+                  show={showConfirmModal}
+                  onCancel={cancelDeleteHandler}
+                  header="Are you sure?"
+                  footerClass="place-item__modal-actions"
+                  footer={
+                    <React.Fragment>
+                      <Button inverse onClick={cancelDeleteHandler}>
+                        CANCEL
+                      </Button>
+                      <Button
+                        danger
+                        onClick={() => confirmDeleteHandler(tab.id)}
+                      >
+                        DELETE
+                      </Button>
+                    </React.Fragment>
+                  }
+                >
+                  <p>
+                    Do you want to proceed and delete this place? Please note
+                    that it can't be undone thereafter.
+                  </p>
+                </Modal>
               </div>
             </div>
           ))}
