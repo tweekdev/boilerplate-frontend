@@ -8,8 +8,9 @@
   align-items: flex-start;
 	padding: 2rem 6rem;
 		background-image: url('../../assets/image/perso1.png');
-	background-repeat: no-repeat;
-	background-size: contain;
+		background-size: cover;
+	background-repeat: no-repeat;	
+	background-position: bottom;
 
 }
 .instrument-page {

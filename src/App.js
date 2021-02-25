@@ -116,9 +116,6 @@ const App = () => {
         <Route path="/tutorial/:tutorialId">
           <Tutorial></Tutorial>
         </Route>
-        <Route path="/instruments" exact>
-          <Instruments></Instruments>
-        </Route>
         <Route path="/instruments/:iid" exact>
           <Instrument />
         </Route>
@@ -130,6 +127,12 @@ const App = () => {
         </Route>
         <Route path="/users/edit/:uid" exact>
           <UpdateUser />
+        </Route>
+        <Route path="/tabs/edit/:tabsId">
+          <UpdateTabs />
+        </Route>
+        <Route path="/tutorials/edit/:tutoId">
+          <UpdateTutorial />
         </Route>
         <Redirect to="/" />
       </Switch>

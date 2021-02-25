@@ -88,7 +88,7 @@ const SimpleMenu = (props) => {
                   >
                     <MenuItem onClick={handleClose}>
                       <NavLink className="links" to="/profil" exact>
-                        Profile
+                        Profil
                       </NavLink>
                     </MenuItem>
                     <MenuItem onClick={handleClose}>

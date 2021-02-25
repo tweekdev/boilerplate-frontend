@@ -72,6 +72,7 @@ const Admin = (props) => {
         setLoadUsers(responseData.users);
       } catch (err) {}
     };
+
     const fetchDifficulties = async () => {
       try {
         const responseData = await sendRequest(
@@ -120,6 +121,11 @@ const Admin = (props) => {
     fetchTypes();
     fetchDifficulties();
   }, [sendRequest]);
+  const userDeletedHandler = (deletedUserId) => {
+    setLoadUsers((prevUser) =>
+      prevUser.filter((user) => user.id !== deletedUserId)
+    );
+  };
 
   return (
     <div className="main-admin">
@@ -141,7 +147,12 @@ const Admin = (props) => {
         ) : (
           <>
             <TabPanel value={value} index={0}>
-              {!isLoading && loadedUsers && <UsersList users={loadedUsers} />}
+              {!isLoading && loadedUsers && (
+                <UsersList
+                  onDeleteUser={userDeletedHandler}
+                  users={loadedUsers}
+                />
+              )}
             </TabPanel>
             <TabPanel value={value} index={1}>
               <div className="add-new-container">

@@ -1,12 +1,16 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { DataGrid, GridToolbar } from '@material-ui/data-grid';
+import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import Pagination from '@material-ui/lab/Pagination';
 import PaginationItem from '@material-ui/lab/PaginationItem';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import Button from '../../shared/components/FormElements/Button';
+import Modal from '../../shared/components/UIElements/Modal';
 import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import './TutorialsList.css';
@@ -105,14 +109,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 const TutorialsList = (props) => {
   const classes = useStyles();
-
+  const history = useHistory();
   const [data, setdata] = useState([]);
   const { sendRequest } = useHttpClient();
   const auth = useContext(AuthContext);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
-  const showDeleteWarningHandler = () => {
-    setShowConfirmModal(true);
-  };
   CustomPagination.propTypes = {
     /**
      * ApiRef that let you manipulate the grid.
@@ -130,19 +131,41 @@ const TutorialsList = (props) => {
     setShowConfirmModal(false);
   };
 
-  const confirmDeleteHandler = async () => {
+  const showDeleteWarningHandler = () => {
+    setShowConfirmModal(true);
+  };
+  const confirmDeleteHandlerTuto = async (id) => {
     setShowConfirmModal(false);
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/tutorials/${props.id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/tutorials/deletetutoadmin/${id}`,
         'DELETE',
         null,
         {
           Authorization: 'Bearer ' + auth.token,
         }
       );
-      props.onDelete(props.id);
-    } catch (err) {}
+      toast.success('🦄 Tutorial supprimé!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      history.push('/');
+    } catch (err) {
+      toast.error('An error occurred!', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   };
   const columns = [
     {
@@ -224,7 +247,7 @@ const TutorialsList = (props) => {
       width: 70,
       headerName: 'Actions',
       renderCell: (params: id) => (
-        <strong>
+        <strong className="actions-adm">
           <div className="tutorials-item__actions">
             <Link to={`/tutorials/edit/${params.value}`}>
               <button className="act">
@@ -232,6 +255,32 @@ const TutorialsList = (props) => {
               </button>
             </Link>
           </div>
+          <div className="tutorials-item__actions">
+            <button onClick={showDeleteWarningHandler} className="act">
+              <DeleteIcon></DeleteIcon>
+            </button>
+          </div>
+          <Modal
+            show={showConfirmModal}
+            onCancel={cancelDeleteHandler}
+            header="Are you sure?"
+            footerClass="place-item__modal-actions"
+            footer={
+              <React.Fragment>
+                <Button inverse onClick={cancelDeleteHandler}>
+                  Annuler
+                </Button>
+                <Button
+                  danger
+                  onClick={() => confirmDeleteHandlerTuto(params.value)}
+                >
+                  Supprimer
+                </Button>
+              </React.Fragment>
+            }
+          >
+            <p>Supprimer le tutoriel ?</p>
+          </Modal>
         </strong>
       ),
       headerClassName: 'super-app-theme--header',

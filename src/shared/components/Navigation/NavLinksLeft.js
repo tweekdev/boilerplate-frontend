@@ -1,5 +1,4 @@
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import QueueMusicIcon from '@material-ui/icons/QueueMusic';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import YouTubeIcon from '@material-ui/icons/YouTube';
@@ -41,12 +40,6 @@ const NavLinks = (props) => {
           <li>
             <NavLink className="links" to="/tutorial">
               <YouTubeIcon className="icon-header"></YouTubeIcon> Tutoriels
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="links" to="/Instruments" exact>
-              <MusicNoteIcon className="icon-header"></MusicNoteIcon>
-              Instruments
             </NavLink>
           </li>
 

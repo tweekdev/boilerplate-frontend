@@ -4,8 +4,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
+import { AuthContext } from '../../shared/context/auth-context';
+import { useHttpClient } from '../../shared/hooks/http-hook';
 import './Profile.css';
 import TabsProfile from './TabsProfile';
 import TutorialsProfile from './TutorialsProfile';
@@ -51,8 +54,28 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Profile() {
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const auth = useContext(AuthContext);
+  const [loadedTabs, setLoadTabs] = useState();
+  const [state, setState] = useState();
+  const [loadedTutorials, setLoadTutorials] = useState();
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+
+  useEffect(() => {
+    const fetchTabs = async () => {
+      try {
+        const responseData = await sendRequest(
+          `${process.env.REACT_APP_BACKEND_URL}/tabs/user/${state}`
+        );
+        console.log(responseData.tabs);
+        setLoadTabs(responseData.tabs);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchTabs();
+  }, [sendRequest, state]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -78,21 +101,28 @@ function Profile() {
           </Tabs>
         </AppBar>
         <TabPanel value={value} index={0}>
-          <div className="container-profile box">
-            <div className="box-row">
-              <UserProfile className="box-cell" />
-              <UpdateUser className="box-cell" />
+          {!isLoading && (
+            <div className="container-profile box">
+              <div className="box-row">
+                <UserProfile className="box-cell" />
+                <UpdateUser className="box-cell" />
+              </div>
+              <div className="update-password-box">
+                <UpdatePassword className="box-cell" />
+              </div>
             </div>
-            <div className="update-password-box">
-              <UpdatePassword className="box-cell" />
+          )}
+          {isLoading && (
+            <div className="center">
+              <LoadingSpinner />
             </div>
-          </div>
+          )}
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <TabsProfile />
+          {!isLoading && <TabsProfile />}
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <TutorialsProfile />
+          {!isLoading && <TutorialsProfile />}
         </TabPanel>
       </div>
     </div>
