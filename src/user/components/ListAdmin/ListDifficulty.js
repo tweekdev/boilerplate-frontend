@@ -40,8 +40,9 @@ export default function ListDifficulty(props) {
     <Card className={classes.root}>
       <CardHeader title="Difficulté" />
       {props.difficulties &&
-        props.difficulties.map((difficulty) => (
+        props.difficulties.map((difficulty, i) => (
           <CardHeader
+            key={i}
             avatar={<Avatar className={classes.avatar}>D</Avatar>}
             action={
               <IconButton aria-label="settings">

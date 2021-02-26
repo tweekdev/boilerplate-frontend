@@ -40,8 +40,9 @@ export default function ListType(props) {
     <Card className={classes.root}>
       <CardHeader title="Types" />
       {props.types &&
-        props.types.map((type) => (
+        props.types.map((type, i) => (
           <CardHeader
+            key={i}
             avatar={<Avatar className={classes.avatar}>T</Avatar>}
             action={
               <IconButton aria-label="settings">

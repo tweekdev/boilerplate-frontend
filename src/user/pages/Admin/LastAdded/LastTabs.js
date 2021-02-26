@@ -42,8 +42,9 @@ export default function LastTabs(props) {
     <Card className={classes.root}>
       <CardHeader title="Dernières tabs" />
       {props.tabs &&
-        props.tabs.map((tab) => (
+        props.tabs.map((tab, i) => (
           <CardHeader
+            key={i}
             avatar={
               <Avatar aria-label="recipe" className={classes.avatar}>
                 Tabs

@@ -40,8 +40,9 @@ export default function LastUsers(props) {
     <Card className={classes.root}>
       <CardHeader title="Dernières inscriptions" />
       {props.users &&
-        props.users.map((user) => (
+        props.users.map((user, i) => (
           <CardHeader
+            key={i}
             avatar={
               <Avatar
                 aria-label="recipe"

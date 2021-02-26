@@ -47,8 +47,9 @@ export default function LastTutorials(props) {
     <Card className={classes.root}>
       <CardHeader title="Derniers tutoriels" />
       {props.tutorials &&
-        props.tutorials.map((tutorial) => (
+        props.tutorials.map((tutorial, i) => (
           <CardHeader
+            key={i}
             avatar={
               <Avatar aria-label="recipe" className={classes.avatar}>
                 Tuto

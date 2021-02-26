@@ -32,6 +32,10 @@
   width: 100%;
   display: flex;
 }
+.description-data-single p {
+	text-align: justify;
+}
+
 
 .video {
   width: 75%;
@@ -157,5 +161,6 @@
 .description-data-single p {
   line-height: 1.6;
   margin-top: 1rem;
+	text-align: justify;
 }
 

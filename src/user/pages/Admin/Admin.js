@@ -37,7 +37,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <Typography component={'span'}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -203,11 +203,13 @@ const Admin = (props) => {
                   loadedTutorialsLast &&
                   loadedTabsLast &&
                   loadedUsersLast && (
-                    <Dashboard
-                      tabs={loadedTabsLast}
-                      users={loadedUsersLast}
-                      tutorials={loadedTutorialsLast}
-                    />
+                    <div>
+                      <Dashboard
+                        tabs={loadedTabsLast}
+                        users={loadedUsersLast}
+                        tutorials={loadedTutorialsLast}
+                      />
+                    </div>
                   )}
               </TabPanel>
               <TabPanel value={value} index={1}>

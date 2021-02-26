@@ -186,3 +186,11 @@ h2 {
 		width: 100%;
   }
 }
+
+
+
+@media (max-width: 768px) {
+.header-search {
+    height: 100% !important;
+}
+}

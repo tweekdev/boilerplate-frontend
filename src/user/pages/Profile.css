@@ -47,4 +47,9 @@
     flex-direction: column !important;
     align-items: flex-start;
   }
+
+	.main-tabs-profile, .main-tutorials-profile{
+		flex-direction: column !important;
+		min-height: 0;
+	}
 }

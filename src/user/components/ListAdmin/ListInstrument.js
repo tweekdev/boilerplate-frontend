@@ -41,8 +41,9 @@ export default function ListInstrument(props) {
     <Card className={classes.root}>
       <CardHeader title="Instrument" />
       {props.instruments &&
-        props.instruments.map((instrument) => (
+        props.instruments.map((instrument, i) => (
           <CardHeader
+            key={i}	
             avatar={<Avatar className={classes.avatar}>I</Avatar>}
             action={
               <IconButton aria-label="settings">

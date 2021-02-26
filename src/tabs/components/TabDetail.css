@@ -84,6 +84,7 @@
 .react-pdf__Page, .page-controls {
   display: flex;
   justify-content: center;
+	overflow: hidden;
 }
 
 .react-pdf__Page__canvas {
@@ -143,6 +144,10 @@
 .tab-item__info {
   flex: 1;
   height: 100%;
+}
+
+.description-data-single p {
+	text-align: justify;
 }
 
 .tabs-data-single {
@@ -230,4 +235,5 @@
 .description-data-single p {
   line-height: 1.6;
   margin-top: 1rem;
+	text-align: justify;
 }
