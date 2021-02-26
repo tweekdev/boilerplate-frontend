@@ -212,6 +212,14 @@ const TabsList = (props) => {
       cellClassName: 'super-app-theme--cell',
     },
     {
+      field: 'creator',
+      headerName: 'Createur',
+      width: 150,
+      headerClassName: 'super-app-theme--header',
+      headerAlign: 'center',
+      cellClassName: 'super-app-theme--cell',
+    },
+    {
       field: 'instrument',
       headerName: 'instrument',
       width: 180,
@@ -248,6 +256,7 @@ const TabsList = (props) => {
     {
       field: 'id',
       headerName: 'Actions',
+      width: 200,
       renderCell: (params: id) => (
         <strong className="actions-adm">
           <div className="tabs-item__actions">
@@ -257,7 +266,7 @@ const TabsList = (props) => {
               </button>
             </Link>
           </div>
-          <div className="tabs-item__actions">
+          <div className="tabs-item__actions delete">
             <button onClick={showDeleteWarningHandler} className="act">
               <DeleteIcon></DeleteIcon>
             </button>
@@ -305,6 +314,7 @@ const TabsList = (props) => {
           instrument: tab.instrument.name,
           type: tab.type.name,
           difficulty: tab.difficulty.name,
+          creator: tab.creator.pseudo,
         },
       ])
     );

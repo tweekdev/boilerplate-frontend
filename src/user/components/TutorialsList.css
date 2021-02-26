@@ -38,6 +38,14 @@
   flex-shrink: 0;
   user-select: none;
 }
+
 .actions-adm{
-	display: flex;
+	justify-content: space-around;
+	border-radius: 0;
+}
+.actions-adm .tutorials-item__actions{
+	width: 100%;
+}
+.actions-adm .delete .act{
+	background-color: #FF0038;
 }

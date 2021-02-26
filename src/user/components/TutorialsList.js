@@ -201,6 +201,14 @@ const TutorialsList = (props) => {
       cellClassName: 'super-app-theme--cell',
     },
     {
+      field: 'creator',
+      headerName: 'Createur',
+      width: 150,
+      headerClassName: 'super-app-theme--header',
+      headerAlign: 'center',
+      cellClassName: 'super-app-theme--cell',
+    },
+    {
       field: 'date',
       headerName: 'date',
       width: 200,
@@ -244,7 +252,7 @@ const TutorialsList = (props) => {
     },
     {
       field: 'id',
-      width: 70,
+      width: 200,
       headerName: 'Actions',
       renderCell: (params: id) => (
         <strong className="actions-adm">
@@ -255,7 +263,7 @@ const TutorialsList = (props) => {
               </button>
             </Link>
           </div>
-          <div className="tutorials-item__actions">
+          <div className="tutorials-item__actions delete">
             <button onClick={showDeleteWarningHandler} className="act">
               <DeleteIcon></DeleteIcon>
             </button>
@@ -303,6 +311,7 @@ const TutorialsList = (props) => {
           instrument: tutorial.instrument.name,
           type: tutorial.type.name,
           difficulty: tutorial.difficulty.name,
+          creator: tutorial.creator.pseudo,
         },
       ])
     );

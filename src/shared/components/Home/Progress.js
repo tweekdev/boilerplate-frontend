@@ -105,13 +105,10 @@ class Progress extends Component {
     await axios
       .get('http://localhost:5000/course')
       .then((response) => {
-        console.log(response);
         this.setState({ progress: response.data, isLoaded: true });
         //this.setState({name: response.data.name}); NE PAS OUBLIER DE VISEE LE DATA POUR RECUPERER LES DATAS
       })
-      .catch((e) => {
-        console.error(e);
-      });
+      .catch((e) => {});
   }
 
   render() {
@@ -134,31 +131,28 @@ class Progress extends Component {
           }}
         >
           {progress &&
-            progress.map(
-              (item) => (
-                <Card key={item._id}>
-                  <CardImage>
-                    <Image src={item.image}></Image>
-                  </CardImage>
-                  <CardTitle>
-                    <Lien href={item.lien}>{item.libelle}</Lien>
-                    <ProgressBar
-                      style={{
-                        backgroundColor: '#222',
-                        height: '1.5rem',
-                        borderRadius: '1em',
-                        width: '100%',
-                        marginTop: '3rem',
-                      }}
-                      label={item.pourcentage + '%'}
-                      striped={false}
-                      now={item.pourcentage}
-                    ></ProgressBar>
-                  </CardTitle>
-                </Card>
-              ),
-              console.log(this.state.progress)
-            )}
+            progress.map((item) => (
+              <Card key={item._id}>
+                <CardImage>
+                  <Image src={item.image}></Image>
+                </CardImage>
+                <CardTitle>
+                  <Lien href={item.lien}>{item.libelle}</Lien>
+                  <ProgressBar
+                    style={{
+                      backgroundColor: '#222',
+                      height: '1.5rem',
+                      borderRadius: '1em',
+                      width: '100%',
+                      marginTop: '3rem',
+                    }}
+                    label={item.pourcentage + '%'}
+                    striped={false}
+                    now={item.pourcentage}
+                  ></ProgressBar>
+                </CardTitle>
+              </Card>
+            ))}
         </Carousel>
       );
     }

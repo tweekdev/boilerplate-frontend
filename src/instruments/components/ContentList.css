@@ -220,7 +220,7 @@ background: linear-gradient(110deg, #1b2055 60%, #121539 60%);
 
 @media screen and (max-width: 80em) {
   .tutorials--items {
-    margin: 1rem;
+    margin: 0rem;
     flex: 0 1 auto;
   }
 
@@ -235,41 +235,36 @@ background: linear-gradient(110deg, #1b2055 60%, #121539 60%);
 
 @media screen and (max-width: 70em) {
   .tutorials--items {
-    margin: 1rem;
+    margin: 0rem;
     flex: 0 1 auto;
   }
 }
 
 @media screen and (max-width: 56em) {
   .tutorials--items {
-    margin: 1rem;
+    margin: 0rem;
     flex: 0 1 auto;
   }
 }
 @media screen and (max-width: 47.5em) {
   .tutorials--items {
-    margin: 2rem;
+    margin: 0rem;
     flex: 0 1 auto;
-    margin-left: 1rem;
   }
 }
 
 @media screen and (max-width: 37.5em) {
   .tutorials--items {
-    margin: 2rem;
+    margin: 0rem;
     flex: 0 1 auto;
-    margin-left: 1rem;
   }
 }
 @media screen and (max-width: 30em) {
   .tutorials--items {
-    margin: 2rem;
+    margin: 0rem;
     flex: 0 1 auto;
-    margin-left: 1rem;
   }
-  .tutorials-item__info {
-    margin-left: 1rem;
-  }
+
 }
 
 @media screen and (max-width: 80em) {

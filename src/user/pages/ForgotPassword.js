@@ -59,7 +59,7 @@ const ForgotPassword = (props) => {
   };
 
   return (
-    <div className="main auth-page">
+    <div className="main auth-page forgot">
       <ErrorModal error={error} onClear={clearError} />
       {!isLoading ? (
         <Card className="authentication">

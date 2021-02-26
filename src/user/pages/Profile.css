@@ -4,11 +4,47 @@
 }
 .box .box-row {
   display: flex;
-	flex-direction: row;
+  flex-direction: row;
   width: 100%;
 }
 .box .box-cell {
-	width: 100%;
+  width: 100%;
   flex: 1;
   padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+    color: #d4dcff;
+  }
+  .profile-container .authentication {
+    min-width: 0 !important;
+  }
+  .profile-container .user-prof-card {
+    min-width: 0 !important;
+  }
+  .box .box-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .box .box-cell {
+    width: 100%;
+    flex: 1;
+    padding: 16px;
+  }
+
+  .profile-container .update-password {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .upd-password .authentication form {
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-start;
+  }
 }

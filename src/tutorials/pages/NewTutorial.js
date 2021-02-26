@@ -73,7 +73,6 @@ const NewTutorial = () => {
       if (ampersandPosition !== -1) {
         video_id = video_id.substring(0, ampersandPosition);
       }
-      console.log(video_id);
       await sendRequest(
         `${process.env.REACT_APP_BACKEND_URL}/tutorials`,
         'POST',

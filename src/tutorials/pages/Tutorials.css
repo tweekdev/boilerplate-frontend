@@ -1,16 +1,16 @@
 .main-tutorials {
-	min-height:100vh;
+  min-height: 100vh;
   height: 100% !important;
   display: flex;
   width: 100%;
   justify-content: space-around;
   flex-direction: row-reverse;
   align-items: flex-start;
-	padding: 2rem 6rem;
-		background-image: url('../../assets/image/AdobeStock_331719856.png');
-	background-size: contain;
-	background-repeat: no-repeat;	
-	background-position: center;
+  padding: 2rem 6rem;
+  background-image: url('../../assets/image/AdobeStock_331719856.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 .tutorial {
   display: flex;
@@ -18,9 +18,8 @@
   width: 100%;
 }
 
-
 .tutorials-title {
-  color: #FF0038;
+  color: #ff0038;
   display: flex;
   align-items: center;
 }
@@ -28,7 +27,6 @@ h2 {
   color: var(--color);
   margin: 0;
 }
-
 
 @media screen and (max-width: 80em) {
   .title {
@@ -39,34 +37,39 @@ h2 {
   }
 }
 @media screen and (max-width: 70em) {
-
 }
 
 @media screen and (max-width: 56em) {
-  .main-tutorials  {
+  .main-tutorials {
     padding: 1rem;
   }
-	.descritif-tutorials {
-		margin-left: 0;
-		grid-column: 1/1;
-	}
+  .descritif-tutorials {
+    margin-left: 0;
+    grid-column: 1/1;
+  }
+
+		.descritif-tutorials h1 {
+    font-size: 40px;
+}
+	.descritif-tutorials strong {
+    font-size: 40px;
+}
+	.descritif-tutorials p {
+    font-size: 16px;
+}
 }
 
 @media screen and (max-width: 37.5em) {
-  .main-tutorials  {
+  .main-tutorials {
     padding: 1rem;
   }
-	.descritif-tutorials {
-		margin-left: 0;
-		grid-column: 1/1;
-	}
+  .descritif-tutorials {
+    margin-left: 0;
+    grid-column: 1/1;
+  }
 }
 
 @media screen and (max-width: 30em) {
-
-
 }
 @media screen and (max-width: 25em) {
-
-
 }

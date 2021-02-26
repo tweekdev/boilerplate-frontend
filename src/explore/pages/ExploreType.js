@@ -20,9 +20,7 @@ function ExploreType() {
           `${process.env.REACT_APP_BACKEND_URL}/tabs/type/601931d35dc3ee2e0f4edb79`
         );
         setLoadRock(responseData.tabs);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     const fetchTabsPunk = async () => {
       try {
@@ -30,9 +28,7 @@ function ExploreType() {
           `${process.env.REACT_APP_BACKEND_URL}/tabs/type/601932c1fbf5a82f69a7873e`
         );
         setLoadPunk(responseData.tabs);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     const fetchTabsPop = async () => {
       try {
@@ -40,9 +36,7 @@ function ExploreType() {
           `${process.env.REACT_APP_BACKEND_URL}/tabs/type/601932bcfbf5a82f69a7873d`
         );
         setLoadPop(responseData.tabs);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTabsRock();
     fetchTabsPunk();

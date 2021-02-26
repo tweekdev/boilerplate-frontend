@@ -15,6 +15,9 @@ import { AuthContext } from './shared/context/auth-context';
 import { useAuth } from './shared/hooks/auth-hook';
 import NewTabs from './tabs/pages/NewTabs';
 import NewTutorial from './tutorials/pages/NewTutorial';
+import EditDifficulty from './user/pages/Admin/Edit/EditDifficulty';
+import EditInstrument from './user/pages/Admin/Edit/EditInstrument';
+import EditType from './user/pages/Admin/Edit/EditType';
 import ForgotPassword from './user/pages/ForgotPassword';
 import Profile from './user/pages/Profile';
 import ResetPassword from './user/pages/ResetPassword';
@@ -26,13 +29,13 @@ const Tutorials = React.lazy(() => import('./tutorials/pages/Tutorials'));
 const Tutorial = React.lazy(() => import('./tutorials/pages/Tutorial'));
 const Instrument = React.lazy(() => import('./instruments/pages/Instrument'));
 const NewInstrument = React.lazy(() =>
-  import('./instruments/pages/NewInstrument')
+  import('./user/components/new/NewInstrument')
 );
 const UpdateTabs = React.lazy(() => import('./tabs/pages/UpdateTabs'));
 const UpdateTutorial = React.lazy(() =>
   import('./tutorials/pages/UpdateTutorial')
 );
-const Admin = React.lazy(() => import('./user/pages/Admin'));
+const Admin = React.lazy(() => import('./user/pages/Admin/Admin'));
 const Auth = React.lazy(() => import('./user/pages/Auth'));
 const Signup = React.lazy(() => import('./user/pages/Signup'));
 
@@ -86,6 +89,15 @@ const App = () => {
         </Route>
         <Route path="/tabs/edit/:tabsId">
           <UpdateTabs />
+        </Route>
+        <Route path="/types/edit/:typeId">
+          <EditType />
+        </Route>
+        <Route path="/instruments/edit/:instrumentId">
+          <EditInstrument />
+        </Route>
+        <Route path="/difficulties/edit/:difficultyId">
+          <EditDifficulty />
         </Route>
 
         <Route path="/users/edit/:uid" exact>

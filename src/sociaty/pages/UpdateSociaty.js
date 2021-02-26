@@ -28,10 +28,7 @@ const UpdateSociaty = () => {
           `${process.env.REACT_APP_BACKEND_URL}/sociatys/${sid}`
         );
         setLoadedSociaty(responseData.sociaty);
-        console.log(responseData);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchSociaty();
   }, [sendRequest, sid]);

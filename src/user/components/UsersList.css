@@ -34,4 +34,17 @@
 
 .actions-adm{
 	display: flex;
+	width: 100%;
+}
+.actions-adm .users-item__actions{
+	width: 100%;
+}
+.actions-adm .users-item__actions a{
+	width: 100%;
+}
+.actions-adm .users-item__actions a .act{
+	width: 100%;
+}
+.actions-adm .act{
+	width: 100%;
 }

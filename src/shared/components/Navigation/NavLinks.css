@@ -41,8 +41,7 @@
   display: block;
   padding: 9px 0;
   border: 1px solid transparent;
-  border-radius: 18px;
-  color: #262626;
+  border-radius: 18px; 
   font-size: 0.8125rem;
   font-weight: 600;
   line-height: 1;

@@ -66,11 +66,8 @@ const UpdateTabs = () => {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/tabs/${tid}`
         );
-        console.log(responseData);
         setLoadTabs(responseData.tabs);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTypes();
     fetchInstruments();

@@ -39,9 +39,7 @@ function UserProfile() {
           `${process.env.REACT_APP_BACKEND_URL}/users/user/${auth.userId}`
         );
         setLoadedUsers(responseData.users[0]);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchUser();
   }, [sendRequest]);

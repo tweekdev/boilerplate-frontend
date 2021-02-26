@@ -4,10 +4,8 @@ import EditIcon from '@material-ui/icons/Edit';
 import Pagination from '@material-ui/lab/Pagination';
 import PaginationItem from '@material-ui/lab/PaginationItem';
 import PropTypes from 'prop-types';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../shared/context/auth-context';
-import { useHttpClient } from '../../shared/hooks/http-hook';
 import './DifficultiesList.css';
 
 function customCheckbox(theme) {
@@ -104,14 +102,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 const DifficultiesList = (props) => {
   const classes = useStyles();
-  const { sendRequest } = useHttpClient();
 
   const [data, setdata] = useState([]);
-  const auth = useContext(AuthContext);
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
-  const showDeleteWarningHandler = () => {
-    setShowConfirmModal(true);
-  };
+
   CustomPagination.propTypes = {
     /**
      * ApiRef that let you manipulate the grid.
@@ -125,24 +118,6 @@ const DifficultiesList = (props) => {
     state: PropTypes.object.isRequired,
   };
 
-  const cancelDeleteHandler = () => {
-    setShowConfirmModal(false);
-  };
-
-  const confirmDeleteHandler = async () => {
-    setShowConfirmModal(false);
-    try {
-      await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/tabs/${props.id}`,
-        'DELETE',
-        null,
-        {
-          Authorization: 'Bearer ' + auth.token,
-        }
-      );
-      props.onDelete(props.id);
-    } catch (err) {}
-  };
   const columns = [
     {
       field: 'name',

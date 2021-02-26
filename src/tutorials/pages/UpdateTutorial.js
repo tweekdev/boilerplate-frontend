@@ -65,11 +65,8 @@ const UpdateTutorial = () => {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/tutorials/${tuid}`
         );
-        console.log(responseData);
         setLoadTutos(responseData.tutorials);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTypes();
     fetchInstruments();

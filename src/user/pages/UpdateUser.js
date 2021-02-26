@@ -54,9 +54,7 @@ const UpdateUser = (props) => {
           );
           setLoadedUsers(responseData.users[0]);
         }
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchRoles();
     fetchUser();

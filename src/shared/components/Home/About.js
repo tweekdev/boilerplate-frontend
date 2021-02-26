@@ -93,13 +93,11 @@ const About = () => {
   const birthDate = 1998; // create a date object directly from `dob1` argument
   const age_now = today.getFullYear() - birthDate;
   var m = today.getMonth();
-  console.log(m);
   if (m <= 7) {
     age = age_now - 1;
   } else {
     age = age_now;
   }
-  console.log(age_now);
 
   return (
     <div className="About__content">

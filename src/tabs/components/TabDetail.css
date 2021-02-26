@@ -27,6 +27,9 @@
   padding: 3rem;
   transition: none;
 }
+.card-tab-item-info .MuiTypography-colorTextSecondary {
+	color: #d4dcff;
+}
 .tab-item {
   margin: 1rem;
   flex: 0 1 auto;
@@ -53,9 +56,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+	margin-top: 2rem;
 }
 .data-bottom .tabs-data-single {
   color: #d4dcff;
+}
+
+.auteur h5 {
+	display: flex;
+	align-items: center;
 }
 .auteur strong {
   margin-left: 0.5rem;

@@ -71,11 +71,8 @@ const ListTabByInstrument = (props) => {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/tabs/allByInstrumentId/${props.id}`
         );
-        console.log(responseData.tabs);
         setLoadedTabsByInstrument(responseData.tabs);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTabs();
   }, [sendRequest, props.id]);

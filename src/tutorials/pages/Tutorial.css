@@ -22,3 +22,34 @@ h2 {
   color: #d4dcff;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .main-tutorials-single  {
+    padding: 1rem;
+  }
+  .main-tutorials-single  .tab-item {
+    font-size: 1em;
+		margin: 1rem 0;
+  }
+  .main-tutorials-single .video-youtube{
+    height: 15rem;
+  }
+  .main-tutorials-single  .tab-item h1{
+    font-size: 1.5em;
+  }
+  .main-tutorials-single .tuto-item-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .main-tutorials-single .card-tuto-item-info {
+   padding: 0rem;
+  }
+
+	.description-data-single h2{
+		font-size: 1.5em;
+	}
+  .main-tutorials-single .video {
+    width: 100%;
+  }
+}

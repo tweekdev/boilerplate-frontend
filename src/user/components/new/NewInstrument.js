@@ -3,12 +3,12 @@ import React, { useContext } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
-import Button from '../../shared/components/FormElements/Button';
-import Card from '../../shared/components/UIElements/Card';
-import ErrorModal from '../../shared/components/UIElements/ErrorModal';
-import { AuthContext } from '../../shared/context/auth-context';
-import { useHttpClient } from '../../shared/hooks/http-hook';
-import './NewInstrument.css';
+import Button from '../../../shared/components/FormElements/Button';
+import Card from '../../../shared/components/UIElements/Card';
+import ErrorModal from '../../../shared/components/UIElements/ErrorModal';
+import { AuthContext } from '../../../shared/context/auth-context';
+import { useHttpClient } from '../../../shared/hooks/http-hook';
+import './New.css';
 
 toast.configure();
 
@@ -82,7 +82,7 @@ const NewTabs = () => {
             <form onSubmit={handleSubmit} className="tabs-form">
               <div className={'form-group'}>
                 <Field
-                  className={'new-tabs-control'}
+                  className={'form-control'}
                   type="text"
                   name="name"
                   onChange={handleChange}

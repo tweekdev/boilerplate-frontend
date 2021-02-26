@@ -16,9 +16,7 @@ const Tutorials = (props) => {
           `${process.env.REACT_APP_BACKEND_URL}/tutorials`
         );
         setLoadTutorials(responseData.tutorials);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTutorials();
   }, [sendRequest]);

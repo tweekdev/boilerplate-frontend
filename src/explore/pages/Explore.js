@@ -16,9 +16,7 @@ const Explore = (props) => {
           `${process.env.REACT_APP_BACKEND_URL}/tabs`
         );
         setLoadTabs(responseData.tabs);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTabs();
   }, [sendRequest]);

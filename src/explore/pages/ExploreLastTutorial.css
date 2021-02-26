@@ -44,22 +44,7 @@
 }
 
 
-table { 
-	color: #404972;
-  padding:0em 2em;
-  border-collapse: collapse;
-	width: 100%;
-}
-tr {
-  border-bottom: 1px solid #404972;
-}
-tr:last-child {
+
+.MuiTableRow-root:last-child {
   border-bottom: none;
-}
-td {
-	padding: 1rem 1em;
-	width: 36%;
-}
-td .last-col{
-	text-align: end;
 }

@@ -1,17 +1,25 @@
 import Avatar from '@material-ui/core/Avatar';
+import Divider from '@material-ui/core/Divider';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useContext } from 'react';
+import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
+import MicIcon from '@material-ui/icons/Mic';
+import StraightenOutlinedIcon from '@material-ui/icons/StraightenOutlined';
+import React from 'react';
 import YouTube from 'react-youtube';
 import Card from '../../shared/components/UIElements/Card';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import './TutorialDetail.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    width: '100%',
+    maxWidth: 360,
     '& > *': {
       margin: theme.spacing(1),
     },
@@ -24,11 +32,16 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(7),
     height: theme.spacing(7),
   },
+  avatar: {
+    backgroundColor: '#0F122F',
+  },
+  text: {
+    color: '#f8f8fa',
+  },
 }));
 const TutorialDetail = (props) => {
   const classes = useStyles();
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const auth = useContext(AuthContext);
+  const { isLoading, error, clearError } = useHttpClient();
   const _onReady = (event) => {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
@@ -56,6 +69,7 @@ const TutorialDetail = (props) => {
       <div className="tuto-item-info">
         <div className="video">
           <YouTube
+            className="video-youtube"
             videoId={props.items.link} // defaults -> null
             id={props.items.link} // defaults -> null
             opts={opts} // defaults -> {}
@@ -64,14 +78,46 @@ const TutorialDetail = (props) => {
         </div>
         <div className="tuto-item__info">
           <Card className="card-tuto-item-info">
-            <div className="tutorials-data-single">
-              <label>Type:</label>
-              <h4 className="items-desc">{props.items.type.name}</h4>
-            </div>
-            <div className="tutorials-data-single">
-              <label>Instrument:</label>
-              <h4 className="items-desc">{props.items.instrument.name}</h4>
-            </div>
+            <List className={classes.root}>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar className={classes.avatar}>
+                    <MicIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  className={classes.text}
+                  primary="Chanteur"
+                  secondary={props.items.chanteur}
+                />
+              </ListItem>
+              <Divider variant="inset" component="li" />
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar className={classes.avatar}>
+                    <LibraryMusicIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  className={classes.text}
+                  primary="Type"
+                  secondary={props.items.type.name}
+                />
+              </ListItem>
+              <Divider variant="inset" component="li" />
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar className={classes.avatar}>
+                    <StraightenOutlinedIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  className={classes.text}
+                  primary="Instrument"
+                  secondary={props.items.instrument.name}
+                />
+              </ListItem>
+            </List>
             {props.items.tab ? (
               <div className="linktab">
                 <a

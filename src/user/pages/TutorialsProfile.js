@@ -28,9 +28,7 @@ const TutorialsProfile = (props) => {
           `${process.env.REACT_APP_BACKEND_URL}/tutorials/user/${auth.userId}`
         );
         setLoadTutorials(responseData.tutorials);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTutorials();
   }, [sendRequest]);
@@ -47,7 +45,6 @@ const TutorialsProfile = (props) => {
     setShowConfirmModal(false);
 
     try {
-      console.log(id);
       await sendRequest(
         `${process.env.REACT_APP_BACKEND_URL}/tutorials/${id}`,
         'DELETE',

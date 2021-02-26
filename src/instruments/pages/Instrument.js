@@ -18,11 +18,8 @@ const Tab = () => {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/tabsTutos/${iid}`
         );
-        console.log(responseData.instruments[0]);
         setLoadTab(responseData.instruments[0]);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTutorial();
   }, [sendRequest, iid]);

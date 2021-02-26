@@ -20,6 +20,9 @@
   transition: none;
 }
 
+.card-tuto-item-info .MuiTypography-colorTextSecondary {
+  color: #d4dcff;
+}
 
 .tab-content {
   display: table;
@@ -63,18 +66,22 @@
   padding: 0 0.5em;
 }
 .data-bottom {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
 }
-.data-bottom .tutorials-data-single{
-	color: #d4dcff;
+.data-bottom .tutorials-data-single {
+  color: #d4dcff;
 }
-.auteur strong{
-	margin-left: .5rem;
-	font-weight: bold;
-  color: #FF0038;
-
+.auteur h5 {
+  display: flex;
+  align-items: center;
+}
+.auteur strong {
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: #ff0038;
 }
 .page-controls button {
   height: 40px;
@@ -139,17 +146,16 @@
   padding: 0.5rem 1rem;
 }
 
-.description-data-single{
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+.description-data-single {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
-.description-data-single h2{
-	margin-left: 0;
-	font-size: 2em;
-	
+.description-data-single h2 {
+  margin-left: 0;
+  font-size: 2em;
 }
-.description-data-single p{
-	line-height: 1.6;
-	margin-top: 1rem;
+.description-data-single p {
+  line-height: 1.6;
+  margin-top: 1rem;
+}
 
-}

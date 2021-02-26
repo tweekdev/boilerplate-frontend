@@ -36,9 +36,7 @@ const TabsProfile = (props) => {
           `${process.env.REACT_APP_BACKEND_URL}/tabs/user/${auth.userId}`
         );
         setLoadTabs(responseData.tabs);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTabs();
   }, [sendRequest]);
@@ -47,7 +45,6 @@ const TabsProfile = (props) => {
     setShowConfirmModal(false);
 
     try {
-      console.log();
       await sendRequest(
         `${process.env.REACT_APP_BACKEND_URL}/tabs/${id}`,
         'DELETE',

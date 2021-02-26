@@ -4,39 +4,38 @@
   margin: 0;
   margin-top: 0;
   padding: 0;
-	background-image: url('../../assets/image/AdobeStock_331719984.png');
-	background-repeat: no-repeat;
-	background-size: contain;
+  background-image: url('../../assets/image/AdobeStock_331719984.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
-
 
 .home-intro {
   height: 90vh;
   display: flex;
-	padding: 0 6rem;
+  padding: 0 6rem;
   justify-content: center;
   align-items: center;
-	user-select: none;
+  user-select: none;
 }
 .stack {
   width: 100%;
   align-content: flex-start;
 }
-.container-home{
-	background-image: url('../../assets/image/AdobeStock_270209307.png');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: right;
+.container-home {
+  background-image: url('../../assets/image/AdobeStock_270209307.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
 }
-.home-push{
-	width: 100%;
-	padding: 0rem 6rem;
+.home-push {
+  width: 100%;
+  padding: 0rem 6rem;
 }
 
-.last-home{
-	display: flex;
-	margin-top: 2rem;
-	/*background-image: url('../../assets/image/AdobeStock.png');
+.last-home {
+  display: flex;
+  margin-top: 2rem;
+  /*background-image: url('../../assets/image/AdobeStock.png');
 	margin-bottom: 2rem;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -64,10 +63,10 @@
   transition: color 0.2s ease-out;
 }
 
-
-.title span, .subTitle span {
+.title span,
+.subTitle span {
   font-weight: 600;
-  color: #FF0038;
+  color: #ff0038;
   transition: color 0.2s ease-out;
 }
 
@@ -80,66 +79,97 @@
   transition: color 0.2s ease-out;
 }
 .see-tabs {
-  border: 1px solid #FF0038;
+  border: 1px solid #ff0038;
   background: transparent;
-  color: #FF0038;
+  color: #ff0038;
   margin-left: 1rem;
 }
-@media screen and (max-width: 80em) {
-  .title {
-    font-size: 4rem;
+
+@media screen and (max-width: 90em) {
+  .home-intro {
+    height: 70vh;
   }
-  .subTitle {
-    font-size: 1.2rem;
+}
+@media screen and (max-width: 80em) {
+  .home-intro {
+    height: 35vh;
   }
 }
 @media screen and (max-width: 70em) {
-  .title {
-    font-size: 3.2rem;
-  }
-  .subTitle {
-    font-size: 1rem;
+  .home-intro {
+    height: 35vh;
   }
 }
 
 @media screen and (max-width: 56em) {
-.main-home {
-  padding: 1rem;
-}
-.home-intro {
-  height: 90vh;
-  display: flex;
-	padding: 0 0rem;
-  justify-content: center;
-  align-items: center;
-}
-.container {
-	    width: 100%;
-    margin-top: 0rem;
-    padding-left: 0rem;
-}
-.backgroundImage {
-    display: none;
-}
+  .main-home {
+    padding: 1rem;
+
+    width: 100%;
+    align-items: center;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+  .home-intro {
+    height: 90vh;
+    display: flex;
+    padding: 0 0rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-push {
+    width: 100%;
+    padding: 0rem 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .home-push .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  .home-push .card-content .MuiPaper-root {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .home-push .artist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #d4d7e6;
+    width: 63%;
+    padding: 1rem;
+  }
+  .explore-difficulty {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3rem;
+    -webkit-user-select: none;
+    user-select: none;
+  }
 }
 
 @media screen and (max-width: 37.5em) {
   .title {
-    font-size: 4.5rem;
+    font-size: 2rem;
   }
   .subTitle {
     font-size: 1rem;
   }
 
- 
   .backgroundImage {
     align-items: start;
   }
-.container {
-	    width: 100%;
+  .container {
+    width: 100%;
     margin-top: 0rem;
     padding-left: 0rem;
-}
+  }
   .smallWrapper {
     margin-top: 7rem;
     width: 100%;
@@ -150,16 +180,23 @@
 
 @media screen and (max-width: 30em) {
   .title {
-    font-size: 4rem;
+    font-size: 2rem;
+  }
+  .home-intro {
+    height: 75vh;
+    display: flex;
+    padding: 0 0rem;
+    justify-content: center;
+    align-items: center;
   }
   .subTitle {
     font-size: 1.2rem;
   }
-.container {
-	    width: 100%;
+  .container {
+    width: 100%;
     margin-top: 0rem;
     padding-left: 0rem;
-}
+  }
   .smallWrapper {
     margin-top: 7rem;
     width: 100%;
@@ -174,11 +211,11 @@
   .subTitle {
     font-size: 1.2rem;
   }
-.container {
-	    width: 100%;
+  .container {
+    width: 100%;
     margin-top: 0rem;
     padding-left: 0rem;
-}
+  }
   .smallWrapper {
     margin-top: 7rem;
     width: 100%;

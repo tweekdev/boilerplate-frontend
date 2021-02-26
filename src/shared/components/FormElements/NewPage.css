@@ -47,3 +47,19 @@ form.new-form {
   color: #f8f8f873;
   margin: 0 !important;
 }
+
+@media (max-width: 768px) {
+.main-new {
+  display: flex;
+  width: 100%;
+	padding: 1rem;
+}
+.main-new .MuiPaper-root {
+  width: 100%;
+}
+
+.main-new .card-new {
+  padding: 2rem;
+	min-width: 0rem;
+}
+}

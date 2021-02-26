@@ -82,7 +82,7 @@ const NewTabs = () => {
             <form onSubmit={handleSubmit} className="tabs-form">
               <div className={'form-group'}>
                 <Field
-                  className={'new-tabs-control'}
+                  className={'form-control'}
                   type="text"
                   name="name"
                   onChange={handleChange}

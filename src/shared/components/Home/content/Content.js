@@ -17,9 +17,7 @@ const Content = () => {
           `${process.env.REACT_APP_BACKEND_URL}/tabs/last`
         );
         setTabs(responseData.tabs);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     const fetchLastInstruments = async () => {
       try {
@@ -27,9 +25,7 @@ const Content = () => {
           `${process.env.REACT_APP_BACKEND_URL}/instruments/last`
         );
         setInstruments(responseData.instruments);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     const fetchLastTutorials = async () => {
       try {
@@ -37,9 +33,7 @@ const Content = () => {
           `${process.env.REACT_APP_BACKEND_URL}/tutorials/last`
         );
         setTutorials(responseData.tutorials);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchLastTabs();
     fetchLastInstruments();

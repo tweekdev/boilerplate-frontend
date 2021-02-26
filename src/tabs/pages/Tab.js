@@ -18,11 +18,8 @@ const Tab = () => {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/tabs/${tib}`
         );
-        console.log(responseData.tabs);
         setLoadTab(responseData.tabs);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTab();
   }, [sendRequest, tib]);

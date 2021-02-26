@@ -1,22 +1,32 @@
 import Avatar from '@material-ui/core/Avatar';
+import Divider from '@material-ui/core/Divider';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useCallback, useContext, useState } from 'react';
+import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
+import MicIcon from '@material-ui/icons/Mic';
+import StraightenOutlinedIcon from '@material-ui/icons/StraightenOutlined';
+import React, { useCallback, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import Card from '../../shared/components/UIElements/Card';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import { AuthContext } from '../../shared/context/auth-context';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import './TabDetail.css';
-import './TabDetail.less';
-
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    width: '100%',
+    maxWidth: 360,
     '& > *': {
       margin: theme.spacing(1),
     },
+    color: '#f8f8fa',
+  },
+  text: {
+    color: '#f8f8fa',
   },
   small: {
     width: theme.spacing(3),
@@ -26,13 +36,14 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(7),
     height: theme.spacing(7),
   },
+  avatar: {
+    backgroundColor: '#0F122F',
+  },
 }));
 const TabDetail = (props) => {
   const classes = useStyles();
 
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const auth = useContext(AuthContext);
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const { isLoading, error, clearError } = useHttpClient();
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -103,18 +114,47 @@ const TabDetail = (props) => {
         </div>
         <div className="tab-item__info">
           <Card className="card-tab-item-info">
-            <div className="tabs-data-single">
-              <label>Chanteur:</label>
-              <h4 className="items-desc"> {props.items.chanteur}</h4>
-            </div>
-            <div className="tabs-data-single">
-              <label>Type:</label>
-              <h4 className="items-desc"> {props.items.type.name}</h4>
-            </div>
-            <div className="tabs-data-single">
-              <label>Instrument:</label>
-              <h4 className="items-desc">{props.items.instrument.name}</h4>
-            </div>
+            <List className={classes.root}>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar className={classes.avatar}>
+                    <MicIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  className={classes.text}
+                  primary="Chanteur"
+                  secondary={props.items.chanteur}
+                />
+              </ListItem>
+              <Divider variant="inset" component="li" />
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar className={classes.avatar}>
+                    <LibraryMusicIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  className={classes.text}
+                  primary="Type"
+                  secondary={props.items.type.name}
+                />
+              </ListItem>
+              <Divider variant="inset" component="li" />
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar className={classes.avatar}>
+                    <StraightenOutlinedIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  className={classes.text}
+                  primary="Instrument"
+                  secondary={props.items.instrument.name}
+                />
+              </ListItem>
+            </List>
+
             <div className="linktab">
               <a
                 href={`${process.env.REACT_APP_BACKEND_URL}/${props.items.file}`}
@@ -157,7 +197,7 @@ const TabDetail = (props) => {
       </div>
       {props.items.description && (
         <div className="description-data-single">
-          <h2>A propos de ce tutoriel</h2>
+          <h2>A propos de cette tabs</h2>
           <p>{props.items.description}</p>
         </div>
       )}

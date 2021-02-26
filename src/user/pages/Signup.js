@@ -62,7 +62,7 @@ const NewUser = () => {
   };
 
   return (
-    <div className="main auth-page">
+    <div className="main auth-page signup">
       <ErrorModal error={error} onClear={clearError} />
       {isLoading ? (
         <LoadingSpinner asOverlay />

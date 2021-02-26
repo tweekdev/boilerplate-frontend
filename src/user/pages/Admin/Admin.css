@@ -1,0 +1,56 @@
+.main-admin .MuiCard-root {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 2rem;
+  max-width: 25rem !important;
+}
+
+.main-admin .add-new-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+	margin-top: 1rem;
+
+}
+
+.main-admin .add-new-container .MuiPaper-root {
+  padding: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+}
+
+
+@media (max-width: 768px) {
+.main-admin .add-new-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main-admin .add-new-container .MuiPaper-root {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+}
+.main-admin .autres-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.main-admin .MuiBox-root {
+    padding: 0;
+}
+.tabs-content-admin {
+    margin: 0;
+	}
+	.tutorials-content-admin {
+	margin: 0;
+}
+	.users-content-admin {
+	margin: 0;
+}
+}

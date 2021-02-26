@@ -222,15 +222,15 @@ const UsersList = (props) => {
   return (
     <div className="users-content-admin">
       <div style={{ display: 'flex', height: '100%' }}>
-        <div className={classes.root} style={{ width: '100%' }}>
+        <div className={classes.root} style={{ height: 520, width: '100%' }}>
           <DataGrid
             className={classes.root}
             rows={data}
             columns={columns}
             showToolbar
-            checkboxSelection
             pageSize={10}
             autoHeight
+            rowHeight={38}
             loading={data.length === 0}
             columnBuffer={2}
             components={{

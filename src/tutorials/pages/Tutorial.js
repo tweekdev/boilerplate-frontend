@@ -19,9 +19,7 @@ const Tab = () => {
           `${process.env.REACT_APP_BACKEND_URL}/tutorials/${tuib}`
         );
         setLoadTab(responseData.tutorials);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     fetchTutorial();
   }, [sendRequest, tuib]);

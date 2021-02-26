@@ -43,6 +43,15 @@
 		grid-column: 1/1;
 		margin-left: 0;
 	}
+	.descritif-tabs h1 {
+    font-size: 40px;
+}
+	.descritif-tabs strong {
+    font-size: 40px;
+}
+	.descritif-tabs p {
+    font-size: 16px;
+}
 }
 
 @media screen and (max-width: 30em) {

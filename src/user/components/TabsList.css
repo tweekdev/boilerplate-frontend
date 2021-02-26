@@ -15,7 +15,15 @@
 }
 
 
-
 .actions-adm{
-	display: flex;
+	justify-content: space-around;
+	border-radius: 0;
+}
+.actions-adm .tabs-item__actions{
+	width: 100%;
+	border-radius: 0;
+}
+.actions-adm .delete .act{
+	border-radius: 0;
+	background-color: #FF0038;
 }

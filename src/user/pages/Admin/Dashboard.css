@@ -1,0 +1,52 @@
+.main-dashboard .main-counter {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.main-dashboard .last-added{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-top: 5rem;
+}
+.main-dashboard .main-counter .MuiPaper-root{
+	padding: 5rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: #fff;
+}
+.main-dashboard .main-counter .MuiPaper-root .icon{
+	margin-right: 2rem;
+}
+.main-dashboard .main-counter .MuiPaper-root .icon .MuiSvgIcon-root{
+	width: 1.7em;
+	height: 1.7em;	
+	color: #FF0038;
+}
+
+.main-dashboard .last-added .MuiTypography-root{
+	color: #fff;
+}
+
+
+@media (max-width: 768px) {
+.main-dashboard .main-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+	}
+.main-dashboard .main-counter .MuiPaper-root {
+    width: 100%;
+	}
+	.main-dashboard .last-added {
+		display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+		flex-direction: column;
+    margin-top: 5rem;
+}
+}
+
+
