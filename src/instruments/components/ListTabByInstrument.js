@@ -69,7 +69,7 @@ const ListTabByInstrument = (props) => {
     const fetchTabs = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs/allByInstrumentId/${props.id}`
+          `/api/tweektabs/tabs/allByInstrumentId/${props.id}`
         );
         setLoadedTabsByInstrument(responseData.tabs);
       } catch (err) {}

@@ -12,9 +12,7 @@ const Tutorials = (props) => {
   useEffect(() => {
     const fetchTutorials = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tutorials`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/tutorials`);
         setLoadTutorials(responseData.tutorials);
       } catch (err) {}
     };

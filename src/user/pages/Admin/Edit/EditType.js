@@ -25,9 +25,7 @@ const EditType = (props) => {
   useEffect(() => {
     const fetchType = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/types/${tid}`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/types/${tid}`);
         setLoadType(responseData.type);
       } catch (err) {}
     };
@@ -38,7 +36,7 @@ const EditType = (props) => {
   const userUpdateSubmitHandler = async (values, actions) => {
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/types/${tid}`,
+        `/api/tweektabs/types/${tid}`,
         'PATCH',
         JSON.stringify({
           name: values.name,

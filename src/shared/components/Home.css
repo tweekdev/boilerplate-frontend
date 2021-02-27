@@ -152,6 +152,12 @@
     -webkit-user-select: none;
     user-select: none;
   }
+	.see-tabs {
+  margin-left: 0rem;
+}
+	.explore-artist {
+  display: none;
+}
 }
 
 @media screen and (max-width: 37.5em) {

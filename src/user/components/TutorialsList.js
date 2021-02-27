@@ -138,7 +138,7 @@ const TutorialsList = (props) => {
     setShowConfirmModal(false);
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/tutorials/deletetutoadmin/${id}`,
+        `/api/tweektabs/tutorials/deletetutoadmin/${id}`,
         'DELETE',
         null,
         {

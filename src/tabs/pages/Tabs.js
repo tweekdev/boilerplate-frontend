@@ -11,9 +11,7 @@ const Tabs = (props) => {
   useEffect(() => {
     const fetchTabs = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/tabs`);
         setLoadTabs(responseData.tabs);
       } catch (err) {}
     };

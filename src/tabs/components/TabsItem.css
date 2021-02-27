@@ -92,15 +92,13 @@
   text-decoration: none;
   align-items: center;
   position: relative;
-  height: 1rem;
 }
 
 .tabs-choose .button-reverse {
-  position: absolute;
   width: 50%;
   padding: 0.5rem 0.5rem;
   color: #f8f8fa;
-  margin-top: 2rem;
+  margin-top: 0rem;
   margin-bottom: 1rem;
 
 }

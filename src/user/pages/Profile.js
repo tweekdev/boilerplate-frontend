@@ -63,7 +63,7 @@ function Profile() {
     const fetchTabs = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs/user/${state}`
+          `/api/tweektabs/tabs/user/${state}`
         );
         setLoadTabs(responseData.tabs);
       } catch (err) {}

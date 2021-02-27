@@ -36,12 +36,12 @@ const UpdateUser = (props) => {
       try {
         if (uid) {
           const responseData = await sendRequest(
-            `${process.env.REACT_APP_BACKEND_URL}/users/user/${uid}`
+            `/api/tweektabs/users/user/${uid}`
           );
           setLoadedUsers(responseData.users[0]);
         } else {
           const responseData = await sendRequest(
-            `${process.env.REACT_APP_BACKEND_URL}/users/user/${auth.userId}`
+            `/api/tweektabs/users/user/${auth.userId}`
           );
           setLoadedUsers(responseData.users[0]);
         }
@@ -53,9 +53,7 @@ const UpdateUser = (props) => {
   const userUpdateSubmitHandler = async (values, actions) => {
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/users/user/password/${
-          uid ? uid : loadedUsers.id
-        }`,
+        `/api/tweektabs/users/user/password/${uid ? uid : loadedUsers.id}`,
         'PATCH',
         JSON.stringify({
           password: values.password,

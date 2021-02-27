@@ -27,7 +27,7 @@ const NavLinks = (props) => {
       try {
         if (userId !== false) {
           const responseData = await sendRequest(
-            `${process.env.REACT_APP_BACKEND_URL}/users/user/${auth.userId}`
+            `/api/tweektabs/users/user/${auth.userId}`
           );
           setUser(responseData.users[0]);
         }
@@ -52,7 +52,7 @@ const NavLinks = (props) => {
             <div className={classes.root}>
               <Avatar
                 alt="profile-picture"
-                src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
+                src={`/api/tweektabs/${user.picture}`}
               />
 
               <SimpleMenu logout={auth.logout} pseudo={user.pseudo}>

@@ -83,7 +83,7 @@ const TabDetail = (props) => {
         <div className="pdf">
           <Document
             className="custom-classname-document"
-            file={`${process.env.REACT_APP_BACKEND_URL}/${props.items.file}`}
+            file={`/api/tweektabs/${props.items.file}`}
             onLoadSuccess={onDocumentLoadSuccess}
           >
             <div className="Test__container__content__document">
@@ -157,7 +157,7 @@ const TabDetail = (props) => {
 
             <div className="linktab">
               <a
-                href={`${process.env.REACT_APP_BACKEND_URL}/${props.items.file}`}
+                href={`/api/tweektabs/${props.items.file}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -183,7 +183,7 @@ const TabDetail = (props) => {
             <div className={`${classes.root} user-head`}>
               <Avatar
                 alt="picture"
-                src={`${process.env.REACT_APP_BACKEND_URL}/${props.items.creator.picture}`}
+                src={`/api/tweektabs/${props.items.creator.picture}`}
                 className={classes.small}
               />
             </div>

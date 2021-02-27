@@ -35,9 +35,7 @@ const UpdateUser = (props) => {
   useEffect(() => {
     const fetchRoles = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/roles`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/roles`);
         setLoadRoles(responseData.roles);
       } catch (err) {}
     };
@@ -45,12 +43,12 @@ const UpdateUser = (props) => {
       try {
         if (uid) {
           const responseData = await sendRequest(
-            `${process.env.REACT_APP_BACKEND_URL}/users/user/${uid}`
+            `/api/tweektabs/users/user/${uid}`
           );
           setLoadedUsers(responseData.users[0]);
         } else {
           const responseData = await sendRequest(
-            `${process.env.REACT_APP_BACKEND_URL}/users/user/${auth.userId}`
+            `/api/tweektabs/users/user/${auth.userId}`
           );
           setLoadedUsers(responseData.users[0]);
         }
@@ -74,9 +72,7 @@ const UpdateUser = (props) => {
       formData.append('role', values.role);
 
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/users/${
-          uid ? uid : loadedUsers.id
-        }`,
+        `/api/tweektabs/users/${uid ? uid : loadedUsers.id}`,
         'PATCH',
         formData,
         {

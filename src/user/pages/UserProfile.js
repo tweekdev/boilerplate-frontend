@@ -36,7 +36,7 @@ function UserProfile() {
     const fetchUser = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/users/user/${auth.userId}`
+          `/api/tweektabs/users/user/${auth.userId}`
         );
         setLoadedUsers(responseData.users[0]);
       } catch (err) {}
@@ -50,7 +50,7 @@ function UserProfile() {
           <div className={`${classes.root} user-head`}>
             <Avatar
               alt="picture"
-              src={`${process.env.REACT_APP_BACKEND_URL}/${loadedUsers.picture}`}
+              src={`/api/tweektabs/${loadedUsers.picture}`}
               className={classes.large}
             />
             <h2>Mes informations</h2>

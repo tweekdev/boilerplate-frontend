@@ -17,7 +17,7 @@ function ExploreType() {
     const fetchTabsRock = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs/type/601931d35dc3ee2e0f4edb79`
+          `/api/tweektabs/tabs/type/601931d35dc3ee2e0f4edb79`
         );
         setLoadRock(responseData.tabs);
       } catch (err) {}
@@ -25,7 +25,7 @@ function ExploreType() {
     const fetchTabsPunk = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs/type/601932c1fbf5a82f69a7873e`
+          `/api/tweektabs/tabs/type/601932c1fbf5a82f69a7873e`
         );
         setLoadPunk(responseData.tabs);
       } catch (err) {}
@@ -33,7 +33,7 @@ function ExploreType() {
     const fetchTabsPop = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs/type/601932bcfbf5a82f69a7873d`
+          `/api/tweektabs/tabs/type/601932bcfbf5a82f69a7873d`
         );
         setLoadPop(responseData.tabs);
       } catch (err) {}

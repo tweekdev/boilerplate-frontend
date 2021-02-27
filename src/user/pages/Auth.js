@@ -29,7 +29,7 @@ const Auth = () => {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/users/login`,
+          `/api/tweektabs/users/login`,
           'POST',
           JSON.stringify({
             email: values.email,
@@ -37,6 +37,7 @@ const Auth = () => {
           }),
           {
             'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + auth.token,
           }
         );
         auth.login(

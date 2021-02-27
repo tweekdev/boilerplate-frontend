@@ -26,7 +26,7 @@ const EditDifficulty = (props) => {
     const fetchDifficulty = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/difficulties/${did}`
+          `/api/tweektabs/difficulties/${did}`
         );
         setLoadDifficulty(responseData.difficulty);
       } catch (err) {}
@@ -38,7 +38,7 @@ const EditDifficulty = (props) => {
   const userUpdateSubmitHandler = async (values, actions) => {
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/difficulties/${did}`,
+        `/api/tweektabs/difficulties/${did}`,
         'PATCH',
         JSON.stringify({
           name: values.name,

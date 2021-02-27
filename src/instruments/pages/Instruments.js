@@ -11,9 +11,7 @@ const Instruments = () => {
   useEffect(() => {
     const fetchInstruments = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/instruments`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/instruments`);
         setLoadedInstruments(responseData.instruments);
       } catch (err) {}
     };

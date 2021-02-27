@@ -131,14 +131,9 @@ const UsersList = (props) => {
   const confirmDeleteHandler = async () => {
     setShowConfirmModal(false);
     try {
-      await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/users/${props.id}`,
-        'DELETE',
-        null,
-        {
-          Authorization: 'Bearer ' + auth.token,
-        }
-      );
+      await sendRequest(`/api/tweektabs/users/${props.id}`, 'DELETE', null, {
+        Authorization: 'Bearer ' + auth.token,
+      });
       props.onDelete(props.id);
     } catch (err) {}
   };

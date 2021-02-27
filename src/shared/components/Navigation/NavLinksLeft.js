@@ -14,7 +14,7 @@ const NavLinks = (props) => {
   useEffect(() => {
     const fetchLastInstruments = async () => {
       try {
-        await fetch(`${process.env.REACT_APP_BACKEND_URL}/instruments`)
+        await fetch(`/api/tweektabs/instruments`)
           .then((response) => response.json())
           .then((result) => setInstruments(result.instruments));
       } catch (err) {}

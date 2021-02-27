@@ -44,7 +44,7 @@ const NewUser = () => {
       formData.append('tabs', []);
       formData.append('news', []);
       const responseData = await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/users/signup`,
+        `/api/tweektabs/users/signup`,
         'POST',
         formData
       );

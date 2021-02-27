@@ -25,7 +25,7 @@ const TutorialsProfile = (props) => {
     const fetchTutorials = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tutorials/user/${auth.userId}`
+          `/api/tweektabs/tutorials/user/${auth.userId}`
         );
         setLoadTutorials(responseData.tutorials);
       } catch (err) {}
@@ -45,14 +45,9 @@ const TutorialsProfile = (props) => {
     setShowConfirmModal(false);
 
     try {
-      await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/tutorials/${id}`,
-        'DELETE',
-        null,
-        {
-          Authorization: 'Bearer ' + auth.token,
-        }
-      );
+      await sendRequest(`/api/tweektabs/tutorials/${id}`, 'DELETE', null, {
+        Authorization: 'Bearer ' + auth.token,
+      });
       toast.success('🦄 Tutoriel supprimé!', {
         position: 'top-right',
         autoClose: 3000,

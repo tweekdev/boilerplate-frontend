@@ -26,7 +26,7 @@ const EditInstrument = (props) => {
     const fetchInstrument = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/instruments/${iid}`
+          `/api/tweektabs/instruments/${iid}`
         );
         setLoadInstrument(responseData.instrument);
       } catch (err) {}
@@ -38,7 +38,7 @@ const EditInstrument = (props) => {
   const userUpdateSubmitHandler = async (values, actions) => {
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/instruments/${iid}`,
+        `/api/tweektabs/instruments/${iid}`,
         'PATCH',
         JSON.stringify({
           name: values.name,

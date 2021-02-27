@@ -26,9 +26,7 @@ function ExploreLastTutorial() {
   useEffect(() => {
     const fetchLastTutorials = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tutorials/last`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/tutorials/last`);
         setTutorials(responseData.tutorials);
       } catch (err) {}
     };

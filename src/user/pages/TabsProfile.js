@@ -33,7 +33,7 @@ const TabsProfile = (props) => {
     const fetchTabs = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs/user/${auth.userId}`
+          `/api/tweektabs/tabs/user/${auth.userId}`
         );
         setLoadTabs(responseData.tabs);
       } catch (err) {}
@@ -45,14 +45,9 @@ const TabsProfile = (props) => {
     setShowConfirmModal(false);
 
     try {
-      await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/tabs/${id}`,
-        'DELETE',
-        null,
-        {
-          Authorization: 'Bearer ' + auth.token,
-        }
-      );
+      await sendRequest(`/api/tweektabs/tabs/${id}`, 'DELETE', null, {
+        Authorization: 'Bearer ' + auth.token,
+      });
       toast.success('🦄 Tabs supprimé!', {
         position: 'top-right',
         autoClose: 3000,

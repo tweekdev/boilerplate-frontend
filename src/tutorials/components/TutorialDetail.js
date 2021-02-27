@@ -149,7 +149,7 @@ const TutorialDetail = (props) => {
             <div className={`${classes.root} user-head`}>
               <Avatar
                 alt="picture"
-                src={`${process.env.REACT_APP_BACKEND_URL}/${props.items.creator.picture}`}
+                src={`/api/tweektabs/${props.items.creator.picture}`}
                 className={classes.small}
               />
             </div>

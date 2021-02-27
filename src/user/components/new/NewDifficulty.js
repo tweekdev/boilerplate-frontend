@@ -22,7 +22,7 @@ const NewTabs = () => {
   const userSubmitHandler = async (values, actions) => {
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/difficulties`,
+        `/api/tweektabs/difficulties`,
         'POST',
         JSON.stringify({
           name: values.name,

@@ -24,7 +24,7 @@ const ForgotPassword = (props) => {
   const userUpdateSubmitHandler = async (values, actions) => {
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/users/forgotPassword`,
+        `/api/tweektabs/users/forgotPassword`,
         'POST',
         JSON.stringify({
           email: values.email,

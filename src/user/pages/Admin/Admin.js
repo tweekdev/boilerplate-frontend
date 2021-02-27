@@ -83,74 +83,56 @@ const Admin = (props) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/users`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/users`);
         setLoadUsers(responseData.users);
       } catch (err) {}
     };
     const fetchUsersLast = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/users/last`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/users/last`);
         setLoadUsersLast(responseData.users);
       } catch (err) {}
     };
 
     const fetchDifficulties = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/difficulties`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/difficulties`);
         setLoadedDifficulties(responseData.difficulties);
       } catch (err) {}
     };
     const fetchInstruments = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/instruments`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/instruments`);
         setLoadedInstruments(responseData.instruments);
       } catch (err) {}
     };
     const fetchTutorials = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tutorials`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/tutorials`);
         setLoadTutorials(responseData.tutorials);
       } catch (err) {}
     };
     const fetchTutorialsLast = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tutorials/last`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/tutorials/last`);
         setLoadTutorialsLast(responseData.tutorials);
       } catch (err) {}
     };
     const fetchTabs = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/tabs`);
         setLoadTabs(responseData.tabs);
       } catch (err) {}
     };
     const fetchTabsLast = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs/last`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/tabs/last`);
         setLoadTabsLast(responseData.tabs);
       } catch (err) {}
     };
     const fetchTypes = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/types`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/types`);
         setLoadTypes(responseData.types);
       } catch (err) {}
     };

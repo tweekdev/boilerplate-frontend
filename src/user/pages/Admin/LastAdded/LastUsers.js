@@ -47,7 +47,7 @@ export default function LastUsers(props) {
               <Avatar
                 aria-label="recipe"
                 alt="picture"
-                src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
+                src={`/api/tweektabs/${user.picture}`}
                 className={classes.avatar}
               ></Avatar>
             }

@@ -141,7 +141,7 @@ const TabsList = (props) => {
     setShowConfirmModal(false);
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/tabs/deletetabadmin/${id}`,
+        `/api/tweektabs/tabs/deletetabadmin/${id}`,
         'DELETE',
         null,
         {

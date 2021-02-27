@@ -13,25 +13,21 @@ const Content = () => {
   useEffect(() => {
     const fetchLastTabs = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tabs/last`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/tabs/last`);
         setTabs(responseData.tabs);
       } catch (err) {}
     };
     const fetchLastInstruments = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/instruments/last`
+          `/api/tweektabs/instruments/last`
         );
         setInstruments(responseData.instruments);
       } catch (err) {}
     };
     const fetchLastTutorials = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tutorials/last`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/tutorials/last`);
         setTutorials(responseData.tutorials);
       } catch (err) {}
     };

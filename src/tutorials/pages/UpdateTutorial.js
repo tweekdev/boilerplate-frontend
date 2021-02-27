@@ -38,32 +38,26 @@ const UpdateTutorial = () => {
   useEffect(() => {
     const fetchTypes = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/types`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/types`);
         setLoadTypes(responseData.types);
       } catch (err) {}
     };
     const fetchInstruments = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/instruments`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/instruments`);
         setLoadInstrument(responseData.instruments);
       } catch (err) {}
     };
     const fetchDifficulty = async () => {
       try {
-        const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/difficulties`
-        );
+        const responseData = await sendRequest(`/api/tweektabs/difficulties`);
         setLoadDifficulty(responseData.difficulties);
       } catch (err) {}
     };
     const fetchTuto = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tutorials/${tuid}`
+          `/api/tweektabs/tutorials/${tuid}`
         );
         setLoadTutos(responseData.tutorials);
       } catch (err) {}
@@ -91,7 +85,7 @@ const UpdateTutorial = () => {
       }
 
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/tutorials/${tuid}`,
+        `/api/tweektabs/tutorials/${tuid}`,
         'PATCH',
         JSON.stringify({
           chanteur: values.chanteur,

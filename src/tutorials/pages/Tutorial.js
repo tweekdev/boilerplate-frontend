@@ -16,7 +16,7 @@ const Tab = () => {
     const fetchTutorial = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/tutorials/${tuib}`
+          `/api/tweektabs/tutorials/${tuib}`
         );
         setLoadTab(responseData.tutorials);
       } catch (err) {}
