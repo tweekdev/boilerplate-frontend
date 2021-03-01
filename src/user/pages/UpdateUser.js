@@ -72,7 +72,7 @@ const UpdateUser = (props) => {
       formData.append('role', values.role);
 
       await sendRequest(
-        `/api/tweektabs/users/${uid ? uid : loadedUsers.id}`,
+        `/api/tweektabs/users/user/update/${uid ? uid : loadedUsers.id}`,
         'PATCH',
         formData,
         {

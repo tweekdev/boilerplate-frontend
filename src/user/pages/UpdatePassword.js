@@ -53,7 +53,9 @@ const UpdateUser = (props) => {
   const userUpdateSubmitHandler = async (values, actions) => {
     try {
       await sendRequest(
-        `/api/tweektabs/users/user/password/${uid ? uid : loadedUsers.id}`,
+        `/api/tweektabs/users/user/update-password/${
+          uid ? uid : loadedUsers.id
+        }`,
         'PATCH',
         JSON.stringify({
           password: values.password,

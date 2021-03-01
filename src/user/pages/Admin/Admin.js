@@ -89,7 +89,9 @@ const Admin = (props) => {
     };
     const fetchUsersLast = async () => {
       try {
-        const responseData = await sendRequest(`/api/tweektabs/users/last`);
+        const responseData = await sendRequest(
+          `/api/tweektabs/users/last-seven`
+        );
         setLoadUsersLast(responseData.users);
       } catch (err) {}
     };

@@ -31,7 +31,7 @@ const ResetPassword = (props) => {
   const userUpdateSubmitHandler = async (values, actions) => {
     try {
       await sendRequest(
-        `/api/tweektabs/users/user/resetPassword`,
+        `/api/tweektabs/users/user/reset-password`,
         'PATCH',
         JSON.stringify({
           password: values.password,

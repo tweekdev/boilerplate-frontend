@@ -37,7 +37,6 @@ const Auth = () => {
           }),
           {
             'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + auth.token,
           }
         );
         auth.login(
