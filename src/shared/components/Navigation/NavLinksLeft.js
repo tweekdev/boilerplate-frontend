@@ -1,69 +1,21 @@
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import QueueMusicIcon from '@material-ui/icons/QueueMusic';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../context/auth-context';
 import './NavLinksLeft.css';
 const NavLinks = (props) => {
   const auth = useContext(AuthContext);
-  const [instruments, setInstruments] = useState();
-  const [isVisible, setIsVisible] = useState(true);
 
-  useEffect(() => {
-    const fetchLastInstruments = async () => {
-      try {
-        await fetch(`/api/tweektabs/instruments`)
-          .then((response) => response.json())
-          .then((result) => setInstruments(result.instruments));
-      } catch (err) {}
-    };
-    fetchLastInstruments();
-  }, []);
   return (
     <ul className="nav-links-left">
       {auth.isLoggedIn && (
         <>
           <li>
             <NavLink className="links" to="/">
-              <DashboardIcon className="icon-header"></DashboardIcon> Explore
+              <DashboardIcon className="icon-header"/> Explore
             </NavLink>
           </li>
-          <li>
-            <NavLink className="links" to="/tabs">
-              <QueueMusicIcon className="icon-header"></QueueMusicIcon> Tabs
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="links" to="/tutorial">
-              <YouTubeIcon className="icon-header"></YouTubeIcon> Tutoriels
-            </NavLink>
-          </li>
-
-          <div className="instrument-left">
-            <button
-              className="btn-active-menu"
-              onClick={() => setIsVisible(!isVisible)}
-            >
-              Instruments
-            </button>
-            {isVisible && (
-              <ul>
-                {instruments &&
-                  instruments.map((instrument, i) => (
-                    <NavLink
-                      key={instrument.id}
-                      className="links"
-                      to={`/instruments/${instrument.id}`}
-                    >
-                      <QueueMusicIcon className="icon-header"></QueueMusicIcon>
-                      {instrument.name}
-                    </NavLink>
-                  ))}
-              </ul>
-            )}
-          </div>
         </>
       )}
       {auth.isLoggedIn && auth.role === '601724ea6f33a7db18a485c5' && (
@@ -71,7 +23,7 @@ const NavLinks = (props) => {
           Administration
           <li>
             <NavLink className="links" to="/admin" exact>
-              <SupervisorAccountIcon className="icon-header"></SupervisorAccountIcon>
+              <SupervisorAccountIcon className="icon-header"/>
               Panel Admin
             </NavLink>
           </li>
@@ -81,42 +33,9 @@ const NavLinks = (props) => {
         <>
           <li>
             <NavLink className="links" to="/">
-              <DashboardIcon className="icon-header"></DashboardIcon> Explore
+              <DashboardIcon className="icon-header"/> Explore
             </NavLink>
           </li>
-          <li>
-            <NavLink className="links" to="/tabs">
-              <QueueMusicIcon className="icon-header"></QueueMusicIcon> Tabs
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="links" to="/tutorial">
-              <YouTubeIcon className="icon-header"></YouTubeIcon> Tutoriels
-            </NavLink>
-          </li>
-          <div className="instrument-left">
-            <button
-              className="btn-active-menu"
-              onClick={() => setIsVisible(!isVisible)}
-            >
-              Instruments
-            </button>
-            {isVisible && (
-              <ul>
-                {instruments &&
-                  instruments.map((instrument, i) => (
-                    <NavLink
-                      key={instrument.id}
-                      className="links"
-                      to={`/instruments/${instrument.id}`}
-                    >
-                      <QueueMusicIcon className="icon-header"></QueueMusicIcon>
-                      {instrument.name}
-                    </NavLink>
-                  ))}
-              </ul>
-            )}
-          </div>
         </>
       )}
     </ul>

@@ -6,17 +6,17 @@ export const useAuth = () => {
   const history = useHistory();
 
   const [token, setToken] = useState(false);
-  const [role, setRole] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(null);
   const [userId, setUserId] = useState(null);
   const [pseudo, setPseudo] = useState(null);
   const [picture, setPicture] = useState(null);
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
 
   const login = useCallback(
-    (uid, token, role, pseudo, picture, expirationDate) => {
+    (uid, token, isAdmin, pseudo, picture, expirationDate) => {
       setToken(token);
       setUserId(uid);
-      setRole(role);
+      setIsAdmin(isAdmin);
       setPseudo(pseudo);
       setPicture(picture);
       const tokenExpirationDate =
@@ -26,7 +26,7 @@ export const useAuth = () => {
         JSON.stringify({
           userId: uid,
           token: token,
-          role: role,
+          isAdmin: isAdmin,
           pseudo: pseudo,
           picture: picture,
           expiration: tokenExpirationDate.toISOString(),
@@ -40,7 +40,7 @@ export const useAuth = () => {
     setToken(token);
     setTokenExpirationDate(null);
     setUserId(null);
-    setRole(null);
+    setIsAdmin(null);
     setPseudo(null);
     setPicture(null);
     localStorage.removeItem('userData');
@@ -67,7 +67,7 @@ export const useAuth = () => {
       login(
         storedData.userId,
         storedData.token,
-        storedData.role,
+        storedData.isAdmin,
         storedData.pseudo,
         storedData.picture,
         new Date(storedData.expiration)
@@ -75,5 +75,5 @@ export const useAuth = () => {
     }
   }, [login]);
 
-  return { token, login, logout, userId, role, pseudo, picture };
+  return { token, login, logout, userId, isAdmin, pseudo, picture };
 };
